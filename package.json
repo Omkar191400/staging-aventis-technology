@@ -1,0 +1,12 @@
+{
+  "name": "aventis-technology-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static site for Aventis Technology. Build step regenerates blog.html from the Medium RSS feed before Cloudflare Pages deploys.",
+  "scripts": {
+    "build": "node generate-blog.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

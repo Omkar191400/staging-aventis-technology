@@ -3,12 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prezio | Aventis Technology</title>
-<meta name="description" content="Prezio is Aventis Technology dynamic pricing and offer decisioning engine, choosing the winning offer and price for every customer on every channel.">
+<title>Blog | Insights on Digital Strategy, AI &amp; CX | Aventis Technology</title>
+<meta name="description" content="Perspectives on enterprise digital strategy, agentic AI, customer experience and technology architecture from the Aventis Technology team.">
+<link rel="canonical" href="https://www.aventistechnology.com/blog.html">
+<meta name="robots" content="index,follow,max-snippet:-1">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="%233B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="white"/></svg>'>
+<style>
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px}
+.bpost{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel-solid);
+       text-decoration:none;color:inherit;display:flex;flex-direction:column;
+       transition:border-color .35s,transform .5s var(--ease),box-shadow .35s}
+.bpost:hover{border-color:rgba(255,255,255,.5);transform:translateY(-4px);box-shadow:0 22px 46px rgba(0,0,0,.30)}
+.bpost .thumb{aspect-ratio:16/10;background:var(--navy-2);overflow:hidden}
+.bpost .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.bpost .body{padding:26px 26px 30px}
+.bpost .meta{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.2em;
+             text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:block}
+.bpost h3{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.015em;
+          margin-bottom:10px;line-height:1.28}
+.bpost p{color:var(--muted);font-size:15px;line-height:1.6}
+.blog-empty{margin-top:60px;padding:60px 40px;text-align:center;border:1px solid var(--line);
+            border-radius:20px;background:var(--panel-solid);color:var(--muted)}
+@media(max-width:1080px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.blog-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <canvas id="bg-field" aria-hidden="true"></canvas>
@@ -16,10 +37,10 @@
   <a class="brand" href="index.html" aria-label="Aventis Technology home"><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#3B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="#fff"/></svg><span class="wm">Aventis <b>Technology</b></span></a>
   <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   <div class="nav-links" id="nav-links">
+    <a href="index.html#practices">Practices</a>
     <a href="services.html">Services</a>
     <a href="blog.html">Blog</a>
     <a href="prezio.html">Prezio</a>
-    <a href="cx-pulse.html">CX Pulse</a>
     <a href="index.html#about">About</a>
     <a class="btn" href="index.html#contact">Start a project <span class="arr">&rarr;</span></a>
   </div>
@@ -27,84 +48,31 @@
 
 <header class="phero">
   <div class="wrap">
-    <span class="kick"><i>Prezio</i> Revenue decisioning</span>
-    <h1>The right price, for <em>one customer</em> at a time.</h1>
-    <p class="sub">Prezio scores every customer against your full catalog and decides the winning offer and price for each channel, nightly at full-base scale and in real time when the moment demands it.</p>
-    <div class="cta">
-      <a class="btn" href="index.html#contact">Request a walkthrough <span class="arr">&rarr;</span></a>
-      <a class="btn ghost" href="#how">See how it works</a>
-    </div>
+    <span class="kick"><i>Blog</i> Notes from the team</span>
+    <h1>Ideas on where digital <em>is heading.</em></h1>
+    <p class="sub">Perspectives on strategy, architecture, AI and customer experience from the people building it.</p>
   </div>
 </header>
 
-<section class="strip">
+<section id="posts">
   <div class="wrap">
-    <div class="rv"><div class="sec-tag">The problem</div><h2>Segments average away the thing that actually matters.</h2><p class="lede">Most pricing engines were built to serve a few dozen segments. Modern catalogs and modern customers have outgrown them.</p></div>
-    <div class="strip-grid rv">
-      <div class="pain"><b>Averages leave money behind</b><p>A segment price is right for almost nobody in it. The customers who would have paid more are discounted, and the ones who needed a nudge never get one.</p></div>
-      <div class="pain"><b>Offers compete with each other</b><p>Thousands of catalog items and no shared ranking means campaigns cannibalise each other, and the same customer sees a different story on every channel.</p></div>
-      <div class="pain"><b>Nobody can prove the value</b><p>Without disciplined holdouts, uplift is a claim rather than a number, and pricing decisions get argued on instinct.</p></div>
+    <div class="rv">
+      <div class="sec-tag">Latest writing</div>
+      <h2>From our Medium.</h2>
+      <p class="lede">Published on Medium, mirrored here. Follow along for the full archive.</p>
     </div>
-  </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <div class="rv"><div class="sec-tag">Capabilities</div><h2>Everything needed to price one customer at a time.</h2><p class="lede">Prezio is a decisioning engine, not a rules table. It ranks, selects, governs and publishes at full-base scale.</p></div>
-    <div class="caps rv">
-      <div class="cap"><span class="n">01</span><h3>N=1 decisioning</h3><p>A personalized winner per customer, per channel, ranked on propensity and value rather than segment membership.</p></div>
-      <div class="cap"><span class="n">02</span><h3>Unified offer catalog</h3><p>One source of truth for offers across brands and channels, with eligibility and lifecycle handled centrally.</p></div>
-      <div class="cap"><span class="n">03</span><h3>Propensity and value scoring</h3><p>A shared scoring formula blends likelihood to convert with commercial worth, so ranking is consistent everywhere.</p></div>
-      <div class="cap"><span class="n">04</span><h3>Commercial guardrails</h3><p>Margin floors, eligibility, fairness and frequency rules are enforced on every decision, with a full audit trail.</p></div>
-      <div class="cap"><span class="n">05</span><h3>Channel-aware slotting</h3><p>Winners are published per container and channel, so app, web, messaging and partner surfaces each get the right treatment.</p></div>
-      <div class="cap"><span class="n">06</span><h3>Batch and real time</h3><p>Nightly decisions cover the entire base; live decisioning handles the moments that cannot wait for a batch.</p></div>
-    </div>
-  </div>
-</section>
+<!--POSTS-->
 
-<section class="flow" id="how">
-  <div class="wrap">
-    <div class="rv"><div class="sec-tag">How it works</div><h2>From catalog to a priced moment.</h2><p class="lede">The pipeline runs end to end every night, with a real-time path for moments that cannot wait.</p></div>
-    <div class="steps rv">
-      <div class="stp"><span class="num">STEP 01</span><h3>Ingest</h3><p>Offer catalog, customer profile, behavioural and transactional signals are brought together into one decisioning view.</p></div>
-      <div class="stp"><span class="num">STEP 02</span><h3>Score</h3><p>Every eligible customer and offer pair is scored on propensity to convert and commercial value using a shared ranking formula.</p></div>
-      <div class="stp"><span class="num">STEP 03</span><h3>Decide</h3><p>Selection strategies and decision policies pick one winner per container and channel, applying guardrails as hard constraints.</p></div>
-      <div class="stp"><span class="num">STEP 04</span><h3>Publish</h3><p>Winning offers are materialised as customer attributes and audiences, ready for every activation surface to read.</p></div>
-      <div class="stp"><span class="num">STEP 05</span><h3>Serve</h3><p>App, web, messaging, USSD, partner and paid channels render the winner with dynamic templates bound at request time.</p></div>
-      <div class="stp"><span class="num">STEP 06</span><h3>Measure</h3><p>Deterministic holdouts keep a stable control group so incremental revenue is measured, not estimated.</p></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="rv"><div class="sec-tag">Outcomes</div><h2>What changes once pricing gets personal.</h2></div>
-    <div class="outs rv">
-      <div class="out"><b>N=1</b><small>Every customer priced individually rather than by segment, across the entire active base.</small></div>
-      <div class="out"><b>Full base</b><small>Decisions run nightly at tens-of-millions scale, with real-time decisioning for live moments.</small></div>
-      <div class="out"><b>Provable</b><small>Holdout-based measurement built in, so uplift is reported as a number rather than a claim.</small></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="rv"><div class="sec-tag">Where it runs</div><h2>Built for catalogs that move fast.</h2></div>
-    <div class="ucs rv">
-      <div class="uc"><span class="tag">Telecommunications</span><h3>Personalized offer pricing</h3><p>Data, voice and bundle offers priced per subscriber across app, messaging and USSD, with margin floors enforced on every decision.</p></div>
-      <div class="uc"><span class="tag">Aviation and travel</span><h3>Dynamic ancillary pricing</h3><p>Seats, bags and upgrades priced to the individual traveler and the moment in their journey rather than a fixed fare table.</p></div>
-      <div class="uc"><span class="tag">Retail and commerce</span><h3>Promotions and markdown</h3><p>Personalized promotions that protect margin while clearing the right inventory to the right customers.</p></div>
-      <div class="uc"><span class="tag">Financial services</span><h3>Product and rate personalization</h3><p>Next-best product and pricing decisions governed by strict consent, eligibility and fairness rules.</p></div>
-    </div>
   </div>
 </section>
 
 <section class="pcta">
   <div class="wrap">
-    <h2>Price every customer, <em>individually.</em></h2>
-    <p class="lede">We will walk you through Prezio against your own catalog and channels.</p>
+    <h2>Let's build what's <em>next.</em></h2>
+    <p class="lede">Tell us where you are today and we will map the route from here.</p>
     <div class="cta-btns">
-      <a class="btn ghost" href="cx-pulse.html">Explore CX Pulse</a>
+      <a class="btn ghost" href="case-studies.html">Explore our work</a>
       <a class="btn" href="index.html#contact">Start the conversation <span class="arr">&rarr;</span></a>
     </div>
   </div>
@@ -114,7 +82,7 @@
   <div class="foot">
     <div class="about">
       <a class="brand" href="index.html"><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#3B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="#fff"/></svg><span class="wm">Aventis <b>Technology</b></span></a>
-      <p>Digital experience and engineering partner headquartered in Singapore, serving enterprise clients across Asia-Pacific.</p>
+      <p>Adobe implementation partner headquartered in Singapore, serving enterprise clients across Asia-Pacific.</p>
       <div class="trust">
         <img src="images/soc2-badge.png" alt="AICPA SOC 2 Type II certified" width="38" height="38" loading="lazy">
         <div>
@@ -124,11 +92,316 @@
       </div>
     
     </div>
-    <div><h4>Products</h4><a href="prezio.html">Prezio</a><a href="cx-pulse.html">CX Pulse</a><a href="index.html#services">Capabilities</a><a href="legal.html">Legal</a><a href="services.html">Services</a><a href="blog.html">Blog</a></div>
+    <div><h4>Products</h4><a href="prezio.html">Prezio</a><a href="cx-pulse.html">CX Pulse</a><a href="index.html#platforms">Platforms</a><a href="legal.html">Legal</a><a href="services.html">Services</a><a href="blog.html">Blog</a></div>
     <div><h4>Connect</h4><a href="mailto:hello@aventistechnology.com">hello@aventistechnology.com</a><a href="index.html#contact">Start a project</a><a href="index.html">Home</a></div>
   </div>
   <div class="legal"><span>&copy; 2026 Aventis Technologies Pte. Ltd. Singapore. All rights reserved.</span><span><a href="legal.html" style="color:inherit">Legal</a> &middot; Customer experience, engineered at altitude.</span></div>
 </footer>
+<script>
+(function(){"use strict";
+var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var nav=document.getElementById('nav'),links=document.getElementById('nav-links'),tg=document.getElementById('menu-toggle');
+tg.addEventListener('click',function(){var o=links.classList.toggle('open');tg.textContent=o?'\u2715':'\u2630';tg.setAttribute('aria-expanded',o);});
+links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');tg.textContent='\u2630';});});
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e);});
+document.body.classList.add('ready');
+/* ================= Living background =================
+   Two engines. Switch with <body data-bg="cells"> for the Voronoi
+   field; the default is the identity graph.                       */
+var BG = (document.body.getAttribute('data-bg')||'graph');
+var isSmall = window.innerWidth < 760;
+var heroP = 0, ptrX = -9999, ptrY = -9999;
+var cv = document.getElementById('bg-field');
+window.addEventListener('pointermove',function(e){
+  var r=cv?cv.getBoundingClientRect():null; if(!r) return;
+  ptrX=e.clientX-r.left; ptrY=e.clientY-r.top;
+},{passive:true});
+document.addEventListener('pointerleave',function(){ ptrX=-9999; ptrY=-9999; });
+/* ================= Living field: Voronoi resolution =================
+   Cells drift like segments. Every few seconds a region resolves into
+   individuals, then settles back. Segments to N=1, as a background.   */
+function initCells(){
+var ctx = cv.getContext('2d');
+var W=0,H=0,PAD=0,sites=[],nextBurst=0;
+var seed = 20260815;
+function rnd(){ seed=(seed*1103515245+12345)&0x7fffffff; return (seed%100000)/100000; }
+function circum(a,b,c){
+  var d=2*(a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y));
+  if(d<1e-7&&d>-1e-7) return null;
+  var s1=a.x*a.x+a.y*a.y,s2=b.x*b.x+b.y*b.y,s3=c.x*c.x+c.y*c.y;
+  var ux=(s1*(b.y-c.y)+s2*(c.y-a.y)+s3*(a.y-b.y))/d;
+  var uy=(s1*(c.x-b.x)+s2*(a.x-c.x)+s3*(b.x-a.x))/d;
+  return {x:ux,y:uy,r2:(ux-a.x)*(ux-a.x)+(uy-a.y)*(uy-a.y)};
+}
+function build(){
+  var n=sites.length, big=Math.max(W,H)*12;
+  var p=sites.concat([{x:W/2-big,y:H/2-big},{x:W/2+big,y:H/2-big},{x:W/2,y:H/2+big}]);
+  var tris=[{a:n,b:n+1,c:n+2,cc:circum(p[n],p[n+1],p[n+2])}];
+  for(var i=0;i<n;i++){
+    var edges=[];
+    for(var t=tris.length-1;t>=0;t--){
+      var T=tris[t],cc=T.cc;
+      if(!cc){ tris.splice(t,1); continue; }
+      var dx=p[i].x-cc.x, dy=p[i].y-cc.y;
+      if(dx*dx+dy*dy<cc.r2){ edges.push([T.a,T.b],[T.b,T.c],[T.c,T.a]); tris.splice(t,1); }
+    }
+    for(var e=0;e<edges.length;e++){
+      var dup=false;
+      for(var f=0;f<edges.length;f++){
+        if(e!==f&&((edges[e][0]===edges[f][0]&&edges[e][1]===edges[f][1])||(edges[e][0]===edges[f][1]&&edges[e][1]===edges[f][0]))){dup=true;break;}
+      }
+      if(!dup){ var T2={a:edges[e][0],b:edges[e][1],c:i}; T2.cc=circum(p[T2.a],p[T2.b],p[T2.c]); if(T2.cc) tris.push(T2); }
+    }
+  }
+  /* dual: a Voronoi edge joins the circumcentres of two adjacent triangles */
+  var map={},out=[];
+  for(var t2=0;t2<tris.length;t2++){
+    var T3=tris[t2], es=[[T3.a,T3.b],[T3.b,T3.c],[T3.c,T3.a]];
+    for(var q=0;q<3;q++){
+      var i0=es[q][0], i1=es[q][1];
+      if(i0>=n||i1>=n) continue;
+      var k=(i0<i1?i0:i1)+'_'+(i0<i1?i1:i0);
+      (map[k]=map[k]||[]).push(T3.cc);
+      map[k].i0=i0; map[k].i1=i1;
+    }
+  }
+  for(var k2 in map){ var m=map[k2]; if(m.length===2) out.push([m[0],m[1],m.i0,m.i1]); }
+  return out;
+}
+function seedSites(){
+  sites=[]; PAD=Math.max(W,H)*0.20;
+  var n=isSmall?26:48;
+  for(var i=0;i<n;i++) sites.push({
+    x:-PAD+rnd()*(W+2*PAD), y:-PAD+rnd()*(H+2*PAD),
+    vx:(rnd()-.5)*0.13, vy:(rnd()-.5)*0.13, a:1, burst:0 });
+}
+function resize(){
+  var d=Math.min(window.devicePixelRatio||1,2);
+  W=cv.offsetWidth; H=cv.offsetHeight;
+  cv.width=Math.round(W*d); cv.height=Math.round(H*d);
+  ctx.setTransform(d,0,0,d,0,0);
+  seedSites();
+}
+function burst(now){
+  /* one region resolves from a segment into individuals */
+  var bx=W*(0.18+rnd()*0.64), by=H*(0.18+rnd()*0.64);
+  var n=isSmall?8:13;
+  for(var i=0;i<n;i++){
+    var ang=rnd()*6.2832, r=34+rnd()*(isSmall?110:180);
+    sites.push({x:bx+Math.cos(ang)*r, y:by+Math.sin(ang)*r,
+      vx:(rnd()-.5)*0.07, vy:(rnd()-.5)*0.07, a:0, burst:1, born:now, life:5200});
+  }
+  nextBurst = now + 4200 + rnd()*3200;
+}
+function step(now){
+  for(var i=sites.length-1;i>=0;i--){
+    var s=sites[i];
+    s.x+=s.vx; s.y+=s.vy;
+    if(s.x<-PAD)s.x=W+PAD; if(s.x>W+PAD)s.x=-PAD;
+    if(s.y<-PAD)s.y=H+PAD; if(s.y>H+PAD)s.y=-PAD;
+    if(ptrX>-9000){                                  /* cells swell around the pointer */
+      var dx=s.x-ptrX, dy=s.y-ptrY, d2=dx*dx+dy*dy;
+      if(d2<44000&&d2>1){ var f=(1-d2/44000)*0.85, d=Math.sqrt(d2); s.x+=dx/d*f; s.y+=dy/d*f; }
+    }
+    if(s.burst){
+      var age=now-s.born;
+      s.a = age<900 ? age/900 : (age>s.life-900 ? Math.max(0,(s.life-age)/900) : 1);
+      if(age>s.life) sites.splice(i,1);
+    }
+  }
+  if(now>nextBurst) burst(now);
+}
+function draw(){
+  var edges=build();
+  ctx.clearRect(0,0,W,H);
+  /* quiet base mesh first, resolved cells over the top */
+  ctx.lineCap='round';
+  for(var pass=0;pass<2;pass++){
+    ctx.beginPath();
+    var any=false;
+    for(var i=0;i<edges.length;i++){
+      var e=edges[i], s0=sites[e[2]], s1=sites[e[3]];
+      if(!s0||!s1) continue;
+      var hot=(s0.burst||s1.burst)?1:0;
+      if(hot!==pass) continue;
+      ctx.moveTo(e[0].x,e[0].y); ctx.lineTo(e[1].x,e[1].y); any=true;
+    }
+    if(!any) continue;
+    if(pass===0){ ctx.strokeStyle='rgba(255,255,255,.16)'; ctx.lineWidth=1; }
+    else{ ctx.strokeStyle='rgba(185,206,255,.42)'; ctx.lineWidth=1.5; }
+    ctx.stroke();
+  }
+  for(var j=0;j<sites.length;j++){
+    var s=sites[j];
+    if(s.x<-20||s.x>W+20||s.y<-20||s.y>H+20) continue;
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.burst?2.6:1.8,0,6.2832);
+    ctx.fillStyle = s.burst ? 'rgba(255,255,255,'+(0.75*s.a)+')' : 'rgba(255,255,255,.28)';
+    ctx.fill();
+    if(s.burst&&s.a>0.2){
+      ctx.beginPath(); ctx.arc(s.x,s.y,9+(1-s.a)*10,0,6.2832);
+      ctx.strokeStyle='rgba(185,206,255,'+(0.22*s.a)+')'; ctx.lineWidth=1; ctx.stroke();
+    }
+  }
+}
+resize(); draw();
+window.addEventListener('resize',function(){ isSmall=window.innerWidth<760; resize(); draw(); });
+window.addEventListener('pointermove',function(e){
+  var r=cv.getBoundingClientRect(); ptrX=e.clientX-r.left; ptrY=e.clientY-r.top;
+},{passive:true});
+document.addEventListener('pointerleave',function(){ ptrX=-9999; ptrY=-9999; });
+var frame=0;
+function loop(){
+  frame++;
+  if(!(isSmall&&(frame&1))){ step(performance.now()); draw(); }
+  requestAnimationFrame(loop);
+}
+if(!reduced) requestAnimationFrame(loop);
+}
+function initGraph(){
+var ctx=cv.getContext('2d');
+var W=0,H=0,nodes=[],links=[],pulses=[],nextEvt=0,seed=20260815;
+function rnd(){ seed=(seed*1103515245+12345)&0x7fffffff; return (seed%100000)/100000; }
+function seedGraph(){
+  nodes=[];links=[];pulses=[];
+  var N=isSmall?30:58, cores=Math.round(N*0.28);
+  for(var i=0;i<N;i++) nodes.push({x:rnd()*W,y:rnd()*H,vx:0,vy:0,
+    core:i<cores, r:i<cores?(4.2+rnd()*1.8):(1.9+rnd()*0.9), a:1});
+  for(var j=cores;j<N;j++) links.push({s:j,t:Math.floor(rnd()*cores),L:70+rnd()*62,a:1});
+  for(var k=0;k<cores;k++) if(rnd()<0.55) links.push({s:k,t:Math.floor(rnd()*cores),L:170+rnd()*95,a:1});
+}
+function resize(){
+  var d=Math.min(window.devicePixelRatio||1,2);
+  W=cv.offsetWidth;H=cv.offsetHeight;
+  cv.width=Math.round(W*d);cv.height=Math.round(H*d);
+  ctx.setTransform(d,0,0,d,0,0);
+  seedGraph();
+  for(var i=0;i<160;i++) step(0);      /* pre-settle so it never appears mid-explosion */
+}
+/* a new identifier arrives and is stitched onto an existing profile */
+function resolve(now){
+  var cores=[];
+  for(var i=0;i<nodes.length;i++) if(nodes[i].core) cores.push(i);
+  if(!cores.length) return;
+  var hub=cores[Math.floor(rnd()*cores.length)], n=isSmall?2:4;
+  for(var j=0;j<n;j++){
+    var ang=rnd()*6.2832, dist=90+rnd()*70;
+    nodes.push({x:nodes[hub].x+Math.cos(ang)*dist,y:nodes[hub].y+Math.sin(ang)*dist,
+      vx:0,vy:0,core:false,r:2.0+rnd()*0.8,a:0,born:now,life:7000,fresh:true});
+    var li=links.push({s:nodes.length-1,t:hub,L:74+rnd()*46,a:0,fresh:true})-1;
+    pulses.push({link:li,p:0,born:now+j*160});
+  }
+  nextEvt=now+3800+rnd()*3000;
+}
+function step(now){
+  var n=nodes.length,i,j;
+  for(i=0;i<n;i++){
+    for(j=i+1;j<n;j++){
+      var a=nodes[i],b=nodes[j],dx=b.x-a.x,dy=b.y-a.y,d2=dx*dx+dy*dy;
+      if(d2<96100&&d2>0.01){
+        var d=Math.sqrt(d2),f=1150/d2; if(f>0.9)f=0.9;
+        var ux=dx/d*f,uy=dy/d*f;
+        a.vx-=ux;a.vy-=uy;b.vx+=ux;b.vy+=uy;
+      }
+    }
+  }
+  for(var k=0;k<links.length;k++){
+    var l=links[k],p=nodes[l.s],q=nodes[l.t];
+    if(!p||!q) continue;
+    var ex=q.x-p.x,ey=q.y-p.y,ed=Math.sqrt(ex*ex+ey*ey)||0.01;
+    var ef=(ed-l.L)*0.0022,vx=ex/ed*ef,vy=ey/ed*ef;
+    p.vx+=vx;p.vy+=vy;q.vx-=vx;q.vy-=vy;
+  }
+  for(i=0;i<n;i++){
+    var s=nodes[i];
+    s.vx+=(W/2-s.x)*0.00006; s.vy+=(H/2-s.y)*0.00013;
+    if(ptrX>-9000){                                   /* nodes give way to the pointer */
+      var px=s.x-ptrX,py=s.y-ptrY,pd2=px*px+py*py;
+      if(pd2<26000&&pd2>1){ var pd=Math.sqrt(pd2),pf=(1-pd2/26000)*1.5; s.vx+=px/pd*pf; s.vy+=py/pd*pf; }
+    }
+    s.vx*=0.85; s.vy*=0.85; s.x+=s.vx; s.y+=s.vy;
+    if(s.fresh){
+      var age=now-s.born;
+      s.a = age<800?age/800:(age>s.life-900?Math.max(0,(s.life-age)/900):1);
+    }
+  }
+  for(var m=0;m<links.length;m++){ var L2=links[m]; if(L2.fresh){ var na=nodes[L2.s]; L2.a=na?na.a:0; } }
+  for(i=nodes.length-1;i>=0;i--){
+    if(nodes[i].fresh&&now-nodes[i].born>nodes[i].life){
+      nodes.splice(i,1);
+      for(var z=links.length-1;z>=0;z--){
+        if(links[z].s===i||links[z].t===i){ links.splice(z,1); continue; }
+        if(links[z].s>i)links[z].s--; if(links[z].t>i)links[z].t--;
+      }
+      pulses=[];
+    }
+  }
+  for(i=pulses.length-1;i>=0;i--){
+    var pu=pulses[i];
+    if(now<pu.born) continue;
+    pu.p+=0.022; if(pu.p>1) pulses.splice(i,1);
+  }
+  if(now>nextEvt&&now>0) resolve(now);
+}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  ctx.lineCap='round';
+  for(var pass=0;pass<2;pass++){
+    ctx.beginPath(); var any=false;
+    for(var k=0;k<links.length;k++){
+      var l=links[k],p=nodes[l.s],q=nodes[l.t];
+      if(!p||!q) continue;
+      var hot=l.fresh?1:0; if(hot!==pass) continue;
+      ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); any=true;
+    }
+    if(!any) continue;
+    if(pass===0){ ctx.strokeStyle='rgba(255,255,255,.13)'; ctx.lineWidth=1; }
+    else{ ctx.strokeStyle='rgba(185,206,255,.40)'; ctx.lineWidth=1.4; }
+    ctx.stroke();
+  }
+  for(var i=0;i<pulses.length;i++){          /* the stitch travelling down the new edge */
+    var pu=pulses[i],l2=links[pu.link];
+    if(!l2) continue;
+    var a2=nodes[l2.s],b2=nodes[l2.t];
+    if(!a2||!b2) continue;
+    var x=a2.x+(b2.x-a2.x)*pu.p, y=a2.y+(b2.y-a2.y)*pu.p;
+    ctx.beginPath(); ctx.arc(x,y,2.6,0,6.2832);
+    ctx.fillStyle='rgba(232,240,255,'+(1-pu.p*0.6)+')'; ctx.fill();
+  }
+  for(var j=0;j<nodes.length;j++){
+    var s=nodes[j];
+    if(s.x<-40||s.x>W+40||s.y<-40||s.y>H+40) continue;
+    if(s.core){
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r+4.5,0,6.2832);
+      ctx.fillStyle='rgba(143,178,255,.10)'; ctx.fill();
+    }
+    ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.2832);
+    ctx.fillStyle = s.core ? 'rgba(255,255,255,'+(0.52*s.a)+')' : 'rgba(185,206,255,'+(0.34*s.a)+')';
+    ctx.fill();
+    if(s.core){ ctx.lineWidth=1; ctx.strokeStyle='rgba(255,255,255,.30)'; ctx.stroke(); }
+    if(s.fresh&&s.a>0.25){
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r+5+(1-s.a)*9,0,6.2832);
+      ctx.strokeStyle='rgba(185,206,255,'+(0.30*s.a)+')'; ctx.lineWidth=1; ctx.stroke();
+    }
+  }
+}
+resize(); draw();
+window.addEventListener('resize',function(){ isSmall=window.innerWidth<760; resize(); draw(); });
+var frame=0;
+(function loop(){
+  frame++;
+  if(!(isSmall&&(frame&1))){ step(performance.now()); draw(); }
+  requestAnimationFrame(loop);
+})();
+}
+
+if(cv){ if(BG==='cells') initCells(); else initGraph(); }
+
+
+})();
+</script>
 <script>
 (function(){"use strict";
 var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
