@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adobe Implementation Partner in APAC | Aventis Technology</title>
+<meta name="description" content="Aventis Technology is an Adobe implementation partner headquartered in Singapore, serving enterprises across APAC. We implement Adobe Experience Platform, Real-Time CDP, Journey Optimizer, Customer Journey Analytics and Experience Manager, alongside Braze and Salesforce, plus dynamic pricing, data and AI engineering.">
+<link rel="canonical" href="https://www.aventistechnology.com/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Adobe Implementation Partner in APAC | Aventis Technology">
+<meta property="og:description" content="Singapore-headquartered Adobe implementation partner delivering customer data, journey orchestration, dynamic pricing and experience management across Asia-Pacific.">
+<meta property="og:url" content="https://www.aventistechnology.com/">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="%233B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="white"/></svg>'>
+<style>
+:root{
+  --bg:#10256E;
+  --bg-soft:#16307F;
+  --panel:#193589;
+  --deep:#0A1A52;
+  --navy:#0A1A52;
+  --navy-2:#0E2168;
+  --blue:#8FB2FF;
+  --blue-soft:#B9CEFF;
+  --cyan:#B9CEFF;
+  --ink:#FFFFFF;
+  --muted:#AFC2EE;
+  --muted-2:#8FA4D8;
+  --panel-solid:rgba(9,22,72,.86);
+  --panel-hover:rgba(18,38,104,.92);
+  --line:rgba(255,255,255,.15);
+  --line-strong:rgba(255,255,255,.30);
+  --display:'Switzer','Inter',system-ui,-apple-system,sans-serif;
+  --body:'Switzer','Inter',system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:#fff;color:#0A1A52}
+img,svg,canvas{max-width:100%}
+
+/* ---------- Preloader ---------- */
+#loader{
+  position:fixed;inset:0;z-index:1000;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;
+  transition:opacity .7s var(--ease),visibility .7s;
+}
+#loader.done{opacity:0;visibility:hidden}
+#loader svg{width:64px;height:64px;animation:pulse 1.4s ease-in-out infinite}
+#loader .alt-read{font-family:var(--display);font-weight:500;letter-spacing:.28em;font-size:12px;color:var(--muted-2);text-transform:uppercase}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.92);opacity:.7}}
+
+/* ---------- Altitude meter (signature) ---------- */
+#altimeter{
+  position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:90;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  font-family:var(--display);font-size:11px;letter-spacing:.22em;color:var(--muted-2);
+  pointer-events:none;
+}
+#altimeter .track{width:2px;height:130px;background:var(--line-strong);position:relative;overflow:hidden;border-radius:2px}
+#altimeter .track i{position:absolute;left:0;top:0;width:100%;background:var(--blue);display:block;height:0%}
+#altimeter .val{writing-mode:vertical-rl;text-orientation:mixed}
+@media(max-width:900px){#altimeter{display:none}}
+
+/* ---------- Cursor ---------- */
+
+/* ---------- Nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 48px;
+  transition:background .4s,backdrop-filter .4s,padding .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+nav::before{content:"";position:absolute;inset:0;background:rgba(11,28,88,.84);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;transition:opacity .4s;pointer-events:none;z-index:-1}
+nav.scrolled::before{opacity:1}
+nav.scrolled{padding:14px 48px;border-color:var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand svg{width:38px;height:38px;flex:none}
+.brand .wm{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.14em;line-height:1.15;text-transform:uppercase}
+.brand .wm b{display:block;font-weight:700}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.02em;transition:color .25s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink)}
+.nav-links a.btn,.nav-links a.btn:hover,.nav-links a.btn:focus-visible{color:#0A1A52}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.04em;
+  color:#0A1A52;background:#FFFFFF;border:1px solid #FFFFFF;
+  padding:12px 24px;border-radius:100px;text-decoration:none;
+  transition:transform .3s var(--ease),box-shadow .3s,background .3s;
+}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.32);background:#EAF0FF}
+.btn.ghost{background:transparent;border-color:var(--line-strong);color:var(--ink)}
+.btn.ghost:hover{border-color:#fff;box-shadow:none;background:rgba(255,255,255,.10)}
+.btn .arr{transition:transform .3s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+#menu-toggle{display:none;background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer}
+@media(max-width:900px){
+  nav{padding:16px 20px}
+  nav.scrolled{padding:12px 20px}
+  .nav-links{position:fixed;inset:0;height:100dvh;background:var(--bg);flex-direction:column;justify-content:center;gap:30px;transform:translateY(-102%);visibility:hidden;pointer-events:none;transition:transform .5s var(--ease),visibility 0s .5s}
+  .nav-links.open{transform:translateY(0);visibility:visible;pointer-events:auto;transition:transform .5s var(--ease),visibility 0s 0s}
+  .nav-links a{font-size:26px;font-family:var(--display)}
+  #menu-toggle{display:block;z-index:110;position:relative}
+}
+
+/* ---------- Hero ---------- */
+header{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+#hero-fx{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;pointer-events:none;opacity:0;transition:opacity 1.8s var(--ease) .35s}
+body.ready #hero-fx{opacity:1}
+.hero-inner{z-index:3 !important}
+.hero-fade{z-index:2;position:absolute;inset:0;background:
+  radial-gradient(1100px 560px at 72% 18%, rgba(143,178,255,.16), transparent 62%),
+  linear-gradient(to right, rgba(16,37,110,.86) 0%, rgba(16,37,110,.30) 42%, rgba(16,37,110,0) 62%),
+  linear-gradient(to bottom, rgba(16,37,110,0) 70%, rgba(16,37,110,.85) 97%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;padding:150px 48px 120px;max-width:1280px;margin:0 auto;width:100%}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:34px;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--blue)}
+h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(42px,7.6vw,104px);
+  line-height:1.03;letter-spacing:-.035em;
+  max-width:13ch;color:var(--ink);
+}
+h1 .ln{display:block;overflow:hidden}
+h1 .ln span{display:block;transform:translateY(110%);transition:transform 1s var(--ease)}
+body.ready h1 .ln span{transform:translateY(0)}
+h1 .ln:nth-child(2) span{transition-delay:.1s}
+h1 .ln:nth-child(3) span{transition-delay:.2s}
+h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--blue)}
+.hero-sub{
+  margin-top:34px;max-width:54ch;color:var(--muted);font-size:clamp(16px,1.4vw,19px);
+  opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease) .45s,transform .9s var(--ease) .45s;
+}
+body.ready .hero-sub{opacity:1;transform:none}
+.hero-cta{display:flex;gap:16px;margin-top:44px;flex-wrap:wrap;opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease) .6s,transform .9s var(--ease) .6s}
+body.ready .hero-cta{opacity:1;transform:none}
+.scroll-cue{position:absolute;bottom:34px;left:48px;z-index:2;display:flex;align-items:center;gap:14px;font-family:var(--display);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-2)}
+.scroll-cue .stem{width:1px;height:44px;background:var(--line-strong);position:relative;overflow:hidden}
+.scroll-cue .stem::after{content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;background:var(--blue);animation:drip 2s var(--ease) infinite}
+@keyframes drip{to{top:110%}}
+@media(max-width:900px){.hero-inner{padding:130px 20px 120px}.scroll-cue{left:20px}}
+
+/* ---------- Ticker ---------- */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:rgba(255,255,255,.04);position:relative;z-index:1}
+.ticker .lane{display:flex;width:max-content;animation:scrollx 34s linear infinite;padding:20px 0}
+.ticker:hover .lane{animation-play-state:paused}
+.ticker span{font-family:var(--display);font-weight:500;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:0 32px;white-space:nowrap;display:flex;align-items:center;gap:32px}
+.ticker span::after{content:"◆";font-size:8px;color:var(--blue)}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+
+/* ---------- Shared section scaffolding ---------- */
+section{position:relative;padding:130px 48px}
+.wrap{max-width:1280px;margin:0 auto}
+.sec-tag{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);margin-bottom:26px}
+.sec-tag::before{content:"";width:34px;height:1px;background:var(--blue)}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(32px,4.6vw,62px);line-height:1.09;letter-spacing:-.028em;max-width:20ch;color:var(--ink)}
+.lede{color:var(--muted);max-width:58ch;margin-top:22px;font-size:clamp(16px,1.3vw,19px)}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){section{padding:84px 20px}}
+
+/* ---------- Manifesto ---------- */
+.manifesto p{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(25px,3.6vw,52px);line-height:1.22;letter-spacing:-.01em;
+  max-width:26ch;
+}
+.manifesto .w{color:rgba(255,255,255,.18);transition:color .5s ease}
+.manifesto .w.lit{color:var(--ink)}
+.manifesto .w.key.lit{color:var(--blue)}
+
+/* ---------- Pillars ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:70px;border-radius:20px;overflow:hidden}
+.pillar{background:var(--bg);padding:46px 38px 52px;position:relative;overflow:hidden;transition:background .4s}
+.pillar:hover{background:var(--bg-soft)}
+.pillar .glyph{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.3em;color:var(--blue);display:block;margin-bottom:60px}
+.pillar h3{font-family:var(--display);font-weight:600;font-size:28px;margin-bottom:14px;letter-spacing:-.01em}
+.pillar p{color:var(--muted);font-size:15.5px}
+.pillar .peak{position:absolute;right:-20px;bottom:-26px;width:150px;height:110px;opacity:.10;transition:opacity .4s,transform .6s var(--ease)}
+.pillar:hover .peak{opacity:.28;transform:translateY(-8px)}
+@media(max-width:900px){.pillars{grid-template-columns:1fr}.pillar{padding:36px 26px 42px}.pillar .glyph{margin-bottom:36px}}
+
+/* ---------- Services (sticky stack) ---------- */
+#services{padding-bottom:60px;background:rgba(0,0,0,.16)}
+.svc-stack{margin-top:80px}
+.svc{
+  position:sticky;top:90px;
+  background:var(--panel-solid);
+  border:1px solid var(--line-strong);border-radius:22px;
+  padding:54px 58px;margin-bottom:26px;
+  display:grid;grid-template-columns:1fr 1.4fr;gap:60px;
+  min-height:360px;align-content:center;
+  box-shadow:0 -18px 50px rgba(0,0,0,.32);
+}
+.svc .idx{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.3em;color:var(--blue);margin-bottom:22px;display:block}
+.svc h3{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.6vw,40px);line-height:1.1;letter-spacing:-.015em}
+.svc .body p{color:var(--muted);margin-bottom:26px;font-size:16.5px}
+.svc .chips{display:flex;flex-wrap:wrap;gap:10px}
+.svc .chips i{font-style:normal;font-family:var(--display);font-weight:500;font-size:12.5px;letter-spacing:.08em;color:var(--blue);border:1px solid rgba(255,255,255,.26);padding:8px 16px;border-radius:100px;background:rgba(255,255,255,.07)}
+@media(max-width:900px){
+  .svc{position:relative;top:auto;grid-template-columns:1fr;padding:32px 24px;gap:22px;min-height:0;box-shadow:0 10px 30px rgba(0,0,0,.24);background:var(--panel-solid)}
+  .svc-stack{margin-top:50px}
+}
+
+/* ---------- Products (deep navy band) ---------- */
+.snow{background:rgba(0,0,0,.42);color:#EAF0FA;border-radius:44px;margin:0 26px;overflow:hidden}
+.snow .sec-tag{color:var(--blue-soft)}
+.snow .sec-tag::before{background:var(--blue-soft)}
+.snow h2{color:#fff}
+.snow .lede{color:#A5B2CE}
+.snowline-label{display:flex;align-items:center;gap:18px;font-family:var(--display);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted-2);padding:60px 48px 26px;max-width:1376px;margin:0 auto}
+.snowline-label::before,.snowline-label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line-strong))}
+.prod-intro{margin-bottom:90px}
+.prod-name{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,54px);line-height:1.08;letter-spacing:-.015em;color:#fff}
+.prod-kicker{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--blue-soft);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px}
+.prod-kicker i{font-style:normal;background:rgba(110,168,255,.12);border:1px solid rgba(110,168,255,.35);padding:5px 12px;border-radius:100px;white-space:nowrap}
+.prod-row{margin-top:130px}
+.pulse-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;margin-top:40px}
+.pulse-grid.flip > :first-child{order:2}
+.pulse-grid.flip > :last-child{order:1}
+.pulse-feats{margin-top:38px;display:grid;gap:0}
+.pulse-feats .f{display:flex;gap:18px;padding:20px 0;border-top:1px solid rgba(165,178,206,.22);align-items:flex-start}
+.pulse-feats .f:last-child{border-bottom:1px solid rgba(165,178,206,.22)}
+.pulse-feats .f b{font-family:var(--display);font-weight:600;font-size:17px;display:block;margin-bottom:4px;color:#fff}
+.pulse-feats .f p{color:#A5B2CE;font-size:15px}
+.pulse-feats .dot{width:9px;height:9px;border-radius:50%;background:var(--blue-soft);flex:none;margin-top:8px}
+/* Product mock cards (stay white, they glow on navy) */
+.mock{background:#fff;border:1px solid rgba(255,255,255,.2);border-radius:20px;box-shadow:0 40px 90px rgba(0,0,0,.4);overflow:hidden;transform:rotate(0.6deg);color:#0B1120}
+.mock.tilt-l{transform:rotate(-0.6deg)}
+.mock .bar{display:flex;gap:7px;padding:14px 18px;border-bottom:1px solid #EDF1FA}
+.mock .bar i{width:10px;height:10px;border-radius:50%;background:#E4EAF6}
+.mock .bar i:first-child{background:var(--blue)}
+.mock .inner{padding:26px 28px 30px}
+.mock .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.mock .kpi{border:1px solid #EDF1FA;border-radius:12px;padding:14px 16px}
+.mock .kpi small{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#8FA0C0;font-weight:700;display:block}
+.mock .kpi b{display:block;font-family:var(--display);font-weight:600;font-size:24px;color:#0B1120;margin-top:4px;white-space:nowrap}
+.mock .kpi b em{font-style:normal;font-size:13px;color:#1FA971;margin-left:6px}
+.mock svg{width:100%;height:auto;display:block}
+/* Prezio mock */
+.pz-rows{display:grid;gap:10px}
+.pz-row{display:grid;grid-template-columns:1.1fr 2fr .9fr;align-items:center;gap:14px;border:1px solid #EDF1FA;border-radius:12px;padding:12px 16px}
+.pz-row small{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#8FA0C0;font-weight:700}
+.pz-bar{height:8px;border-radius:100px;background:#EEF2FB;position:relative;overflow:hidden}
+.pz-bar i{position:absolute;left:0;top:0;bottom:0;border-radius:100px;background:linear-gradient(90deg,#6EA8FF,#3B66F6)}
+.pz-price{font-family:var(--display);font-weight:600;font-size:17px;color:#0B1120;text-align:right}
+.pz-price em{font-style:normal;display:block;font-size:11px;color:#8FA0C0;text-decoration:line-through;font-weight:500}
+.pz-foot{margin-top:18px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #EDF1FA;padding-top:16px;gap:10px;flex-wrap:wrap}
+.pz-foot small{font-size:11px;color:#8FA0C0;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.pz-foot .ok{color:#1FA971}
+@media(max-width:900px){
+  .snow{margin:0 10px;border-radius:26px}
+  .snowline-label{padding:44px 20px 16px}
+  .pulse-grid{grid-template-columns:1fr;gap:40px}
+  .pulse-grid.flip > :first-child{order:1}
+  .pulse-grid.flip > :last-child{order:2}
+  .prod-row{margin-top:84px}
+  .prod-intro{margin-bottom:56px}
+  .mock,.mock.tilt-l{transform:none}
+  .mock .inner{padding:20px 16px 22px}
+  .mock .kpis{gap:8px}
+  .mock .kpi{padding:10px 10px}
+  .mock .kpi b{font-size:18px}
+  .mock .kpi small{font-size:9px;letter-spacing:.04em}
+  .pz-row{grid-template-columns:1fr auto;grid-template-areas:"label price" "bar bar";padding:10px 12px;gap:8px}
+  .pz-row small{grid-area:label}
+  .pz-bar{grid-area:bar}
+  .pz-price{grid-area:price;font-size:15px}
+}
+
+/* ---------- Signature: pinned ascent ---------- */
+.ascent{padding:0;height:540vh;position:relative}
+.ascent-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;overflow:hidden;padding:0 48px}
+.ascent-grid{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.asc-alt{display:flex;align-items:baseline;gap:10px;font-family:var(--display);font-weight:600;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.asc-alt #asc-num{font-size:clamp(56px,8vw,110px);font-variant-numeric:tabular-nums}
+.asc-alt span.u{font-size:clamp(18px,2vw,26px);color:var(--muted-2);letter-spacing:.06em}
+.asc-prog{margin:22px 0 34px;height:3px;background:var(--line);border-radius:3px;overflow:hidden;max-width:340px}
+.asc-prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue-soft),var(--blue));border-radius:3px}
+.asc-steps{position:relative;min-height:240px}
+.asc-step{position:absolute;inset:0;opacity:0;transform:translateY(24px);transition:opacity .55s var(--ease),transform .55s var(--ease);pointer-events:none}
+.asc-step.on{opacity:1;transform:none;pointer-events:auto}
+.asc-step .mark{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:16px}
+.asc-step h3{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.4vw,46px);line-height:1.06;letter-spacing:-.02em;margin-bottom:16px}
+.asc-step p{color:var(--muted);font-size:clamp(15px,1.25vw,18px);max-width:42ch}
+.asc-dots{display:flex;gap:8px;margin-top:34px}
+.asc-dots b{width:26px;height:3px;border-radius:3px;background:var(--line-strong);transition:background .4s,width .4s}
+.asc-dots b.on{background:var(--blue);width:44px}
+.asc-vis{position:relative}
+.asc-vis svg{width:100%;height:auto;display:block;overflow:visible}
+#asc-route{stroke-linecap:round}
+#climber{transition:none}
+.wp{transition:r .4s var(--ease),fill .4s,opacity .4s}
+@media(max-width:900px){
+  .ascent{height:480vh}
+  .ascent-sticky{padding:0 20px}
+  .ascent-grid{grid-template-columns:1fr;gap:26px}
+  .asc-vis{order:-1}
+  .asc-steps{min-height:210px}
+  .asc-prog{margin:14px 0 22px}
+}
+
+/* ---------- Proof band ---------- */
+.proof{background:rgba(0,0,0,.46);color:#fff;padding:110px 48px}
+.proof .sec-tag{color:var(--blue-soft)}
+.proof .sec-tag::before{background:var(--blue-soft)}
+.proof h2{color:#fff}
+.proof .lede{color:#A5B2CE}
+.pf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid rgba(165,178,206,.22);border-radius:20px;overflow:hidden;margin-top:64px}
+.pf{background:transparent;padding:40px 32px}
+.pf b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(38px,4.6vw,60px);letter-spacing:-.03em;line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.pf small{display:block;margin-top:14px;color:#A5B2CE;font-size:14.5px;letter-spacing:.01em}
+@media(max-width:900px){.proof{padding:80px 20px}.pf-grid{grid-template-columns:1fr 1fr}.pf{padding:28px 20px}}
+
+/* ---------- Industries ---------- */
+.inds{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:70px}
+.ind{
+  border:1px solid var(--line);border-radius:20px;padding:44px 40px;
+  background:var(--panel-solid);
+  transition:border-color .35s,transform .5s var(--ease),box-shadow .35s;position:relative;overflow:hidden;
+}
+.ind:hover{border-color:rgba(255,255,255,.5);transform:translateY(-5px);box-shadow:0 24px 50px rgba(0,0,0,.30)}
+.ind h3{font-family:var(--display);font-weight:600;font-size:24px;margin-bottom:12px}
+.ind p{color:var(--muted);font-size:15.5px;max-width:44ch}
+.ind .tag{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:28px}
+@media(max-width:900px){.inds{grid-template-columns:1fr}.ind{padding:32px 24px}}
+
+/* ---------- Operate model ---------- */
+.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:70px}
+.op{border:1px solid var(--line);border-radius:20px;padding:40px 34px;background:var(--panel-solid);position:relative}
+.op::before{content:"";position:absolute;top:0;left:34px;right:34px;height:2px;background:linear-gradient(90deg,var(--blue),transparent);border-radius:2px}
+.op .lvl{font-family:var(--display);font-weight:700;font-size:44px;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.2px var(--blue);display:block;margin-bottom:18px}
+.op h3{font-family:var(--display);font-weight:600;font-size:20px;margin-bottom:10px}
+.op p{color:var(--muted);font-size:15px}
+.ops-note{margin-top:34px;color:var(--muted);font-size:15px;display:flex;align-items:center;gap:12px}
+.ops-note::before{content:"";width:9px;height:9px;border-radius:50%;background:#1FA971;box-shadow:0 0 0 6px rgba(31,169,113,.14);flex:none;animation:blink 2.2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.4}}
+@media(max-width:900px){.ops{grid-template-columns:1fr}.op{padding:32px 26px}}
+
+/* ---------- CTA ---------- */
+.cta{padding:170px 48px;text-align:center;position:relative;overflow:hidden;background:rgba(0,0,0,.20)}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 50% 115%,rgba(143,178,255,.20),transparent 70%)}
+.cta h2{max-width:none;margin:0 auto;font-size:clamp(40px,7vw,96px)}
+.cta h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--blue)}
+.cta .lede{margin:26px auto 0;text-align:center}
+.cta .btn{margin-top:48px;font-size:16px;padding:18px 34px;max-width:100%;overflow-wrap:anywhere}
+.cta .wrap{position:relative;z-index:1}
+@media(max-width:900px){.cta{padding:110px 20px}}
+
+/* ---------- About (editorial) ---------- */
+#about{background:rgba(0,0,0,.24);border-top:1px solid var(--line)}
+.about-lead{max-width:24ch;font-size:clamp(28px,3.9vw,54px)}
+.about-cols{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:76px;border-top:1px solid var(--line-strong)}
+.ac{padding:38px 46px 0 0;position:relative}
+.ac + .ac{padding-left:46px;border-left:1px solid var(--line)}
+.ac .idx{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.3em;color:var(--blue);display:block;margin-bottom:22px}
+.ac-lead{font-family:var(--display);font-weight:600;font-size:clamp(19px,1.7vw,24px);line-height:1.25;letter-spacing:-.01em;color:var(--ink);margin-bottom:16px}
+.ac p:last-child{color:var(--muted);font-size:16.5px;max-width:46ch}
+@media(max-width:900px){
+  .about-cols{grid-template-columns:1fr;margin-top:46px}
+  .ac{padding:30px 0 0}
+  .ac + .ac{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:30px}
+}
+
+/* ---------- Leadership ---------- */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px}
+.tm{margin:0}
+.tm .ph{background:#FFFFFF;border:1px solid var(--line);border-radius:18px;overflow:hidden;aspect-ratio:3/4;transition:border-color .4s,box-shadow .4s}
+.tm:hover .ph{border-color:rgba(255,255,255,.55);box-shadow:0 20px 44px rgba(0,0,0,.34)}
+.tm img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.tm:hover img{transform:scale(1.045)}
+.tm figcaption{margin-top:18px}
+.tm b{display:block;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.015em}
+.tm span{display:block;color:var(--muted);font-size:14.5px;margin-top:2px}
+@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}}
+
+/* ---------- Trust & security (certification) ---------- */
+#security{padding:0 48px}
+.cert-card{
+  display:flex;align-items:center;gap:56px;margin-top:80px;
+  border:1px solid var(--line-strong);border-radius:22px;
+  padding:64px 60px;background:var(--panel-solid);
+}
+.cert-card img{width:140px;height:140px;flex:none;border-radius:50%;background:#fff;padding:6px;border:4px solid rgba(255,255,255,.9);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.cert-card .n{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.3em;color:var(--blue);display:block;margin-bottom:18px}
+.cert-card h3{font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:-.015em;color:var(--ink);margin-bottom:14px}
+.cert-card p{color:var(--muted);font-size:15.5px;max-width:60ch;line-height:1.7}
+@media(max-width:900px){
+  #security{padding:0 20px}
+  .cert-card{flex-direction:column;text-align:center;padding:44px 30px;gap:30px;margin-top:48px}
+  .cert-card .n{margin-bottom:12px}
+  .cert-card p{margin-left:auto;margin-right:auto}
+}
+
+/* ---------- Practices ---------- */
+.pracs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-top:66px}
+.prac{background:var(--panel-solid);padding:44px 40px 48px;position:relative;transition:background .4s;text-decoration:none;color:inherit;display:block}
+.prac:hover{background:var(--panel-hover)}
+.prac .n{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.3em;color:var(--blue);display:block;margin-bottom:34px}
+.prac h3{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.3vw,32px);letter-spacing:-.02em;margin-bottom:12px}
+.prac p{color:var(--muted);font-size:15.5px;max-width:44ch}
+.prac .meta{margin-top:22px;font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+@media(max-width:900px){.pracs{grid-template-columns:1fr}.prac{padding:32px 24px 36px}.prac .n{margin-bottom:22px}}
+
+/* ---------- Platforms ---------- */
+.plat-lead{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:var(--panel-solid);border:1px solid var(--line-strong);border-radius:22px;padding:44px 42px;margin-top:60px}
+.plat-lead h3{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.6vw,36px);letter-spacing:-.02em;margin-bottom:14px}
+.plat-lead p{color:var(--muted);font-size:16px}
+.plat-lead .badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);padding:8px 16px;border-radius:100px;margin-bottom:22px}
+.plat-mods{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.plat-mods span{font-size:14.5px;color:var(--muted);padding:10px 0;border-top:1px solid var(--line)}
+.plats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.plat{border:1px solid var(--line);border-radius:16px;padding:26px 22px;background:var(--panel-solid);transition:border-color .35s,background .35s}
+.plat:hover{border-color:rgba(255,255,255,.45);background:var(--panel-hover)}
+.plat b{display:block;font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em}
+.plat small{display:block;color:var(--muted-2);font-size:13px;margin-top:5px}
+@media(max-width:900px){.plat-lead{grid-template-columns:1fr;gap:26px;padding:30px 24px}.plats{grid-template-columns:1fr 1fr}}
+
+/* ---------- Case studies ---------- */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:62px}
+.cs{border:1px solid var(--line);border-radius:22px;padding:38px 32px 34px;background:var(--panel-solid);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:border-color .35s,transform .5s var(--ease),box-shadow .35s}
+.cs:hover{border-color:rgba(255,255,255,.5);transform:translateY(-5px);box-shadow:0 26px 52px rgba(0,0,0,.3)}
+.cs .sector{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:22px}
+.cs h3{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.018em;margin-bottom:12px;line-height:1.2}
+.cs p{color:var(--muted);font-size:15.5px;flex:1}
+.cs .kpi{display:flex;gap:22px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.cs .kpi div b{display:block;font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.02em}
+.cs .kpi div small{display:block;color:var(--muted-2);font-size:12px;margin-top:2px}
+@media(max-width:900px){.cases{grid-template-columns:1fr}}
+
+/* ---------- FAQ ---------- */
+.faqs{margin-top:56px;background:var(--panel-solid);border:1px solid var(--line-strong);border-radius:22px;padding:6px 32px}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;position:relative;font-family:var(--display);font-weight:600;font-size:clamp(17px,1.6vw,21px);letter-spacing:-.015em}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs summary::after{content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:24px;font-weight:400;color:var(--blue);transition:transform .3s}
+.faqs details[open] summary::after{content:"\2212"}
+.faqs .ans{padding:0 60px 26px 0;color:var(--muted);font-size:16px;max-width:78ch}
+@media(max-width:900px){.faqs{padding:4px 20px}.faqs .ans{padding-right:0}}
+
+/* ---------- Delivery network: follow-the-sun band ---------- */
+.dn{border:1px solid var(--line-strong);border-radius:22px;background:var(--panel-solid);padding:34px 32px 28px;margin-top:60px}
+.dn-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.dn-inner{min-width:640px}
+.dn-axis{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.dn-axis .lbl{font-family:var(--display);font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-2)}
+.dn-ticks{position:relative;height:16px}
+.dn-ticks span{position:absolute;top:0;transform:translateX(-50%);font-family:var(--display);font-size:11px;color:var(--muted-2);font-variant-numeric:tabular-nums}
+.dn-row{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:20px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.dn-row:last-of-type{border-bottom:0}
+.dn-city b{display:block;font-family:var(--display);font-weight:600;font-size:15.5px;letter-spacing:-.01em}
+.dn-city small{display:block;color:var(--muted-2);font-size:12.5px;margin-top:1px}
+.dn-city .t{font-variant-numeric:tabular-nums;color:var(--blue);font-weight:600}
+.dn-track{position:relative;height:30px;border-radius:8px;background:rgba(255,255,255,.05);overflow:hidden}
+.dn-bar{position:absolute;top:5px;bottom:5px;border-radius:6px;background:linear-gradient(90deg,rgba(143,178,255,.5),rgba(255,255,255,.72));transition:opacity .4s}
+.dn-row.off .dn-bar{opacity:.34}
+.dn-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--muted-2);margin-right:7px;vertical-align:middle}
+.dn-row.on .dn-dot{background:#4FE0A0;box-shadow:0 0 0 4px rgba(79,224,160,.18);animation:blink 2.4s ease-in-out infinite}
+.dn-now{position:absolute;top:-2px;bottom:-2px;width:2px;background:#fff;z-index:4;box-shadow:0 0 10px rgba(255,255,255,.9)}
+.dn-nowlbl{position:absolute;top:-1px;transform:translateX(-50%);font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.18em;color:#fff;white-space:nowrap;z-index:5}
+.dn-foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.dn-foot b{color:#fff;font-family:var(--display);font-weight:600}
+@media(max-width:900px){
+  .dn{padding:24px 18px 20px;border-radius:18px}
+  .dn-axis,.dn-row{grid-template-columns:118px 1fr;gap:12px}
+  .dn-inner{min-width:560px}
+  .dn-city b{font-size:14px}.dn-city small{font-size:11.5px}
+}
+
+/* ---------- CTA buttons ---------- */
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:48px}
+.cta-btns .btn{margin-top:0}
+
+/* ---------- Living field canvases ---------- */
+#bg-field{position:fixed;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.6s var(--ease) .2s}
+body.ready #bg-field{opacity:1}
+nav,header,section,footer,.snowline-label{position:relative;z-index:1}
+/* sections are translucent so the field reads continuously behind the whole page */
+.tint-a{background:rgba(255,255,255,.035)}
+.tint-b{background:rgba(0,0,0,.22)}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0,0,0,.26)}
+.foot{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:44px}
+.foot h4{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);margin-bottom:18px}
+.foot a{display:block;color:var(--ink);text-decoration:none;font-size:15px;margin-bottom:10px;opacity:.85;transition:opacity .2s,color .2s}
+.foot a:hover{opacity:1;color:var(--blue)}
+.foot .about p{color:var(--muted);font-size:14.5px;max-width:34ch;margin-top:16px}
+.foot .about .trust{display:flex;align-items:center;gap:14px;margin-top:28px;padding-top:28px;border-top:1px solid var(--line);max-width:34ch}
+.foot .about .trust img{width:38px;height:38px;flex:none;border-radius:50%}
+.foot .about .trust b{display:block;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:-.01em;color:var(--ink)}
+.foot .about .trust span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.foot a{overflow-wrap:anywhere}
+.legal{max-width:1280px;margin:56px auto 0;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted-2);font-size:13px}
+@media(max-width:900px){.foot{grid-template-columns:1fr 1fr;gap:32px}footer{padding:56px 20px 30px}}
+@media(max-width:560px){.foot{grid-template-columns:1fr;gap:36px}.legal{flex-direction:column;gap:8px}}
+
+/* ---------- Hero canvas reveal ---------- */
+
+/* ---------- Card spotlight ---------- */
+.pillar,.ind{--mx:50%;--my:50%}
+.pillar::after,.ind::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .45s;
+  background:radial-gradient(320px circle at var(--mx) var(--my), rgba(59,102,246,.10), transparent 70%);
+}
+.pillar:hover::after,.ind:hover::after{opacity:1}
+.pillar{position:relative}
+
+/* ---------- Aurora inside product band ---------- */
+.snow{position:relative}
+.aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.aurora i{position:absolute;display:block;border-radius:50%;opacity:.55}
+.aurora i:nth-child(1){width:60vw;height:60vw;left:-18vw;top:-20vw;background:radial-gradient(circle,rgba(143,178,255,.26),transparent 66%);animation:drift1 26s ease-in-out infinite}
+.aurora i:nth-child(2){width:52vw;height:52vw;right:-16vw;bottom:-22vw;background:radial-gradient(circle,rgba(110,168,255,.22),transparent 66%);animation:drift2 32s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(9%,7%,0) scale(1.14)}}
+@keyframes drift2{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-8%,-6%,0) scale(1.1)}}
+.snow .wrap{position:relative;z-index:1}
+
+/* ---------- Live mock behaviour ---------- */
+.mock{transition:box-shadow .6s var(--ease)}
+.pz-bar i{width:0;transition:width 1.1s var(--ease)}
+.pz-row{transition:border-color .5s,background .5s}
+.pz-row.flash{border-color:rgba(59,102,246,.55);background:rgba(59,102,246,.05)}
+.pz-price .pv{display:inline-block;transition:transform .35s var(--ease),color .35s}
+.pz-row.flash .pv{transform:translateY(-2px);color:#3B66F6}
+#pz-rate{font-variant-numeric:tabular-nums;color:#3B66F6}
+.mock .ping{transform-box:fill-box;transform-origin:center;animation:ping 2.8s ease-out infinite}
+@keyframes ping{0%{transform:scale(.55);opacity:.4}70%{transform:scale(2.6);opacity:0}100%{transform:scale(2.6);opacity:0}}
+#cx-line{transition:stroke-dashoffset 2s var(--ease) .2s}
+#cx-area{opacity:0;transition:opacity 1.2s ease 1s}
+.drawn #cx-area{opacity:1}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- Sticky service card stacking ---------- */
+.svc{transform-origin:top center;will-change:transform,opacity}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .rv,.hero-sub,.hero-cta,h1 .ln span,#bg-field,#cx-area{opacity:1 !important;transform:none !important}
+  #cx-line{stroke-dashoffset:0 !important}
+  .aurora i{animation:none !important}
+  .asc-step{position:relative;opacity:1 !important;transform:none !important}
+  .ascent{height:auto}
+  .ascent-sticky{position:relative;height:auto;padding:80px 20px}
+}
+
+/* ---------- Cookie consent banner ---------- */
+.cookie-banner{
+  position:fixed;left:20px;right:20px;bottom:20px;z-index:999;
+  max-width:840px;margin:0 auto;
+  background:var(--panel-solid);border:1px solid var(--line-strong);border-radius:20px;
+  padding:24px 28px;display:flex;align-items:center;gap:26px;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 30px 70px rgba(0,0,0,.5);
+  transform:translateY(140%);opacity:0;
+  transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .5s ease;
+}
+.cookie-banner.show{transform:translateY(0);opacity:1}
+.cookie-banner p{font-size:14.5px;line-height:1.62;color:var(--muted);margin:0}
+.cookie-banner p a{color:var(--blue);text-decoration:underline}
+.cookie-banner .ck-actions{display:flex;gap:10px;flex:none}
+.cookie-banner .ck-actions .btn{padding:11px 22px;font-size:13.5px}
+@media(max-width:640px){
+  .cookie-banner{flex-direction:column;align-items:stretch;text-align:left;padding:22px;left:14px;right:14px;bottom:14px}
+  .cookie-banner .ck-actions{width:100%}
+  .cookie-banner .ck-actions .btn{flex:1;justify-content:center}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Organization","ProfessionalService"],"@id":"https://www.aventistechnology.com/#organization","name":"Aventis Technology","url":"https://www.aventistechnology.com/","description":"Aventis Technology is an Adobe implementation partner headquartered in Singapore, delivering Adobe Experience Cloud, dynamic pricing, data and AI, and experience management programmes for enterprises across Asia-Pacific.","slogan":"Customer experience, engineered at altitude.","address":{"@type":"PostalAddress","addressCountry":"SG","addressLocality":"Singapore"},"email":"hello@aventistechnology.com","areaServed":[{"@type":"Place","name":"Asia-Pacific"},{"@type":"Place","name":"Singapore"},{"@type":"Place","name":"Indonesia"},{"@type":"Place","name":"Philippines"},{"@type":"Place","name":"Malaysia"},{"@type":"Place","name":"India"}],"knowsAbout":["Adobe Experience Cloud implementation","Adobe Experience Platform","Adobe Real-Time CDP","Adobe Journey Optimizer","Customer Journey Analytics","Adobe Experience Manager","Adobe Target","Adobe Offer Decisioning","Braze","Salesforce","Customer data platforms","Hyper-personalization","Dynamic content","Dynamic pricing","Marketing technology consulting","Digital wallets","Super apps"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Practices","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Data & AI","description":"Customer data platforms, identity and consent, streaming pipelines, decision intelligence and applied AI."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"CX & MarTech","description":"Adobe Experience Cloud, Braze and Salesforce implementation, journey orchestration, lifecycle marketing, dynamic content and hyper-personalization."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Revenue Decisioning","description":"Dynamic pricing and offer decisioning at N=1 with commercial guardrails, powered by the Prezio engine."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Experience Management","description":"Voice of the customer across every touchpoint with AI-read verbatims and closed-loop workflows, powered by CX Pulse."}}]},"location":[{"@type":"Place","name":"Aventis Technology Singapore","address":{"@type":"PostalAddress","addressLocality":"Singapore","addressCountry":"SG"}},{"@type":"Place","name":"Aventis Technology Jakarta","address":{"@type":"PostalAddress","addressLocality":"Jakarta","addressCountry":"ID"}},{"@type":"Place","name":"Aventis Technology Manila","address":{"@type":"PostalAddress","addressLocality":"Manila","addressCountry":"PH"}},{"@type":"Place","name":"Aventis Technology Bangalore","address":{"@type":"PostalAddress","addressLocality":"Bangalore","addressCountry":"IN"}},{"@type":"Place","name":"Aventis Technology Pune","address":{"@type":"PostalAddress","addressLocality":"Pune","addressCountry":"IN"}},{"@type":"Place","name":"Aventis Technology Tirupati","address":{"@type":"PostalAddress","addressLocality":"Tirupati","addressCountry":"IN"}},{"@type":"Place","name":"Aventis Technology Toronto","address":{"@type":"PostalAddress","addressLocality":"Toronto","addressCountry":"CA"}}],"numberOfEmployees":{"@type":"QuantitativeValue","minValue":50}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Aventis Technology an Adobe implementation partner in APAC?","acceptedAnswer":{"@type":"Answer","text":"Yes. Aventis Technology is an Adobe Digital Experience partner headquartered in Singapore, delivering Adobe Experience Cloud implementations for enterprises across Asia-Pacific, including Singapore, Indonesia, the Philippines, Malaysia and India. Our work spans architecture, implementation, migration and always-on managed operations."}},{"@type":"Question","name":"Which Adobe products does Aventis Technology implement?","acceptedAnswer":{"@type":"Answer","text":"We implement Adobe Experience Platform, Real-Time CDP, Journey Optimizer, Customer Journey Analytics, Experience Manager, Adobe Target, Offer Decisioning and GenStudio. Programmes typically combine several of these, with our engineers handling data architecture, identity and consent, journey design and activation across every channel."}},{"@type":"Question","name":"Do you work with platforms other than Adobe?","acceptedAnswer":{"@type":"Answer","text":"Yes. While the majority of our delivery runs on Adobe Experience Cloud, we implement and integrate Braze, Salesforce, Confluent Kafka, Google Cloud and BigQuery, Twilio, Snowflake and Tableau. We also build custom digital products, including consumer apps, super apps and digital wallets."}},{"@type":"Question","name":"What is hyper-personalization and how does Aventis deliver it?","acceptedAnswer":{"@type":"Answer","text":"Hyper-personalization means the content itself changes per individual, not just which segment receives which campaign. We deliver it by binding content templates to the live customer profile and to a real-time decision, so the layout is assembled at the moment of the request. A single managed component then renders a different offer, benefit set or message for every customer and every channel, with brand and eligibility guardrails enforced automatically."}},{"@type":"Question","name":"Which countries and industries do you serve?","acceptedAnswer":{"@type":"Answer","text":"We serve enterprise clients across Asia-Pacific from our Singapore headquarters, with delivery experience in Indonesia, the Philippines, Malaysia, Singapore and India. Our deepest sector experience is in telecommunications, aviation and travel, financial services and retail, where customer bases run at national scale, in the hundreds of millions across our programmes."}},{"@type":"Question","name":"Where are Aventis Technology's delivery centres?","acceptedAnswer":{"@type":"Answer","text":"We operate seven delivery centres: Singapore, Jakarta in Indonesia, Manila in the Philippines, Bangalore, Pune and Tirupati in India, and Toronto in Canada. The spread means core working hours cover more than twenty hours of every weekday, with managed services closing the remaining window on rotating shifts, so delivery and support follow the sun across Asia-Pacific and North America."}},{"@type":"Question","name":"What does an Adobe Experience Platform implementation involve?","acceptedAnswer":{"@type":"Answer","text":"A typical programme starts with discovery and outcome definition, then moves through data architecture covering schema design, identity resolution, consent and governance, then platform build and integration, use case delivery in phased drops, and finally managed operations. Value usually lands within the first few months rather than at the end of a multi-year build."}},{"@type":"Question","name":"Do you take over platforms implemented by another partner?","acceptedAnswer":{"@type":"Answer","text":"Yes. A significant part of our work is inheriting live platforms from an incumbent, stabilising them, and taking full ownership of operations, releases and continuous optimization. We run structured handovers with knowledge transfer, documentation and a defined ownership date."}},{"@type":"Question","name":"What are Prezio and CX Pulse?","acceptedAnswer":{"@type":"Answer","text":"Prezio is our dynamic pricing and offer decisioning engine, which scores every customer against a full offer catalog and publishes a winning offer and price per channel, with commercial guardrails and holdout-based measurement. CX Pulse is our experience management platform, capturing NPS, CSAT and CES across every touchpoint with AI-read verbatims and closed-loop workflows."}}]}</script>
+</head>
+<body>
+<canvas id="bg-field" aria-hidden="true"></canvas>
+
+<div id="loader" aria-hidden="true">
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="#3B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="#fff"/></svg>
+  <div class="alt-read">ALT <span id="load-alt">0000</span> M</div>
+</div>
+
+
+<div id="altimeter" aria-hidden="true">
+  <span>ALT</span>
+  <div class="track"><i id="alt-fill"></i></div>
+  <span class="val"><span id="alt-val">0000</span> M</span>
+</div>
+
+<nav id="nav">
+  <a class="brand" href="#top" aria-label="Aventis Technology home">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#3B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="#fff"/></svg>
+    <span class="wm">Aventis <b>Technology</b></span>
+  </a>
+  <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <div class="nav-links" id="nav-links">
+    <a href="#practices">Practices</a>
+    <a href="services.html">Services</a>
+    <a href="#work">Work</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a class="btn" href="#contact">Start a project <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<header id="top">
+  <canvas id="hero-fx" aria-hidden="true"></canvas>
+  <div class="hero-fade"></div>
+  <div class="hero-inner">
+    <h1 aria-label="Customer experience, engineered at altitude.">
+      <span class="ln"><span>Customer</span></span>
+      <span class="ln"><span>experience,</span></span>
+      <span class="ln"><span>engineered <em>at altitude.</em></span></span>
+    </h1>
+    <p class="hero-sub">Aventis Technology designs, builds and operates digital experience platforms for Asia's most ambitious brands, from real-time customer data and hyper-personalized journeys to dynamic content, super apps and digital wallets.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#contact">Start the climb <span class="arr">→</span></a>
+      <a class="btn ghost" href="#services">Explore what we do</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><div class="stem"></div> Begin ascent</div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="lane" id="ticker-lane">
+    <span>Customer Data &amp; Identity</span><span>Journey Orchestration</span><span>Dynamic Pricing</span><span>Super Apps</span><span>Digital Wallets</span><span>Decision Intelligence</span><span>Hyper-Personalization</span><span>Dynamic Content</span><span>Experience Analytics</span><span>Applied AI</span>
+  </div>
+</div>
+
+<section class="manifesto" id="manifesto">
+  <div class="wrap">
+    <div class="sec-tag">Why we exist</div>
+    <p id="mani-text">Most platforms get implemented. Few get mastered. We stay on the mountain after launch, tuning data, journeys, pricing and decisions until the experience actually performs.</p>
+  </div>
+</section>
+
+<section id="practices">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">Practices</div>
+      <h2>Four practices. One accountable team.</h2>
+      <p class="lede">Each practice stands on its own, and they compound when combined. That is how a customer data foundation turns into personalized pricing and measurable loyalty.</p>
+    </div>
+    <div class="pracs rv">
+      <a class="prac" href="#services"><h3>Data &amp; AI</h3><p>Customer data platforms, identity and consent, streaming pipelines, decision intelligence and applied AI, engineered to carry customer bases at national scale.</p><span class="meta">Data foundations, agentic systems</span></a>
+      <a class="prac" href="#services"><h3>CX &amp; MarTech</h3><p>Journey orchestration, lifecycle marketing, dynamic content and hyper-personalization across every owned and paid channel, built on the platform that fits you.</p><span class="meta">Adobe, Braze, Salesforce</span></a>
+      <a class="prac" href="prezio.html"><h3>Revenue Decisioning</h3><p>Offer and price decisioning at N=1, with commercial guardrails and holdout-based measurement, powered by our own Prezio engine.</p><span class="meta">Prezio</span></a>
+      <a class="prac" href="cx-pulse.html"><h3>Experience Management</h3><p>Voice of the customer across every touchpoint, with AI-read verbatims and closed-loop workflows that route insight to the teams who can act.</p><span class="meta">CX Pulse</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="ascent" id="approach">
+  <div class="ascent-sticky">
+    <div class="ascent-grid">
+      <div>
+        <div class="sec-tag">The route</div>
+        <div class="asc-alt"><span id="asc-num">0</span><span class="u">M</span></div>
+        <div class="asc-prog"><i id="asc-bar"></i></div>
+        <div class="asc-steps">
+          <div class="asc-step on"><span class="mark">Base camp</span><h3>Discover what actually matters.</h3><p>We start with your customers and your commercials, not a product demo. Audit the estate, agree the outcomes, and size the prize before a line of anything gets built.</p></div>
+          <div class="asc-step"><span class="mark">Ascent</span><h3>Architect for the decade, not the demo.</h3><p>Data models, identity, consent, journey design, dynamic content and pricing logic, all engineered so the tenth use case is as easy to ship as the first.</p></div>
+          <div class="asc-step"><span class="mark">The ridge</span><h3>Build it all in one place.</h3><p>Platforms, integrations, apps and super apps, wallets and digital products, all delivered by one accountable team instead of four vendors pointing at each other.</p></div>
+          <div class="asc-step"><span class="mark">High camp</span><h3>Launch in drops, not in a big bang.</h3><p>Migrate, test and go live channel by channel, so value lands in month two rather than month twelve, and risk stays small enough to carry.</p></div>
+          <div class="asc-step"><span class="mark">Summit</span><h3>Then we keep climbing.</h3><p>Always-on operations, standing experiments and continuous tuning. The platform gets sharper every quarter instead of ageing quietly.</p></div>
+        </div>
+        <div class="asc-dots" aria-hidden="true"><b class="on"></b><b></b><b></b><b></b><b></b></div>
+      </div>
+      <div class="asc-vis" aria-hidden="true">
+        <svg viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="mg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity=".20"/>
+              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 380 L90 330 L170 360 L260 285 L340 320 L430 235 L520 285 L610 200 L700 250 L790 140 L880 215 L960 265 L1000 240 L1000 620 L0 620 Z" fill="url(#mg)" stroke="rgba(255,255,255,.24)" stroke-width="1.2"/>
+          <path d="M0 450 L100 415 L190 440 L290 375 L380 405 L470 330 L560 370 L650 300 L740 250 L830 305 L920 360 L1000 335 L1000 620 L0 620 Z" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.34)" stroke-width="1.3"/>
+          <path d="M0 540 L120 505 L230 525 L330 470 L440 495 L540 440 L640 470 L740 400 L790 355 L860 420 L940 470 L1000 450 L1000 620 L0 620 Z" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.58)" stroke-width="1.6"/>
+          <path d="M70 560 C160 545, 200 505, 280 495 C360 485, 370 445, 450 430 C530 415, 540 375, 620 355 C690 338, 700 285, 760 235 C790 210, 780 175, 790 142"
+                fill="none" stroke="rgba(255,255,255,.26)" stroke-width="3" stroke-dasharray="6 9" stroke-linecap="round"/>
+          <path id="asc-route" d="M70 560 C160 545, 200 505, 280 495 C360 485, 370 445, 450 430 C530 415, 540 375, 620 355 C690 338, 700 285, 760 235 C790 210, 780 175, 790 142"
+                fill="none" stroke="#FFFFFF" stroke-width="3.4"/>
+          <g id="wps">
+            <circle class="wp" cx="70" cy="560" r="6" fill="rgba(255,255,255,.38)"/>
+            <circle class="wp" cx="280" cy="495" r="6" fill="rgba(255,255,255,.38)"/>
+            <circle class="wp" cx="450" cy="430" r="6" fill="rgba(255,255,255,.38)"/>
+            <circle class="wp" cx="620" cy="355" r="6" fill="rgba(255,255,255,.38)"/>
+            <circle class="wp" cx="790" cy="142" r="6" fill="rgba(255,255,255,.38)"/>
+          </g>
+          <g id="climber">
+            <circle r="15" fill="#FFFFFF" opacity=".22"/>
+            <circle r="7.5" fill="#FFFFFF" stroke="#0A1A52" stroke-width="2.5"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="rv"><div class="sec-tag">Services</div>
+    <h2>End-to-end capability. Enterprise-grade delivery.</h2>
+    <p class="lede">The strategy, architecture and engineering depth of a global consultancy across marketing technology, digital products and customer data, delivered by a senior team that stays hands-on from first workshop to production.</p></div>
+
+    <div class="svc-stack">
+      <article class="svc">
+        <div><span class="idx">01 · DATA</span><h3>Customer data &amp; identity</h3></div>
+        <div class="body">
+          <p>One trusted profile for every customer: identity resolution, consent and governance, and real-time segmentation that activates across every channel at tens-of-millions scale.</p>
+          <div class="chips"><i>Unified Profiles</i><i>Identity Resolution</i><i>Consent &amp; Governance</i><i>Real-time Segmentation</i></div>
+        </div>
+      </article>
+      <article class="svc">
+        <div><span class="idx">02 · ENGAGEMENT</span><h3>Journey orchestration &amp; lifecycle marketing</h3></div>
+        <div class="body">
+          <p>Real-time, trigger-based journeys across app, email, push, SMS, web and paid. Decisioning, experimentation and frequency governance are designed into the journey, not bolted on.</p>
+          <div class="chips"><i>Real-time Journeys</i><i>Next-best-offer</i><i>Experimentation</i><i>Lifecycle Programs</i></div>
+        </div>
+      </article>
+      <article class="svc">
+        <div><span class="idx">03 · INTELLIGENCE</span><h3>Analytics &amp; decision intelligence</h3></div>
+        <div class="body">
+          <p>Cross-channel measurement on the full customer journey: attribution, value dashboards and holdout-based incrementality, so every program proves what it actually earned.</p>
+          <div class="chips"><i>Journey Analytics</i><i>Attribution</i><i>Incrementality</i><i>Executive Dashboards</i></div>
+        </div>
+      </article>
+      <article class="svc">
+        <div><span class="idx">04 · CONTENT</span><h3>Dynamic content &amp; hyper-personalization</h3></div>
+        <div class="body">
+          <p>Content that assembles itself around the individual: componentized design systems, dynamic assembly bound to the customer profile, and generative workflows kept inside brand guardrails.</p>
+          <div class="chips"><i>Dynamic Content</i><i>Hyper-Personalization</i><i>Design Systems</i><i>Generative Workflows</i></div>
+        </div>
+      </article>
+      <article class="svc">
+        <div><span class="idx">05 · ENGINEERING</span><h3>Apps, wallets &amp; digital platforms</h3></div>
+        <div class="body">
+          <p>Full-stack product engineering beyond martech: consumer apps and super apps, digital wallets and the platform architecture that keeps them secure, compliant and fast at scale.</p>
+          <div class="chips"><i>Super Apps</i><i>Digital Wallets</i><i>Platform Engineering</i></div>
+        </div>
+      </article>
+      <article class="svc">
+        <div><span class="idx">06 · AI</span><h3>Applied AI &amp; Agentic Systems</h3></div>
+        <div class="body">
+          <p>LLM-powered agents that work your stack: campaign co-pilots, autonomous data-quality checks, and orchestration layers that connect your experience platforms with the rest of the enterprise.</p>
+          <div class="chips"><i>Agent Orchestration</i><i>Campaign Co-pilots</i><i>Streaming Data</i><i>Cloud Native</i></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="personalization">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">Hyper-personalization</div>
+      <h2>One layout. A different story for every customer.</h2>
+      <p class="lede">Personalization stops scaling the moment it depends on humans authoring a variant per segment. We build content that assembles itself around the individual at the moment of the request.</p>
+    </div>
+    <div class="plat-lead rv">
+      <div>
+        <span class="badge">Dynamic content</span>
+        <h3>Assembled at request time, not authored per segment.</h3>
+        <p>Templates bind to the customer profile and the live decision as the request is served, so an offer card, a benefits table or a hero banner renders differently for every person and every channel, from one managed component instead of hundreds of hand-built variants.</p>
+      </div>
+      <div class="plat-mods">
+        <span>Profile-bound templates</span><span>Decision-driven content</span>
+        <span>Per-channel rendering</span><span>Reusable content fragments</span>
+        <span>Real-time assembly</span><span>Brand and legal guardrails</span>
+        <span>Experimentation by default</span><span>One component, many outcomes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platforms">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">Platforms</div>
+      <h2>Deep on Adobe. Fluent across the stack.</h2>
+      <p class="lede">We are platform-literate rather than platform-loyal. Most of our work runs on Adobe Experience Cloud, and we implement and integrate the rest of the modern marketing and data stack alongside it.</p>
+    </div>
+    <div class="plat-lead rv">
+      <div>
+        <span class="badge">Adobe Digital Experience Partner</span>
+        <h3>An Adobe implementation partner for Asia-Pacific.</h3>
+        <p>Aventis Technology delivers Adobe Experience Cloud programmes for enterprises across Singapore, Indonesia, the Philippines, Malaysia and India, from architecture and implementation through migration and always-on operations.</p>
+      </div>
+      <div class="plat-mods">
+        <span>Adobe Experience Platform</span><span>Real-Time CDP</span>
+        <span>Journey Optimizer</span><span>Customer Journey Analytics</span>
+        <span>Experience Manager</span><span>Adobe Target</span>
+        <span>GenStudio</span><span>Offer Decisioning</span>
+      </div>
+    </div>
+    <div class="plats rv">
+      <div class="plat"><b>Braze</b><small>Lifecycle messaging</small></div>
+      <div class="plat"><b>Salesforce</b><small>CRM and marketing cloud</small></div>
+      <div class="plat"><b>Confluent Kafka</b><small>Event streaming</small></div>
+      <div class="plat"><b>Google Cloud</b><small>BigQuery and data platform</small></div>
+      <div class="plat"><b>Twilio</b><small>Messaging and voice</small></div>
+      <div class="plat"><b>Snowflake</b><small>Cloud data warehouse</small></div>
+      <div class="plat"><b>Tableau</b><small>Analytics and reporting</small></div>
+      <div class="plat"><b>Your existing stack</b><small>Integration and migration</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="snowline-label" aria-hidden="true">Summit push · 7,900 M</div>
+<section class="snow" id="products">
+  <div class="aurora" aria-hidden="true"><i></i><i></i></div>
+  <div class="wrap">
+    <div class="prod-intro rv">
+      <div class="sec-tag">Products by Aventis</div>
+      <h2>Software we build. Proven at enterprise scale.</h2>
+      <p class="lede">Two products born inside real transformation programmes: Prezio for revenue, CX Pulse for loyalty. Both engineered to run alongside your experience stack from day one.</p>
+    </div>
+    <div class="pulse-grid" id="prezio">
+      <div class="rv">
+        <span class="prod-kicker"><i>Prezio</i> Dynamic pricing</span>
+        <div class="prod-name">The right price, for one customer at a time.</div>
+        <p class="lede">Our dynamic pricing and offer decisioning engine. Prezio scores every customer against your full catalog and decides the winning offer and price for each channel, nightly at full-base scale and in real time when the moment demands it.</p>
+        <div class="pulse-feats">
+          <div class="f"><span class="dot"></span><div><b>N=1 decisioning</b><p>A personalized winner per customer, per channel, ranked by propensity and value rather than averages.</p></div></div>
+          <div class="f"><span class="dot"></span><div><b>Commercial guardrails</b><p>Margin floors, eligibility and fairness rules enforced on every decision, with a full audit trail.</p></div></div>
+          <div class="f"><span class="dot"></span><div><b>Value you can prove</b><p>Built-in holdouts and dashboards that separate the incremental revenue from the noise.</p></div></div>
+        </div>
+        <a class="btn" style="margin-top:36px" href="prezio.html">Explore Prezio <span class="arr">→</span></a>
+      </div>
+      <div class="rv">
+        <div class="mock tilt-l" aria-hidden="true">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="inner">
+            <div class="kpis">
+              <div class="kpi"><small>Customers priced</small><b><span class="num" data-to="42" data-dec="0" data-suffix="M">0M</span></b></div>
+              <div class="kpi"><small>Uplift vs holdout</small><b><span class="num" data-to="11.8" data-dec="1" data-prefix="+" data-suffix="%">+0.0%</span></b></div>
+              <div class="kpi"><small>Guardrail pass</small><b><span class="num" data-to="100" data-dec="0" data-suffix="%">0%</span></b></div>
+            </div>
+            <div class="pz-rows">
+              <div class="pz-row" data-w="88"><small>Customer A · App</small><div class="pz-bar"><i></i></div><div class="pz-price"><em>$5.90</em><span class="pv">$4.20</span></div></div>
+              <div class="pz-row" data-w="64"><small>Customer B · Web</small><div class="pz-bar"><i></i></div><div class="pz-price"><em>$5.90</em><span class="pv">$4.90</span></div></div>
+              <div class="pz-row" data-w="76"><small>Customer C · SMS</small><div class="pz-bar"><i></i></div><div class="pz-price"><em>$7.50</em><span class="pv">$5.60</span></div></div>
+              <div class="pz-row" data-w="52"><small>Customer D · App</small><div class="pz-bar"><i></i></div><div class="pz-price"><em>$7.50</em><span class="pv">$6.30</span></div></div>
+            </div>
+            <div class="pz-foot"><small>Live · <span id="pz-rate">0</span> decisions/sec</small><small class="ok">● All guardrails passed</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pulse-grid flip prod-row" id="cxpulse">
+      <div class="rv">
+        <span class="prod-kicker"><i>CX Pulse</i> Experience management</span>
+        <div class="prod-name">Feedback that moves.</div>
+        <p class="lede">Our in-house experience management platform. Capture NPS, CSAT and CES across every touchpoint, let AI find the "why" behind the score, and route insight to the teams who can act on it.</p>
+        <div class="pulse-feats">
+          <div class="f"><span class="dot"></span><div><b>Every channel, one pulse</b><p>Web, app, email and in-journey surveys, unified with the customer profile.</p></div></div>
+          <div class="f"><span class="dot"></span><div><b>AI-read verbatims</b><p>Themes, sentiment and emerging issues surfaced automatically from open feedback.</p></div></div>
+          <div class="f"><span class="dot"></span><div><b>Built to close the loop</b><p>Alerts and workflows push detractor cases to frontline teams in minutes, not quarters.</p></div></div>
+        </div>
+        <a class="btn" style="margin-top:36px" href="cx-pulse.html">Explore CX Pulse <span class="arr">→</span></a>
+      </div>
+      <div class="rv">
+        <div class="mock" aria-hidden="true">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="inner">
+            <div class="kpis">
+              <div class="kpi"><small>NPS</small><b><span class="num" data-to="62" data-dec="0" data-prefix="+">+0</span><em>▲ 8</em></b></div>
+              <div class="kpi"><small>Responses</small><b><span class="num" data-to="18.4" data-dec="1" data-suffix="k">0.0k</span></b></div>
+              <div class="kpi"><small>Loop closed</small><b><span class="num" data-to="92" data-dec="0" data-suffix="%">0%</span></b></div>
+            </div>
+            <svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B66F6" stop-opacity=".28"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient></defs>
+              <g stroke="#EDF1FA" stroke-width="1">
+                <line x1="0" y1="40" x2="520" y2="40"/><line x1="0" y1="90" x2="520" y2="90"/><line x1="0" y1="140" x2="520" y2="140"/>
+              </g>
+              <path id="cx-area" d="M0 150 C60 140,90 155,140 120 C190 85,230 110,280 92 C330 74,370 88,420 55 C460 30,490 42,520 28 L520 200 L0 200 Z" fill="url(#g1)"/>
+              <path id="cx-line" d="M0 150 C60 140,90 155,140 120 C190 85,230 110,280 92 C330 74,370 88,420 55 C460 30,490 42,520 28" fill="none" stroke="#3B66F6" stroke-width="3" stroke-linecap="round"/>
+              <circle class="ping" cx="470" cy="42" r="9" fill="#3B66F6" opacity=".2"/>
+              <circle cx="470" cy="42" r="6" fill="#3B66F6"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="operate">
+  <div class="wrap">
+    <div class="rv"><div class="sec-tag">Run &amp; optimize</div>
+    <h2>We don't leave after go-live. We move in.</h2>
+    <p class="lede">Most partners hand over a platform. We take accountability for its performance by operating, tuning and evolving your experience stack as an embedded extension of your team.</p></div>
+    <div class="ops rv">
+      <div class="op"><span class="lvl">01</span><h3>Always-on operations</h3><p>Round-the-clock monitoring and rapid response across platforms, journeys and integrations, so campaigns never miss a send.</p></div>
+      <div class="op"><span class="lvl">02</span><h3>Continuous optimization</h3><p>Standing experimentation, performance tuning and data-quality engineering that make results compound quarter over quarter.</p></div>
+      <div class="op"><span class="lvl">03</span><h3>Embedded senior expertise</h3><p>Architects and engineers who designed the build stay on the account, so decisions are made by people who know your stack cold.</p></div>
+    </div>
+    <p class="ops-note rv">Live 24×7 with follow-the-sun coverage for enterprise clients across Asia-Pacific.</p>
+  </div>
+</section>
+
+<section id="network">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">Delivery network</div>
+      <h2>Seven delivery centres. A working day that barely closes.</h2>
+      <p class="lede">Singapore, Jakarta, Manila, Bangalore, Pune, Tirupati and Toronto. Work moves west with the sun, so a question raised at the end of one centre's day is already being answered in the next.</p>
+    </div>
+    <div class="dn rv">
+      <div class="dn-scroll"><div class="dn-inner">
+        <div class="dn-axis"><span class="lbl">Delivery centre</span><div class="dn-ticks" id="dn-ticks"></div></div>
+        <div class="dn-row" data-tz="Asia/Singapore"><div class="dn-city"><b><span class="dn-dot"></span>Singapore</b><small>Singapore &middot; <span class="t">--:--</span></small></div><div class="dn-track"></div></div>
+        <div class="dn-row" data-tz="Asia/Jakarta"><div class="dn-city"><b><span class="dn-dot"></span>Jakarta</b><small>Indonesia &middot; <span class="t">--:--</span></small></div><div class="dn-track"></div></div>
+        <div class="dn-row" data-tz="Asia/Manila"><div class="dn-city"><b><span class="dn-dot"></span>Manila</b><small>Philippines &middot; <span class="t">--:--</span></small></div><div class="dn-track"></div></div>
+        <div class="dn-row" data-tz="Asia/Kolkata"><div class="dn-city"><b><span class="dn-dot"></span>Bangalore</b><small>India &middot; <span class="t">--:--</span></small></div><div class="dn-track"></div></div>
+        <div class="dn-row" data-tz="Asia/Kolkata"><div class="dn-city"><b><span class="dn-dot"></span>Pune</b><small>India &middot; <span class="t">--:--</span></small></div><div class="dn-track"></div></div>
+        <div class="dn-row" data-tz="Asia/Kolkata"><div class="dn-city"><b><span class="dn-dot"></span>Tirupati</b><small>India &middot; <span class="t">--:--</span></small></div><div class="dn-track"></div></div>
+        <div class="dn-row" data-tz="America/Toronto"><div class="dn-city"><b><span class="dn-dot"></span>Toronto</b><small>Canada &middot; <span class="t">--:--</span></small></div><div class="dn-track"></div></div>
+      </div></div>
+      <div class="dn-foot">
+        <span>Core hours shown in <b id="dn-zone">your local time</b>, updating live</span>
+        <span><b>20+ hours</b> of every weekday covered by core hours, with managed services closing the rest on rotating shifts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">Selected work</div>
+      <h2>Programmes that run in production.</h2>
+      <p class="lede">Enterprise transformations delivered end to end, from architecture through to the teams that operate them every day.</p>
+    </div>
+    <div class="cases rv">
+      <a class="cs" href="case-studies.html#telco-martech">
+        <span class="sector">Telecommunications &middot; Indonesia</span>
+        <h3>A national operator rebuilds its marketing stack</h3>
+        <p>A fixed-price Adobe Experience Cloud transformation for one of Indonesia's largest operators, unifying multiple consumer brands onto a single customer data foundation with real-time journeys across app, messaging and USSD.</p>
+        <div class="kpi"><div><b>Nation-scale</b><small>Subscriber base unified</small></div><div><b>Multi-brand</b><small>On one data foundation</small></div></div>
+      </a>
+      <a class="cs" href="case-studies.html#pricing">
+        <span class="sector">Telecommunications &middot; Offer decisioning</span>
+        <h3>From segment pricing to a price per customer</h3>
+        <p>Prezio deployed against a live offer catalog, scoring the entire subscriber base nightly and publishing a winning offer per customer and channel under enforced margin and eligibility guardrails.</p>
+        <div class="kpi"><div><b>N=1</b><small>Decisioning at full base</small></div><div><b>100%</b><small>Guardrail compliance</small></div></div>
+      </a>
+      <a class="cs" href="case-studies.html#managed-services">
+        <span class="sector">Telecommunications &middot; Philippines</span>
+        <h3>Taking over a live experience platform</h3>
+        <p>A structured takeover of an in-flight marketing platform for a Philippine telecom group, moving from incumbent handover to full ownership of operations, releases and optimization inside one quarter.</p>
+        <div class="kpi"><div><b>24&times;7</b><small>Operations</small></div><div><b>1 quarter</b><small>To full ownership</small></div></div>
+      </a>
+    </div>
+    <a class="btn ghost" style="margin-top:40px" href="case-studies.html">Read the case studies <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">Proof</div>
+      <h2>Built at a scale most partners only pitch.</h2>
+      <p class="lede">Our work runs in production for some of Asia's largest consumer brands, measured in subscribers rather than slideware.</p>
+    </div>
+    <div class="pf-grid rv">
+      <div class="pf"><b>Nation-scale</b><small>Subscriber bases unified on platforms we designed</small></div>
+      <div class="pf"><b>Multi-brand</b><small>Programmes delivered across brands and markets</small></div>
+      <div class="pf"><b><span class="num" data-to="50" data-dec="0" data-suffix="+">0</span></b><small>Certified specialists across data, journeys, apps and experience platforms</small></div>
+      <div class="pf"><b>24&times;7</b><small>Follow-the-sun operations across Asia-Pacific</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="industries">
+  <div class="wrap">
+    <div class="rv"><div class="sec-tag">Industries</div>
+    <h2>Built for scale where experience is the product.</h2></div>
+    <div class="inds rv">
+      <div class="ind"><span class="tag">Telecommunications</span><h3>Telco &amp; digital services</h3><p>Real-time engagement across nation-scale subscriber bases: super-app experiences, N=1 offer pricing, prepaid journeys and churn prevention at full-base scale.</p></div>
+      <div class="ind"><span class="tag">Aviation &amp; Travel</span><h3>Airlines &amp; hospitality</h3><p>From booking to boarding: personalization across the traveler journey, dynamic ancillary pricing, loyalty activation and personalization at every stage.</p></div>
+      <div class="ind"><span class="tag">Financial Services</span><h3>Banking &amp; fintech</h3><p>Digital wallets, onboarding and KYC funnel analytics, and next-best-action decisioning, all under strict consent and governance.</p></div>
+      <div class="ind"><span class="tag">Retail &amp; Consumer</span><h3>Retail &amp; e-commerce</h3><p>Unified commerce profiles, personalized pricing and promotions, and content supply chains that keep every market on-brand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">Questions</div>
+      <h2>Working with Aventis Technology.</h2>
+    </div>
+    <div class="faqs rv">
+      <details open><summary>Is Aventis Technology an Adobe implementation partner in APAC?</summary><div class="ans">Yes. Aventis Technology is an Adobe Digital Experience partner headquartered in Singapore, delivering Adobe Experience Cloud implementations for enterprises across Asia-Pacific, including Singapore, Indonesia, the Philippines, Malaysia and India. Our work spans architecture, implementation, migration and always-on managed operations.</div></details>
+      <details><summary>Which Adobe products does Aventis Technology implement?</summary><div class="ans">We implement Adobe Experience Platform, Real-Time CDP, Journey Optimizer, Customer Journey Analytics, Experience Manager, Adobe Target, Offer Decisioning and GenStudio. Programmes typically combine several of these, with our engineers handling data architecture, identity and consent, journey design and activation across every channel.</div></details>
+      <details><summary>Do you work with platforms other than Adobe?</summary><div class="ans">Yes. While the majority of our delivery runs on Adobe Experience Cloud, we implement and integrate Braze, Salesforce, Confluent Kafka, Google Cloud and BigQuery, Twilio, Snowflake and Tableau. We also build custom digital products, including consumer apps, super apps and digital wallets.</div></details>
+      <details><summary>What is hyper-personalization and how does Aventis deliver it?</summary><div class="ans">Hyper-personalization means the content itself changes per individual, not just which segment receives which campaign. We deliver it by binding content templates to the live customer profile and to a real-time decision, so the layout is assembled at the moment of the request. A single managed component then renders a different offer, benefit set or message for every customer and every channel, with brand and eligibility guardrails enforced automatically.</div></details>
+      <details><summary>Which countries and industries do you serve?</summary><div class="ans">We serve enterprise clients across Asia-Pacific from our Singapore headquarters, with delivery experience in Indonesia, the Philippines, Malaysia, Singapore and India. Our deepest sector experience is in telecommunications, aviation and travel, financial services and retail, where customer bases run at national scale, in the hundreds of millions across our programmes.</div></details>
+      <details><summary>Where are Aventis Technology's delivery centres?</summary><div class="ans">We operate seven delivery centres: Singapore, Jakarta in Indonesia, Manila in the Philippines, Bangalore, Pune and Tirupati in India, and Toronto in Canada. The spread means core working hours cover more than twenty hours of every weekday, with managed services closing the remaining window on rotating shifts, so delivery and support follow the sun across Asia-Pacific and North America.</div></details>
+      <details><summary>What does an Adobe Experience Platform implementation involve?</summary><div class="ans">A typical programme starts with discovery and outcome definition, then moves through data architecture covering schema design, identity resolution, consent and governance, then platform build and integration, use case delivery in phased drops, and finally managed operations. Value usually lands within the first few months rather than at the end of a multi-year build.</div></details>
+      <details><summary>Do you take over platforms implemented by another partner?</summary><div class="ans">Yes. A significant part of our work is inheriting live platforms from an incumbent, stabilising them, and taking full ownership of operations, releases and continuous optimization. We run structured handovers with knowledge transfer, documentation and a defined ownership date.</div></details>
+      <details><summary>What are Prezio and CX Pulse?</summary><div class="ans">Prezio is our dynamic pricing and offer decisioning engine, which scores every customer against a full offer catalog and publishes a winning offer and price per channel, with commercial guardrails and holdout-based measurement. CX Pulse is our experience management platform, capturing NPS, CSAT and CES across every touchpoint with AI-read verbatims and closed-loop workflows.</div></details>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">About Aventis</div>
+      <h2 class="about-lead">Working alongside every client to bridge strategy and execution, delivering technology that creates lasting business value.</h2>
+    </div>
+    <div class="about-cols rv">
+      <div class="ac">
+        <span class="idx">01</span>
+        <p class="ac-lead">Strategy drives every decision. Execution proves every strategy.</p>
+        <p>Business strategy, architecture, and engineering stay aligned from planning through delivery, ensuring every decision supports your business priorities and every solution delivers measurable results that move your business forward.</p>
+      </div>
+      <div class="ac">
+        <span class="idx">02</span>
+        <p class="ac-lead">Technology earns its value through business impact.</p>
+        <p>Every solution is designed to simplify complexity, strengthen resilience, accelerate growth, and deliver value that continues long after implementation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="security">
+  <div class="wrap">
+    <div class="cert-card rv">
+      <img src="images/soc2-badge.png" alt="AICPA SOC 2 Type II certified" width="104" height="104" loading="lazy">
+      <div>
+        <span class="n">Trust &amp; Security</span>
+        <h3>SOC 2 Type II certified.</h3>
+        <p>Our controls for the security, availability and confidentiality of the systems used to deliver the Products and Services are independently audited annually against the AICPA's SOC 2 Type II standard. A copy of the current report is available to customers and prospective customers under NDA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-tag">Leadership</div>
+      <h2>The people accountable for your outcome.</h2>
+      <p class="lede">Senior practitioners who stay on the engagement from first workshop to production, not a rotating bench.</p>
+    </div>
+    <div class="team-grid rv">
+      <figure class="tm"><div class="ph"><img src="images/vamsi.jpg" alt="Vamsi" width="390" height="567" loading="lazy"></div><figcaption><b>Vamsi</b><span>Chief Executive Officer</span></figcaption></figure>
+      <figure class="tm"><div class="ph"><img src="images/saurabh.jpg" alt="Saurabh" width="1024" height="1024" loading="lazy"></div><figcaption><b>Saurabh</b><span>Chief Technology Officer</span></figcaption></figure>
+      <figure class="tm"><div class="ph"><img src="images/fendy.jpg" alt="Fendy" width="585" height="1024" loading="lazy"></div><figcaption><b>Fendy</b><span>Solution Architect</span></figcaption></figure>
+      <figure class="tm"><div class="ph"><img src="images/ion.jpg" alt="Ion" width="796" height="1024" loading="lazy"></div><figcaption><b>Ion</b><span>Head of Project Management</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>From strategic intent to <em>production reality.</em></h2>
+    <p class="lede">Build what's next with confidence.</p>
+    <div class="cta-btns">
+      <a class="btn ghost" href="#proof">Explore more projects</a>
+      <a class="btn" href="mailto:hello@aventistechnology.com">Start the conversation <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div class="about">
+      <a class="brand" href="#top" aria-label="Aventis Technology">
+        <svg viewBox="0 0 64 64" width="34" height="34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#3B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="#fff"/></svg>
+        <span class="wm">Aventis <b>Technology</b></span>
+      </a>
+      <p>Digital experience and engineering partner headquartered in Singapore. An Adobe Digital Experience Partner with delivery depth across data, journeys and digital products for enterprises in Asia-Pacific.</p>
+      <p style="margin-top:14px">Singapore &middot; Jakarta &middot; Manila &middot; Bangalore &middot; Pune &middot; Tirupati &middot; Toronto</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#practices">Practices</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case studies</a>
+      <a href="#platforms">Platforms</a>
+      <a href="#industries">Industries</a>
+      <a href="#about">About</a>
+      <a href="#team">Leadership</a>
+      <a href="#contact">Contact</a>
+      <a href="legal.html">Legal</a>
+    </div>
+    <div>
+      <h4>Products</h4>
+      <a href="prezio.html">Prezio</a>
+      <a href="cx-pulse.html">CX Pulse</a>
+      <a href="#operate">Run &amp; Optimize</a>
+      <a href="#services">Capabilities</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="mailto:hello@aventistechnology.com">hello@aventistechnology.com</a>
+      <a href="https://www.linkedin.com/company/aventis-aitechnology/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#contact">Start a project</a>
+    </div>
+  </div>
+  <div class="legal">
+    <span>© 2026 Aventis Technologies Pte. Ltd. Singapore. All rights reserved.</span>
+    <span><a href="legal.html" style="color:inherit">Legal</a> · Customer experience, engineered at altitude.</span>
+  </div>
+</footer>
+<script>
+(function(){
+"use strict";
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
+function pad(n){ n=Math.round(n); return ('0000'+n).slice(-4); }
+
+/* ================= Preloader ================= */
+var loader = document.getElementById('loader');
+var loadAlt = document.getElementById('load-alt');
+var t0 = performance.now();
+(function loadTick(now){
+  var p = Math.min(((now||t0) - t0)/900, 1);
+  loadAlt.textContent = pad(p*1320);
+  if(p<1 && !reduced) requestAnimationFrame(loadTick);
+})(t0);
+function boot(){ loader.classList.add('done'); document.body.classList.add('ready'); }
+window.addEventListener('load', function(){ setTimeout(boot, reduced ? 0 : 480); });
+setTimeout(boot, 2600);
+
+/* ================= Nav ================= */
+var nav = document.getElementById('nav');
+var links = document.getElementById('nav-links');
+var toggle = document.getElementById('menu-toggle');
+toggle.addEventListener('click', function(){
+  var open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+  toggle.textContent = open ? '\u2715' : '\u2630';
+});
+links.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){ links.classList.remove('open'); toggle.textContent='\u2630'; toggle.setAttribute('aria-expanded', false); });
+});
+
+/* ================= Living background =================
+   Two engines. Switch with <body data-bg="cells"> for the Voronoi
+   field; the default is the identity graph.                       */
+var BG = (document.body.getAttribute('data-bg')||'graph');
+var isSmall = window.innerWidth < 760;
+var heroP = 0, ptrX = -9999, ptrY = -9999;
+var cv = document.getElementById('bg-field');
+window.addEventListener('pointermove',function(e){
+  var r=cv?cv.getBoundingClientRect():null; if(!r) return;
+  ptrX=e.clientX-r.left; ptrY=e.clientY-r.top;
+},{passive:true});
+document.addEventListener('pointerleave',function(){ ptrX=-9999; ptrY=-9999; });
+/* ================= Living field: Voronoi resolution =================
+   Cells drift like segments. Every few seconds a region resolves into
+   individuals, then settles back. Segments to N=1, as a background.   */
+function initCells(){
+var ctx = cv.getContext('2d');
+var W=0,H=0,PAD=0,sites=[],nextBurst=0;
+var seed = 20260815;
+function rnd(){ seed=(seed*1103515245+12345)&0x7fffffff; return (seed%100000)/100000; }
+function circum(a,b,c){
+  var d=2*(a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y));
+  if(d<1e-7&&d>-1e-7) return null;
+  var s1=a.x*a.x+a.y*a.y,s2=b.x*b.x+b.y*b.y,s3=c.x*c.x+c.y*c.y;
+  var ux=(s1*(b.y-c.y)+s2*(c.y-a.y)+s3*(a.y-b.y))/d;
+  var uy=(s1*(c.x-b.x)+s2*(a.x-c.x)+s3*(b.x-a.x))/d;
+  return {x:ux,y:uy,r2:(ux-a.x)*(ux-a.x)+(uy-a.y)*(uy-a.y)};
+}
+function build(){
+  var n=sites.length, big=Math.max(W,H)*12;
+  var p=sites.concat([{x:W/2-big,y:H/2-big},{x:W/2+big,y:H/2-big},{x:W/2,y:H/2+big}]);
+  var tris=[{a:n,b:n+1,c:n+2,cc:circum(p[n],p[n+1],p[n+2])}];
+  for(var i=0;i<n;i++){
+    var edges=[];
+    for(var t=tris.length-1;t>=0;t--){
+      var T=tris[t],cc=T.cc;
+      if(!cc){ tris.splice(t,1); continue; }
+      var dx=p[i].x-cc.x, dy=p[i].y-cc.y;
+      if(dx*dx+dy*dy<cc.r2){ edges.push([T.a,T.b],[T.b,T.c],[T.c,T.a]); tris.splice(t,1); }
+    }
+    for(var e=0;e<edges.length;e++){
+      var dup=false;
+      for(var f=0;f<edges.length;f++){
+        if(e!==f&&((edges[e][0]===edges[f][0]&&edges[e][1]===edges[f][1])||(edges[e][0]===edges[f][1]&&edges[e][1]===edges[f][0]))){dup=true;break;}
+      }
+      if(!dup){ var T2={a:edges[e][0],b:edges[e][1],c:i}; T2.cc=circum(p[T2.a],p[T2.b],p[T2.c]); if(T2.cc) tris.push(T2); }
+    }
+  }
+  /* dual: a Voronoi edge joins the circumcentres of two adjacent triangles */
+  var map={},out=[];
+  for(var t2=0;t2<tris.length;t2++){
+    var T3=tris[t2], es=[[T3.a,T3.b],[T3.b,T3.c],[T3.c,T3.a]];
+    for(var q=0;q<3;q++){
+      var i0=es[q][0], i1=es[q][1];
+      if(i0>=n||i1>=n) continue;
+      var k=(i0<i1?i0:i1)+'_'+(i0<i1?i1:i0);
+      (map[k]=map[k]||[]).push(T3.cc);
+      map[k].i0=i0; map[k].i1=i1;
+    }
+  }
+  for(var k2 in map){ var m=map[k2]; if(m.length===2) out.push([m[0],m[1],m.i0,m.i1]); }
+  return out;
+}
+function seedSites(){
+  sites=[]; PAD=Math.max(W,H)*0.20;
+  var n=isSmall?26:48;
+  for(var i=0;i<n;i++) sites.push({
+    x:-PAD+rnd()*(W+2*PAD), y:-PAD+rnd()*(H+2*PAD),
+    vx:(rnd()-.5)*0.13, vy:(rnd()-.5)*0.13, a:1, burst:0 });
+}
+function resize(){
+  var d=Math.min(window.devicePixelRatio||1,2);
+  W=cv.offsetWidth; H=cv.offsetHeight;
+  cv.width=Math.round(W*d); cv.height=Math.round(H*d);
+  ctx.setTransform(d,0,0,d,0,0);
+  seedSites();
+}
+function burst(now){
+  /* one region resolves from a segment into individuals */
+  var bx=W*(0.18+rnd()*0.64), by=H*(0.18+rnd()*0.64);
+  var n=isSmall?8:13;
+  for(var i=0;i<n;i++){
+    var ang=rnd()*6.2832, r=34+rnd()*(isSmall?110:180);
+    sites.push({x:bx+Math.cos(ang)*r, y:by+Math.sin(ang)*r,
+      vx:(rnd()-.5)*0.07, vy:(rnd()-.5)*0.07, a:0, burst:1, born:now, life:5200});
+  }
+  nextBurst = now + 4200 + rnd()*3200;
+}
+function step(now){
+  for(var i=sites.length-1;i>=0;i--){
+    var s=sites[i];
+    s.x+=s.vx; s.y+=s.vy;
+    if(s.x<-PAD)s.x=W+PAD; if(s.x>W+PAD)s.x=-PAD;
+    if(s.y<-PAD)s.y=H+PAD; if(s.y>H+PAD)s.y=-PAD;
+    if(ptrX>-9000){                                  /* cells swell around the pointer */
+      var dx=s.x-ptrX, dy=s.y-ptrY, d2=dx*dx+dy*dy;
+      if(d2<44000&&d2>1){ var f=(1-d2/44000)*0.85, d=Math.sqrt(d2); s.x+=dx/d*f; s.y+=dy/d*f; }
+    }
+    if(s.burst){
+      var age=now-s.born;
+      s.a = age<900 ? age/900 : (age>s.life-900 ? Math.max(0,(s.life-age)/900) : 1);
+      if(age>s.life) sites.splice(i,1);
+    }
+  }
+  if(now>nextBurst) burst(now);
+}
+function draw(){
+  var edges=build();
+  ctx.clearRect(0,0,W,H);
+  /* quiet base mesh first, resolved cells over the top */
+  ctx.lineCap='round';
+  for(var pass=0;pass<2;pass++){
+    ctx.beginPath();
+    var any=false;
+    for(var i=0;i<edges.length;i++){
+      var e=edges[i], s0=sites[e[2]], s1=sites[e[3]];
+      if(!s0||!s1) continue;
+      var hot=(s0.burst||s1.burst)?1:0;
+      if(hot!==pass) continue;
+      ctx.moveTo(e[0].x,e[0].y); ctx.lineTo(e[1].x,e[1].y); any=true;
+    }
+    if(!any) continue;
+    if(pass===0){ ctx.strokeStyle='rgba(255,255,255,.16)'; ctx.lineWidth=1; }
+    else{ ctx.strokeStyle='rgba(185,206,255,.42)'; ctx.lineWidth=1.5; }
+    ctx.stroke();
+  }
+  for(var j=0;j<sites.length;j++){
+    var s=sites[j];
+    if(s.x<-20||s.x>W+20||s.y<-20||s.y>H+20) continue;
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.burst?2.6:1.8,0,6.2832);
+    ctx.fillStyle = s.burst ? 'rgba(255,255,255,'+(0.75*s.a)+')' : 'rgba(255,255,255,.28)';
+    ctx.fill();
+    if(s.burst&&s.a>0.2){
+      ctx.beginPath(); ctx.arc(s.x,s.y,9+(1-s.a)*10,0,6.2832);
+      ctx.strokeStyle='rgba(185,206,255,'+(0.22*s.a)+')'; ctx.lineWidth=1; ctx.stroke();
+    }
+  }
+}
+resize(); draw();
+window.addEventListener('resize',function(){ isSmall=window.innerWidth<760; resize(); draw(); });
+window.addEventListener('pointermove',function(e){
+  var r=cv.getBoundingClientRect(); ptrX=e.clientX-r.left; ptrY=e.clientY-r.top;
+},{passive:true});
+document.addEventListener('pointerleave',function(){ ptrX=-9999; ptrY=-9999; });
+var frame=0;
+function loop(){
+  frame++;
+  if(!(isSmall&&(frame&1))){ step(performance.now()); draw(); }
+  requestAnimationFrame(loop);
+}
+if(!reduced) requestAnimationFrame(loop);
+}
+function initGraph(){
+var ctx=cv.getContext('2d');
+var W=0,H=0,nodes=[],links=[],pulses=[],nextEvt=0,seed=20260815;
+function rnd(){ seed=(seed*1103515245+12345)&0x7fffffff; return (seed%100000)/100000; }
+function seedGraph(){
+  nodes=[];links=[];pulses=[];
+  var N=isSmall?30:58, cores=Math.round(N*0.28);
+  for(var i=0;i<N;i++) nodes.push({x:rnd()*W,y:rnd()*H,vx:0,vy:0,
+    core:i<cores, r:i<cores?(4.2+rnd()*1.8):(1.9+rnd()*0.9), a:1});
+  for(var j=cores;j<N;j++) links.push({s:j,t:Math.floor(rnd()*cores),L:70+rnd()*62,a:1});
+  for(var k=0;k<cores;k++) if(rnd()<0.55) links.push({s:k,t:Math.floor(rnd()*cores),L:170+rnd()*95,a:1});
+}
+function resize(){
+  var d=Math.min(window.devicePixelRatio||1,2);
+  W=cv.offsetWidth;H=cv.offsetHeight;
+  cv.width=Math.round(W*d);cv.height=Math.round(H*d);
+  ctx.setTransform(d,0,0,d,0,0);
+  seedGraph();
+  for(var i=0;i<160;i++) step(0);      /* pre-settle so it never appears mid-explosion */
+}
+/* a new identifier arrives and is stitched onto an existing profile */
+function resolve(now){
+  var cores=[];
+  for(var i=0;i<nodes.length;i++) if(nodes[i].core) cores.push(i);
+  if(!cores.length) return;
+  var hub=cores[Math.floor(rnd()*cores.length)], n=isSmall?2:4;
+  for(var j=0;j<n;j++){
+    var ang=rnd()*6.2832, dist=90+rnd()*70;
+    nodes.push({x:nodes[hub].x+Math.cos(ang)*dist,y:nodes[hub].y+Math.sin(ang)*dist,
+      vx:0,vy:0,core:false,r:2.0+rnd()*0.8,a:0,born:now,life:7000,fresh:true});
+    var li=links.push({s:nodes.length-1,t:hub,L:74+rnd()*46,a:0,fresh:true})-1;
+    pulses.push({link:li,p:0,born:now+j*160});
+  }
+  nextEvt=now+3800+rnd()*3000;
+}
+function step(now){
+  var n=nodes.length,i,j;
+  for(i=0;i<n;i++){
+    for(j=i+1;j<n;j++){
+      var a=nodes[i],b=nodes[j],dx=b.x-a.x,dy=b.y-a.y,d2=dx*dx+dy*dy;
+      if(d2<96100&&d2>0.01){
+        var d=Math.sqrt(d2),f=1150/d2; if(f>0.9)f=0.9;
+        var ux=dx/d*f,uy=dy/d*f;
+        a.vx-=ux;a.vy-=uy;b.vx+=ux;b.vy+=uy;
+      }
+    }
+  }
+  for(var k=0;k<links.length;k++){
+    var l=links[k],p=nodes[l.s],q=nodes[l.t];
+    if(!p||!q) continue;
+    var ex=q.x-p.x,ey=q.y-p.y,ed=Math.sqrt(ex*ex+ey*ey)||0.01;
+    var ef=(ed-l.L)*0.0022,vx=ex/ed*ef,vy=ey/ed*ef;
+    p.vx+=vx;p.vy+=vy;q.vx-=vx;q.vy-=vy;
+  }
+  for(i=0;i<n;i++){
+    var s=nodes[i];
+    s.vx+=(W/2-s.x)*0.00006; s.vy+=(H/2-s.y)*0.00013;
+    if(ptrX>-9000){                                   /* nodes give way to the pointer */
+      var px=s.x-ptrX,py=s.y-ptrY,pd2=px*px+py*py;
+      if(pd2<26000&&pd2>1){ var pd=Math.sqrt(pd2),pf=(1-pd2/26000)*1.5; s.vx+=px/pd*pf; s.vy+=py/pd*pf; }
+    }
+    s.vx*=0.85; s.vy*=0.85; s.x+=s.vx; s.y+=s.vy;
+    if(s.fresh){
+      var age=now-s.born;
+      s.a = age<800?age/800:(age>s.life-900?Math.max(0,(s.life-age)/900):1);
+    }
+  }
+  for(var m=0;m<links.length;m++){ var L2=links[m]; if(L2.fresh){ var na=nodes[L2.s]; L2.a=na?na.a:0; } }
+  for(i=nodes.length-1;i>=0;i--){
+    if(nodes[i].fresh&&now-nodes[i].born>nodes[i].life){
+      nodes.splice(i,1);
+      for(var z=links.length-1;z>=0;z--){
+        if(links[z].s===i||links[z].t===i){ links.splice(z,1); continue; }
+        if(links[z].s>i)links[z].s--; if(links[z].t>i)links[z].t--;
+      }
+      pulses=[];
+    }
+  }
+  for(i=pulses.length-1;i>=0;i--){
+    var pu=pulses[i];
+    if(now<pu.born) continue;
+    pu.p+=0.022; if(pu.p>1) pulses.splice(i,1);
+  }
+  if(now>nextEvt&&now>0) resolve(now);
+}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  ctx.lineCap='round';
+  for(var pass=0;pass<2;pass++){
+    ctx.beginPath(); var any=false;
+    for(var k=0;k<links.length;k++){
+      var l=links[k],p=nodes[l.s],q=nodes[l.t];
+      if(!p||!q) continue;
+      var hot=l.fresh?1:0; if(hot!==pass) continue;
+      ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); any=true;
+    }
+    if(!any) continue;
+    if(pass===0){ ctx.strokeStyle='rgba(255,255,255,.13)'; ctx.lineWidth=1; }
+    else{ ctx.strokeStyle='rgba(185,206,255,.40)'; ctx.lineWidth=1.4; }
+    ctx.stroke();
+  }
+  for(var i=0;i<pulses.length;i++){          /* the stitch travelling down the new edge */
+    var pu=pulses[i],l2=links[pu.link];
+    if(!l2) continue;
+    var a2=nodes[l2.s],b2=nodes[l2.t];
+    if(!a2||!b2) continue;
+    var x=a2.x+(b2.x-a2.x)*pu.p, y=a2.y+(b2.y-a2.y)*pu.p;
+    ctx.beginPath(); ctx.arc(x,y,2.6,0,6.2832);
+    ctx.fillStyle='rgba(232,240,255,'+(1-pu.p*0.6)+')'; ctx.fill();
+  }
+  for(var j=0;j<nodes.length;j++){
+    var s=nodes[j];
+    if(s.x<-40||s.x>W+40||s.y<-40||s.y>H+40) continue;
+    if(s.core){
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r+4.5,0,6.2832);
+      ctx.fillStyle='rgba(143,178,255,.10)'; ctx.fill();
+    }
+    ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.2832);
+    ctx.fillStyle = s.core ? 'rgba(255,255,255,'+(0.52*s.a)+')' : 'rgba(185,206,255,'+(0.34*s.a)+')';
+    ctx.fill();
+    if(s.core){ ctx.lineWidth=1; ctx.strokeStyle='rgba(255,255,255,.30)'; ctx.stroke(); }
+    if(s.fresh&&s.a>0.25){
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r+5+(1-s.a)*9,0,6.2832);
+      ctx.strokeStyle='rgba(185,206,255,'+(0.30*s.a)+')'; ctx.lineWidth=1; ctx.stroke();
+    }
+  }
+}
+resize(); draw();
+window.addEventListener('resize',function(){ isSmall=window.innerWidth<760; resize(); draw(); });
+var frame=0;
+(function loop(){
+  frame++;
+  if(!(isSmall&&(frame&1))){ step(performance.now()); draw(); }
+  requestAnimationFrame(loop);
+})();
+}
+
+/* ================= Hero: particle assembly =================
+   ~9,000 points. Individually simulated, they converge into the
+   mark, scatter to a ridge, and reform. They flee the cursor.   */
+function initHeroFX(){
+  var c=document.getElementById('hero-fx'); if(!c) return;
+  var x=c.getContext('2d');
+  var W=0,H=0,img=null,buf=null,N=0,PX,PY,VX,VY,SEED,JX,JY,shapes=[],si=0,nextAt=0,seed=7;
+  function rnd(){ seed=(seed*1103515245+12345)&0x7fffffff; return (seed%100000)/100000; }
+  var mx=-9999,my=-9999,blast=0;
+
+  function sample(drawFn){
+    var o=document.createElement('canvas'); o.width=W; o.height=H;
+    var oc=o.getContext('2d'); drawFn(oc);
+    var d=oc.getImageData(0,0,W,H).data, pts=[], st=2;
+    for(var y=0;y<H;y+=st) for(var xx=0;xx<W;xx+=st)
+      if(d[(y*W+xx)*4+3]>110){ pts.push(xx+rnd()*st, y+rnd()*st); }
+    return new Float32Array(pts);
+  }
+  function geom(){
+    var small=W<760;
+    var cx=small?W*0.5:W*0.70, cy=small?H*0.44:H*0.50;
+    var S=Math.min(small?W*0.62:W*0.30, H*0.58);
+    return {cx:cx,cy:cy,S:S,small:small};
+  }
+  function build(){
+    var g=geom();
+    shapes=[];
+    /* 1. the mark */
+    shapes.push(sample(function(o){
+      o.save(); o.translate(g.cx-g.S/2,g.cy-g.S/2); o.scale(g.S/64,g.S/64);
+      o.fillStyle='#fff';
+      o.fill(new Path2D('M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z'));
+      o.restore();
+    }));
+    /* 2. a ridgeline running off both edges */
+    shapes.push(sample(function(o){
+      o.fillStyle='#fff'; o.beginPath();
+      var base=g.cy+g.S*0.42, amp=g.S*0.62, w=W*1.2, x0=-W*0.1;
+      o.moveTo(x0,base);
+      var pk=[0,.12,.22,.34,.44,.55,.63,.74,.85,1];
+      var hs=[.18,.42,.28,.66,.38,1,.52,.74,.34,.2];
+      for(var i=0;i<pk.length;i++) o.lineTo(x0+w*pk[i], base-amp*hs[i]);
+      o.lineTo(x0+w,base); o.lineTo(x0+w,base+g.S*0.30); o.lineTo(x0,base+g.S*0.30);
+      o.closePath(); o.fill();
+    }));
+    /* 3. N=1 — one customer, one decision */
+    shapes.push(sample(function(o){
+      o.fillStyle='#fff'; o.textAlign='center'; o.textBaseline='middle';
+      o.font='700 '+Math.round(g.S*0.62)+'px Switzer, Inter, system-ui, sans-serif';
+      o.fillText('N=1', g.cx, g.cy);
+    }));
+  }
+  function resize(){
+    W=c.offsetWidth; H=c.offsetHeight;
+    if(!W||!H) return;
+    c.width=W; c.height=H;                       /* 1:1 keeps the pixel buffer cheap */
+    img=x.createImageData(W,H); buf=new Uint32Array(img.data.buffer);
+    build();
+    N=W<760?3200:9000;
+    PX=new Float32Array(N);PY=new Float32Array(N);VX=new Float32Array(N);VY=new Float32Array(N);SEED=new Float32Array(N);
+    JX=new Float32Array(N);JY=new Float32Array(N);
+    for(var i=0;i<N;i++){
+      PX[i]=rnd()*W; PY[i]=rnd()*H; VX[i]=0; VY[i]=0; SEED[i]=0.55+rnd()*0.85;
+      JX[i]=(rnd()-0.5)*5.0; JY[i]=(rnd()-0.5)*5.0;
+    }
+    si=0; nextAt=performance.now()+3200;
+  }
+  function step(now){
+    if(now>nextAt){ si=(si+1)%shapes.length; nextAt=now+4200; }
+    var T=shapes[si]; if(!T||!T.length) return;
+    var n=T.length>>1;
+    for(var i=0;i<N;i++){
+      var k=(n>N ? ((i*n/N)|0) : (i%n))<<1;
+      var tx=T[k]+JX[i], ty=T[k+1]+JY[i];
+      var dx=tx-PX[i], dy=ty-PY[i];
+      var s=SEED[i]*0.016;
+      VX[i]+=dx*s; VY[i]+=dy*s;
+      if(mx>-9000){                                   /* they scatter from the cursor */
+        var ox=PX[i]-mx, oy=PY[i]-my, d2=ox*ox+oy*oy;
+        if(d2<15000&&d2>1){ var d=Math.sqrt(d2), f=(1-d2/15000)*2.9; VX[i]+=ox/d*f; VY[i]+=oy/d*f; }
+      }
+      if(blast>0.01){                                  /* click: blow the whole field apart */
+        var bx=PX[i]-W*0.5, by=PY[i]-H*0.5, bd=Math.sqrt(bx*bx+by*by)||1;
+        VX[i]+=bx/bd*blast*7; VY[i]+=by/bd*blast*7;
+      }
+      VX[i]*=0.90; VY[i]*=0.90;
+      PX[i]+=VX[i]; PY[i]+=VY[i];
+    }
+    blast*=0.86;
+  }
+  function draw(){
+    buf.fill(0);
+    for(var i=0;i<N;i++){
+      var px=PX[i]|0, py=PY[i]|0;
+      if(px<1||px>=W-1||py<1||py>=H-1) continue;
+      var sp=VX[i]*VX[i]+VY[i]*VY[i];
+      /* settled points read white, travelling points glow blue */
+      var a, r, g2, b;
+      if(sp>1.4){ a=225; r=190; g2=214; b=255; }
+      else if(sp>0.25){ a=205; r=225; g2=236; b=255; }
+      else { a=175; r=255; g2=255; b=255; }
+      var col=(a<<24)|(b<<16)|(g2<<8)|r;
+      var o=py*W+px;
+      buf[o]=col; buf[o+1]=col; buf[o+W]=col; buf[o+W+1]=col;
+    }
+    x.putImageData(img,0,0);
+  }
+  resize(); 
+  window.addEventListener('resize',function(){ resize(); });
+  window.addEventListener('pointermove',function(e){
+    var r=c.getBoundingClientRect();
+    mx=e.clientX-r.left; my=e.clientY-r.top;
+    if(mx<-120||my<-120||mx>W+120||my>H+120){ mx=-9999; }
+  },{passive:true});
+  document.addEventListener('pointerleave',function(){ mx=-9999; my=-9999; });
+  c.parentNode.addEventListener('pointerdown',function(){ blast=1; });
+  var vis=true;
+  new IntersectionObserver(function(en){ vis=en[0].isIntersecting; }).observe(c);
+  (function loop(){
+    if(vis && W && H){ step(performance.now()); draw(); }
+    requestAnimationFrame(loop);
+  })();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(build);
+}
+
+if(cv){ if(BG==='cells') initCells(); else initGraph(); }
+if(!reduced) initHeroFX();
+
+
+/* ================= Scroll: nav, altimeter, hero climb, card stack ================= */
+var altFill = document.getElementById('alt-fill');
+var altVal = document.getElementById('alt-val');
+var header = document.querySelector('header');
+var svcs = Array.prototype.slice.call(document.querySelectorAll('.svc'));
+var ticking = false;
+function onScroll(){
+  if(ticking) return; ticking = true;
+  requestAnimationFrame(function(){
+    var y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? y/max : 0;
+    altFill.style.height = (p*100)+'%';
+    altVal.textContent = pad(p*8848);
+    heroP = clamp(y / Math.max(header.offsetHeight,1), 0, 1);
+    if(ascent) updateAscent();
+    /* stacked service cards recede as the next one covers them */
+    if(window.innerWidth > 900){
+      for(var i=0;i<svcs.length-1;i++){
+        var cur = svcs[i].getBoundingClientRect(), nxt = svcs[i+1].getBoundingClientRect();
+        var ov = clamp((cur.bottom - nxt.top) / cur.height, 0, 1);
+        svcs[i].style.transform = 'scale('+(1-ov*0.055)+')';
+        svcs[i].style.opacity = 1 - ov*0.4;
+      }
+    }
+    ticking = false;
+  });
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* ================= Signature: pinned ascent ================= */
+var ascent = document.getElementById('approach');
+var ascNum = document.getElementById('asc-num');
+var ascBar = document.getElementById('asc-bar');
+var route = document.getElementById('asc-route');
+var climber = document.getElementById('climber');
+var steps = Array.prototype.slice.call(document.querySelectorAll('.asc-step'));
+var dots = Array.prototype.slice.call(document.querySelectorAll('.asc-dots b'));
+var wps = Array.prototype.slice.call(document.querySelectorAll('.wp'));
+var routeLen = 0, lastIdx = -1;
+if(route){
+  routeLen = route.getTotalLength();
+  route.style.strokeDasharray = routeLen;
+  route.style.strokeDashoffset = routeLen;
+}
+/* fraction along the route where each waypoint sits, measured from the path itself */
+var wpAt = [];
+if(route){
+  var targets = [[70,560],[280,495],[450,430],[620,355],[790,142]];
+  targets.forEach(function(t){
+    var best = 0, bestD = 1e9;
+    for(var s=0; s<=200; s++){
+      var pt = route.getPointAtLength(routeLen*s/200);
+      var d = (pt.x-t[0])*(pt.x-t[0]) + (pt.y-t[1])*(pt.y-t[1]);
+      if(d < bestD){ bestD = d; best = s/200; }
+    }
+    wpAt.push(best);
+  });
+}
+function updateAscent(){
+  var rect = ascent.getBoundingClientRect();
+  var total = ascent.offsetHeight - window.innerHeight;
+  if(total <= 0) return;
+  var p = clamp(-rect.top/total, 0, 1);
+  /* hold briefly at each end so the first and last steps can be read */
+  var e = clamp((p - 0.05)/0.83, 0, 1);
+  ascNum.textContent = Math.round(e*8848).toLocaleString();
+  ascBar.style.width = (e*100)+'%';
+  if(route){
+    route.style.strokeDashoffset = routeLen*(1-e);
+    var pt = route.getPointAtLength(routeLen*e);
+    climber.setAttribute('transform','translate('+pt.x+','+pt.y+')');
+  }
+  var idx = 0;
+  for(var i=0;i<wpAt.length;i++){ if(e >= wpAt[i]-0.04) idx = i; }
+  if(idx !== lastIdx){
+    lastIdx = idx;
+    steps.forEach(function(s,i){ s.classList.toggle('on', i===idx); });
+    dots.forEach(function(d,i){ d.classList.toggle('on', i===idx); });
+    wps.forEach(function(w,i){
+      var done = i <= idx;
+      w.setAttribute('fill', done ? '#FFFFFF' : 'rgba(255,255,255,.38)');
+      w.setAttribute('r', i===idx ? 9 : 6);
+    });
+  }
+}
+if(ascent && reduced && route){
+  route.style.strokeDashoffset = 0;
+  climber.setAttribute('transform','translate(790,142)');
+  wps.forEach(function(w){ w.setAttribute('fill','#FFFFFF'); });
+  ascNum.textContent = '8,848'; ascBar.style.width = '100%';
+  steps.forEach(function(s){ s.classList.add('on'); });
+} else if(ascent) updateAscent();
+
+/* ================= Ticker ================= */
+var lane = document.getElementById('ticker-lane');
+lane.innerHTML += lane.innerHTML;
+
+/* ================= Reveals ================= */
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold: 0.15});
+document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+/* ================= Manifesto ================= */
+var mani = document.getElementById('mani-text');
+var keywords = ['mastered.','mountain','performs.'];
+mani.innerHTML = mani.textContent.split(' ').map(function(w){
+  return '<span class="w'+(keywords.indexOf(w)>-1?' key':'')+'">'+w+'</span>';
+}).join(' ');
+var words = mani.querySelectorAll('.w');
+function maniScroll(){
+  var rect = mani.getBoundingClientRect(), vh = window.innerHeight;
+  var pr = clamp((vh*0.85 - rect.top) / (rect.height + vh*0.35), 0, 1);
+  var lit = Math.floor(pr * words.length);
+  for(var i=0;i<words.length;i++) words[i].classList.toggle('lit', i < lit);
+}
+if(reduced){ words.forEach(function(w){ w.classList.add('lit'); }); }
+else { window.addEventListener('scroll', maniScroll, {passive:true}); maniScroll(); }
+
+/* ================= Number count-ups ================= */
+function countUp(el){
+  var to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec||0,10);
+  var pre = el.dataset.prefix||'', suf = el.dataset.suffix||'', st = performance.now();
+  (function tick(now){
+    var p = clamp((now-st)/1500, 0, 1);
+    var e = 1 - Math.pow(1-p, 3);
+    el.textContent = pre + (to*e).toFixed(dec) + suf;
+    if(p<1) requestAnimationFrame(tick);
+  })(st);
+}
+
+/* ================= Live product mocks ================= */
+var pzRows = Array.prototype.slice.call(document.querySelectorAll('.pz-row'));
+var pzRate = document.getElementById('pz-rate');
+var cxLine = document.getElementById('cx-line');
+if(cxLine){
+  var len = cxLine.getTotalLength();
+  cxLine.style.strokeDasharray = len; cxLine.style.strokeDashoffset = len;
+}
+var prices = ['$3.90','$4.20','$4.60','$4.90','$5.30','$5.60','$6.30'];
+var pzLive = null, rateLive = null;
+function startMock(mock){
+  if(mock.dataset.live) return; mock.dataset.live = '1';
+  mock.classList.add('drawn');
+  if(cxLine && mock.contains(cxLine)) cxLine.style.strokeDashoffset = 0;
+  mock.querySelectorAll('.num').forEach(function(n){ if(!reduced) countUp(n); else n.textContent=(n.dataset.prefix||'')+n.dataset.to+(n.dataset.suffix||''); });
+  mock.querySelectorAll('.pz-row').forEach(function(row, i){
+    setTimeout(function(){ row.querySelector('.pz-bar i').style.width = row.dataset.w+'%'; }, 220 + i*130);
+  });
+  if(reduced) return;
+  if(mock.querySelector('.pz-row') && !pzLive){
+    pzLive = setInterval(function(){
+      var row = pzRows[Math.floor(Math.random()*pzRows.length)];
+      row.classList.add('flash');
+      row.querySelector('.pz-price .pv').textContent = prices[Math.floor(Math.random()*prices.length)];
+      row.querySelector('.pz-bar i').style.width = (44 + Math.floor(Math.random()*52))+'%';
+      setTimeout(function(){ row.classList.remove('flash'); }, 900);
+    }, 2400);
+  }
+  if(pzRate && mock.contains(pzRate) && !rateLive){
+    rateLive = setInterval(function(){
+      pzRate.textContent = (2200 + Math.floor(Math.random()*700)).toLocaleString();
+    }, 1400);
+    pzRate.textContent = '2,418';
+  }
+}
+var mockIO = new IntersectionObserver(function(en){
+  en.forEach(function(e){ if(e.isIntersecting){ startMock(e.target); mockIO.unobserve(e.target); } });
+}, {threshold: 0.3});
+document.querySelectorAll('.mock').forEach(function(m){ mockIO.observe(m); });
+
+var pfIO = new IntersectionObserver(function(en){
+  en.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.num').forEach(function(n){
+        if(reduced) n.textContent = (n.dataset.prefix||'')+n.dataset.to+(n.dataset.suffix||'');
+        else countUp(n);
+      });
+      pfIO.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.4});
+var pfGrid = document.querySelector('.pf-grid');
+if(pfGrid) pfIO.observe(pfGrid);
+
+/* ================= Spotlight on cards ================= */
+if(!reduced){
+  document.querySelectorAll('.pillar,.ind').forEach(function(card){
+    card.addEventListener('pointermove', function(e){
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX-r.left)+'px');
+      card.style.setProperty('--my', (e.clientY-r.top)+'px');
+    }, {passive:true});
+  });
+}
+
+/* ================= Magnetic buttons + cursor ================= */
+
+/* ================= Delivery network: follow-the-sun ================= */
+(function(){
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.dn-row'));
+  if(!rows.length || !window.Intl) return;
+  var ticks = document.getElementById('dn-ticks');
+  var START = 9*60, END = 18*60;                 /* core hours, local */
+  function offsetMin(tz, d){                     /* true offset, DST-aware */
+    var p = new Intl.DateTimeFormat('en-US',{timeZone:tz,hour12:false,year:'numeric',month:'2-digit',
+      day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'}).formatToParts(d)
+      .reduce(function(a,x){a[x.type]=x.value;return a;},{});
+    var hh = p.hour === '24' ? 0 : +p.hour;
+    return Math.round((Date.UTC(+p.year,+p.month-1,+p.day,hh,+p.minute,+p.second) - d.getTime())/60000);
+  }
+  function place(track, a, b){                   /* minutes -> % of the day, split on wrap */
+    var seg = b > a ? [[a,b]] : [[a,1440],[0,b]];
+    seg.forEach(function(s){
+      var el = document.createElement('div');
+      el.className = 'dn-bar';
+      el.style.left = (s[0]/1440*100)+'%';
+      el.style.width = ((s[1]-s[0])/1440*100)+'%';
+      track.appendChild(el);
+    });
+  }
+  for(var t=0;t<=24;t+=3){
+    var s=document.createElement('span');
+    s.style.left=(t/24*100)+'%';
+    s.textContent=(t===24?'24':(t<10?'0'+t:t))+':00';
+    ticks.appendChild(s);
+  }
+  function render(){
+    var now = new Date();
+    var viewer = -now.getTimezoneOffset();
+    var nowMin = now.getHours()*60 + now.getMinutes();
+    rows.forEach(function(row){
+      var tz = row.dataset.tz, off = offsetMin(tz, now);
+      var track = row.querySelector('.dn-track');
+      track.innerHTML = '';
+      /* local core hours -> UTC -> the viewer's own clock */
+      place(track, ((START-off+viewer)%1440+1440)%1440, ((END-off+viewer)%1440+1440)%1440);
+      var f = new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit',hour12:false});
+      row.querySelector('.t').textContent = f.format(now);
+      var lp = new Intl.DateTimeFormat('en-US',{timeZone:tz,hour12:false,hour:'2-digit',minute:'2-digit',weekday:'short'})
+        .formatToParts(now).reduce(function(a,x){a[x.type]=x.value;return a;},{});
+      var lm = (lp.hour==='24'?0:+lp.hour)*60 + (+lp.minute);
+      var weekday = ['Sat','Sun'].indexOf(lp.weekday) === -1;
+      var on = weekday && lm >= START && lm < END;
+      row.classList.toggle('on', on);
+      row.classList.toggle('off', !on);
+    });
+    var line = document.createElement('div');
+    line.className = 'dn-now'; line.style.left = (nowMin/1440*100)+'%';
+    rows.forEach(function(r){ r.querySelector('.dn-track').appendChild(line.cloneNode()); });
+    var lbl = document.getElementById('dn-nowlbl');
+    if(!lbl){ lbl = document.createElement('div'); lbl.id='dn-nowlbl'; lbl.className='dn-nowlbl'; lbl.textContent='NOW'; ticks.appendChild(lbl); }
+    lbl.style.left = (nowMin/1440*100)+'%';
+    try{
+      var z = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if(z) document.getElementById('dn-zone').textContent = z.replace(/_/g,' ');
+    }catch(e){}
+  }
+  render();
+  setInterval(render, 30000);
+})();
+})();
+</script>
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p>We use cookies to improve your experience and analyze site traffic. Read our <a href="legal.html">Legal &amp; Privacy</a> page to learn more.</p>
+  <div class="ck-actions">
+    <button type="button" class="btn ghost" id="ck-decline">Decline</button>
+    <button type="button" class="btn" id="ck-accept">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  try{
+    var KEY='aventis-cookie-consent';
+    var saved=localStorage.getItem(KEY);
+    var banner=document.getElementById('cookie-banner');
+    if(!banner) return;
+    if(!saved){
+      setTimeout(function(){ banner.classList.add('show'); }, 900);
+    }
+    function setConsent(v){
+      try{ localStorage.setItem(KEY, v); }catch(e){}
+      banner.classList.remove('show');
+    }
+    var a=document.getElementById('ck-accept'), d=document.getElementById('ck-decline');
+    if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
+    if(d) d.addEventListener('click', function(){ setConsent('declined'); });
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
