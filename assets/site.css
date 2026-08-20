@@ -35,9 +35,10 @@ nav.scrolled{padding:14px 48px;border-color:var(--line)}
 #menu-toggle{display:none;background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer}
 @media(max-width:900px){
   nav{padding:16px 20px}nav.scrolled{padding:12px 20px}
-  .nav-links{position:fixed;inset:0;height:100dvh;background:var(--bg);flex-direction:column;justify-content:center;gap:30px;transform:translateY(-102%);visibility:hidden;pointer-events:none;transition:transform .5s var(--ease),visibility 0s .5s}
+  .nav-links{position:fixed;inset:0;height:100dvh;z-index:105;background:#10256E;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:0;padding:96px 24px calc(40px + env(safe-area-inset-bottom));overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;transform:translateY(-102%);visibility:hidden;pointer-events:none;transition:transform .5s var(--ease),visibility 0s .5s}
   .nav-links.open{transform:translateY(0);visibility:visible;pointer-events:auto;transition:transform .5s var(--ease),visibility 0s 0s}
-  .nav-links a{font-size:26px;font-family:var(--display)}
+  .nav-links a{font-size:21px;font-family:var(--display);font-weight:600;letter-spacing:-.01em;width:100%;padding:15px 0;border-bottom:1px solid var(--line)}
+  .nav-links a.btn{margin-top:26px;width:auto;border-bottom:0;padding:14px 26px;font-size:15px;align-self:flex-start}
   #menu-toggle{display:block;z-index:110;position:relative}
 }
 
@@ -55,7 +56,8 @@ h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.2vw,56px);l
 .phero{min-height:88svh;display:flex;align-items:center;padding:150px 48px 90px;overflow:hidden}
 #bg-field{position:fixed;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.6s var(--ease) .2s}
 body.ready #bg-field{opacity:1}
-nav,header,section,footer{position:relative;z-index:1}
+header,section,footer{position:relative;z-index:1}
+nav{z-index:100}
 .phero .kick{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);margin-bottom:26px}
 .phero .kick i{font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.30);padding:6px 14px;border-radius:100px}
 .phero h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6.6vw,88px);line-height:1.03;letter-spacing:-.035em;max-width:15ch}
@@ -118,7 +120,7 @@ nav,header,section,footer{position:relative;z-index:1}
 @media(max-width:900px){.pcta{padding:100px 20px}}
 
 footer{border-top:1px solid var(--line);padding:64px 48px 36px;background:rgba(0,0,0,.26)}
-.foot{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
+.foot{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:40px}
 .foot h4{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);margin-bottom:18px}
 .foot a{display:block;color:var(--ink);text-decoration:none;font-size:15px;margin-bottom:10px;opacity:.85;transition:opacity .2s,color .2s}
 .foot a:hover{opacity:1;color:var(--blue)}
@@ -129,8 +131,9 @@ footer{border-top:1px solid var(--line);padding:64px 48px 36px;background:rgba(0
 .foot .about .trust span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 .foot a{overflow-wrap:anywhere}
 .legal{max-width:1280px;margin:48px auto 0;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted-2);font-size:13px}
-@media(max-width:900px){.foot{grid-template-columns:1fr 1fr;gap:30px}footer{padding:50px 20px 28px}}
-@media(max-width:560px){.foot{grid-template-columns:1fr;gap:36px}.legal{flex-direction:column;gap:8px}}
+@media(max-width:1180px){.foot{grid-template-columns:1.4fr 1fr 1fr;gap:36px}.foot .about{grid-column:1/-1}}
+@media(max-width:760px){.foot{grid-template-columns:1fr 1fr;gap:30px}footer{padding:50px 20px 28px}}
+@media(max-width:520px){.foot{grid-template-columns:1fr;gap:34px}.legal{flex-direction:column;gap:8px}}
 
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}

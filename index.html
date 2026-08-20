@@ -110,9 +110,10 @@ nav.scrolled{padding:14px 48px;border-color:var(--line)}
 @media(max-width:900px){
   nav{padding:16px 20px}
   nav.scrolled{padding:12px 20px}
-  .nav-links{position:fixed;inset:0;height:100dvh;background:var(--bg);flex-direction:column;justify-content:center;gap:30px;transform:translateY(-102%);visibility:hidden;pointer-events:none;transition:transform .5s var(--ease),visibility 0s .5s}
+  .nav-links{position:fixed;inset:0;height:100dvh;z-index:105;background:#10256E;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:0;padding:96px 24px calc(40px + env(safe-area-inset-bottom));overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;transform:translateY(-102%);visibility:hidden;pointer-events:none;transition:transform .5s var(--ease),visibility 0s .5s}
   .nav-links.open{transform:translateY(0);visibility:visible;pointer-events:auto;transition:transform .5s var(--ease),visibility 0s 0s}
-  .nav-links a{font-size:26px;font-family:var(--display)}
+  .nav-links a{font-size:21px;font-family:var(--display);font-weight:600;letter-spacing:-.01em;width:100%;padding:15px 0;border-bottom:1px solid var(--line)}
+  .nav-links a.btn{margin-top:26px;width:auto;border-bottom:0;padding:14px 26px;font-size:15px;align-self:flex-start}
   #menu-toggle{display:block;z-index:110;position:relative}
 }
 
@@ -491,14 +492,15 @@ h2{font-family:var(--display);font-weight:600;font-size:clamp(32px,4.6vw,62px);l
 /* ---------- Living field canvases ---------- */
 #bg-field{position:fixed;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.6s var(--ease) .2s}
 body.ready #bg-field{opacity:1}
-nav,header,section,footer,.snowline-label{position:relative;z-index:1}
+header,section,footer,.snowline-label{position:relative;z-index:1}
+nav{z-index:100}
 /* sections are translucent so the field reads continuously behind the whole page */
 .tint-a{background:rgba(255,255,255,.035)}
 .tint-b{background:rgba(0,0,0,.22)}
 
 /* ---------- Footer ---------- */
 footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0,0,0,.26)}
-.foot{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:44px}
+.foot{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:40px}
 .foot h4{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);margin-bottom:18px}
 .foot a{display:block;color:var(--ink);text-decoration:none;font-size:15px;margin-bottom:10px;opacity:.85;transition:opacity .2s,color .2s}
 .foot a:hover{opacity:1;color:var(--blue)}
@@ -509,8 +511,9 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
 .foot .about .trust span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 .foot a{overflow-wrap:anywhere}
 .legal{max-width:1280px;margin:56px auto 0;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted-2);font-size:13px}
-@media(max-width:900px){.foot{grid-template-columns:1fr 1fr;gap:32px}footer{padding:56px 20px 30px}}
-@media(max-width:560px){.foot{grid-template-columns:1fr;gap:36px}.legal{flex-direction:column;gap:8px}}
+@media(max-width:1180px){.foot{grid-template-columns:1.4fr 1fr 1fr;gap:36px}.foot .about{grid-column:1/-1}}
+@media(max-width:760px){.foot{grid-template-columns:1fr 1fr;gap:30px}footer{padding:56px 20px 30px}}
+@media(max-width:520px){.foot{grid-template-columns:1fr;gap:34px}.legal{flex-direction:column;gap:8px}}
 
 /* ---------- Hero canvas reveal ---------- */
 
@@ -602,20 +605,16 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
 </div>
 
 <nav id="nav">
-  <a class="brand" href="#top" aria-label="Aventis Technology home">
-    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#3B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="#fff"/></svg>
-    <span class="wm">Aventis <b>Technology</b></span>
-  </a>
-  <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <a class="brand" href="#top" aria-label="Aventis Technology home"><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#3B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="#fff"/></svg><span class="wm">Aventis <b>Technology</b></span></a>
+  <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   <div class="nav-links" id="nav-links">
-    <a href="#practices">Practices</a>
     <a href="services.html">Services</a>
     <a href="adobe.html">Adobe</a>
-    <a href="blog.html">Blog</a>
-    <a href="#work">Work</a>
+    <a href="case-studies.html">Work</a>
     <a href="#products">Products</a>
+    <a href="blog.html">Blog</a>
     <a href="#about">About</a>
-    <a class="btn" href="#contact">Start a project <span class="arr">→</span></a>
+    <a class="btn" href="contact.html">Start a project <span class="arr">&rarr;</span></a>
   </div>
 </nav>
 
@@ -1093,36 +1092,51 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
       </a>
       <p>Digital experience and engineering partner headquartered in Singapore. An Adobe Digital Experience Partner with delivery depth across data, journeys and digital products for enterprises in Asia-Pacific.</p>
       <p style="margin-top:14px">Singapore &middot; Jakarta &middot; Manila &middot; Bangalore &middot; Pune &middot; Tirupati &middot; Toronto</p>
+      <div class="trust">
+        <img src="images/soc2-badge.png" alt="AICPA SOC 2 Type II certified" width="38" height="38" loading="lazy">
+        <div>
+          <b>SOC 2 Type II Certified</b>
+          <span>Independently audited security &amp; availability controls.</span>
+        </div>
+      </div>
     </div>
     <div>
-      <h4>Company</h4>
+      <h4>Explore</h4>
       <a href="#practices">Practices</a>
-      <a href="services.html">Services</a>
-      <a href="case-studies.html">Case studies</a>
+      <a href="#approach">Approach</a>
       <a href="#platforms">Platforms</a>
       <a href="#industries">Industries</a>
-      <a href="#about">About</a>
+      <a href="#proof">Proof</a>
       <a href="#team">Leadership</a>
-      <a href="#contact">Contact</a>
-      <a href="legal.html">Legal</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="services.html">All services</a>
+      <a href="adobe.html">Adobe &amp; AEM</a>
+      <a href="#services">Capabilities</a>
+      <a href="#operate">Run &amp; Optimize</a>
+      <a href="case-studies.html">Case studies</a>
     </div>
     <div>
       <h4>Products</h4>
       <a href="prezio.html">Prezio</a>
       <a href="cx-pulse.html">CX Pulse</a>
-      <a href="#operate">Run &amp; Optimize</a>
-      <a href="#services">Capabilities</a>
+      <a href="blog.html">Blog</a>
+      <a href="careers.html">Careers</a>
     </div>
     <div>
       <h4>Connect</h4>
+      <a href="contact.html">Contact us</a>
       <a href="mailto:hello@aventistechnology.com">hello@aventistechnology.com</a>
       <a href="https://www.linkedin.com/company/aventis-aitechnology/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#contact">Start a project</a>
+      <a href="legal.html">Legal</a>
+      <a href="privacy.html">Privacy Policy</a>
     </div>
   </div>
   <div class="legal">
-    <span>© 2026 Aventis Technologies Pte. Ltd. Singapore. All rights reserved.</span>
-    <span><a href="legal.html" style="color:inherit">Legal</a> · Customer experience, engineered at altitude.</span>
+    <span>&copy; 2026 Aventis Technologies Pte. Ltd. Singapore. All rights reserved.</span>
+    <span><a href="legal.html" style="color:inherit">Legal</a> &middot; <a href="privacy.html" style="color:inherit">Privacy</a> &middot; Customer experience, engineered at altitude.</span>
   </div>
 </footer>
 <script>
@@ -1844,7 +1858,7 @@ if(!reduced){
 })();
 </script>
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
-  <p>We use cookies to improve your experience and analyze site traffic. Read our <a href="legal.html">Legal &amp; Privacy</a> page to learn more.</p>
+  <p>We use cookies to improve your experience and analyze site traffic. Read our <a href="privacy.html">Privacy Policy</a> to learn more.</p>
   <div class="ck-actions">
     <button type="button" class="btn ghost" id="ck-decline">Decline</button>
     <button type="button" class="btn" id="ck-accept">Accept</button>
