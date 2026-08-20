@@ -161,3 +161,11 @@ footer{border-top:1px solid var(--line);padding:64px 48px 36px;background:rgba(0
   .cookie-banner .ck-actions{width:100%}
   .cookie-banner .ck-actions .btn{flex:1;justify-content:center}
 }
+
+/* ---------- Footer social icons ---------- */
+.socials{display:flex;gap:10px;margin-top:4px}
+.socials a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;
+  border:1px solid var(--line);border-radius:12px;color:var(--muted);margin:0;
+  transition:border-color .28s,color .28s,background .28s,transform .35s var(--ease)}
+.socials a:hover{border-color:var(--line-strong);color:var(--ink);background:rgba(255,255,255,.07);transform:translateY(-2px);opacity:1}
+.socials svg{width:18px;height:18px;fill:currentColor;display:block}
