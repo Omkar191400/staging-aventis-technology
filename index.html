@@ -593,6 +593,12 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
   transition:border-color .28s,color .28s,background .28s,transform .35s var(--ease)}
 .socials a:hover{border-color:var(--line-strong);color:var(--ink);background:rgba(255,255,255,.07);transform:translateY(-2px);opacity:1}
 .socials svg{width:18px;height:18px;fill:currentColor;display:block}
+
+/* align socials to the SOC2 row at the bottom of the footer columns */
+.foot > div{display:flex;flex-direction:column}
+.foot > div > a{flex:none}
+.socials{margin-top:auto;padding-top:28px;border-top:1px solid var(--line)}
+@media(max-width:1180px){.socials{margin-top:24px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["Organization","ProfessionalService"],"@id":"https://www.aventistechnology.com/#organization","name":"Aventis Technology","url":"https://www.aventistechnology.com/","description":"Aventis Technology is an Adobe implementation partner headquartered in Singapore, delivering Adobe Experience Cloud, dynamic pricing, data and AI, and experience management programmes for enterprises across Asia-Pacific.","slogan":"Customer experience, engineered at altitude.","address":{"@type":"PostalAddress","addressCountry":"SG","addressLocality":"Singapore"},"email":"hello@aventistechnology.com","areaServed":[{"@type":"Place","name":"Asia-Pacific"},{"@type":"Place","name":"Singapore"},{"@type":"Place","name":"Indonesia"},{"@type":"Place","name":"Philippines"},{"@type":"Place","name":"Malaysia"},{"@type":"Place","name":"India"}],"knowsAbout":["Adobe Experience Cloud implementation","Adobe Experience Platform","Adobe Real-Time CDP","Adobe Journey Optimizer","Customer Journey Analytics","Adobe Experience Manager","Adobe Target","Adobe Offer Decisioning","Braze","Salesforce","Customer data platforms","Hyper-personalization","Dynamic content","Dynamic pricing","Marketing technology consulting","Digital wallets","Super apps"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Practices","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Data & AI","description":"Customer data platforms, identity and consent, streaming pipelines, decision intelligence and applied AI."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"CX & MarTech","description":"Adobe Experience Cloud, Braze and Salesforce implementation, journey orchestration, lifecycle marketing, dynamic content and hyper-personalization."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Revenue Decisioning","description":"Dynamic pricing and offer decisioning at N=1 with commercial guardrails, powered by the Prezio engine."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Experience Management","description":"Voice of the customer across every touchpoint with AI-read verbatims and closed-loop workflows, powered by CX Pulse."}}]},"location":[{"@type":"Place","name":"Aventis Technology Singapore","address":{"@type":"PostalAddress","addressLocality":"Singapore","addressCountry":"SG"}},{"@type":"Place","name":"Aventis Technology Jakarta","address":{"@type":"PostalAddress","addressLocality":"Jakarta","addressCountry":"ID"}},{"@type":"Place","name":"Aventis Technology Manila","address":{"@type":"PostalAddress","addressLocality":"Manila","addressCountry":"PH"}},{"@type":"Place","name":"Aventis Technology Bangalore","address":{"@type":"PostalAddress","addressLocality":"Bangalore","addressCountry":"IN"}},{"@type":"Place","name":"Aventis Technology Pune","address":{"@type":"PostalAddress","addressLocality":"Pune","addressCountry":"IN"}},{"@type":"Place","name":"Aventis Technology Tirupati","address":{"@type":"PostalAddress","addressLocality":"Tirupati","addressCountry":"IN"}},{"@type":"Place","name":"Aventis Technology Toronto","address":{"@type":"PostalAddress","addressLocality":"Toronto","addressCountry":"CA"}}],"numberOfEmployees":{"@type":"QuantitativeValue","minValue":50}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Aventis Technology an Adobe implementation partner in APAC?","acceptedAnswer":{"@type":"Answer","text":"Yes. Aventis Technology is an Adobe Digital Experience partner headquartered in Singapore, delivering Adobe Experience Cloud implementations for enterprises across Asia-Pacific, including Singapore, Indonesia, the Philippines, Malaysia and India. Our work spans architecture, implementation, migration and always-on managed operations."}},{"@type":"Question","name":"Which Adobe products does Aventis Technology implement?","acceptedAnswer":{"@type":"Answer","text":"We implement Adobe Experience Platform, Real-Time CDP, Journey Optimizer, Customer Journey Analytics, Experience Manager, Adobe Target, Offer Decisioning and GenStudio. Programmes typically combine several of these, with our engineers handling data architecture, identity and consent, journey design and activation across every channel."}},{"@type":"Question","name":"Do you work with platforms other than Adobe?","acceptedAnswer":{"@type":"Answer","text":"Yes. While the majority of our delivery runs on Adobe Experience Cloud, we implement and integrate Braze, Salesforce, Confluent Kafka, Google Cloud and BigQuery, Twilio, Snowflake and Tableau. We also build custom digital products, including consumer apps, super apps and digital wallets."}},{"@type":"Question","name":"What is hyper-personalization and how does Aventis deliver it?","acceptedAnswer":{"@type":"Answer","text":"Hyper-personalization means the content itself changes per individual, not just which segment receives which campaign. We deliver it by binding content templates to the live customer profile and to a real-time decision, so the layout is assembled at the moment of the request. A single managed component then renders a different offer, benefit set or message for every customer and every channel, with brand and eligibility guardrails enforced automatically."}},{"@type":"Question","name":"Which countries and industries do you serve?","acceptedAnswer":{"@type":"Answer","text":"We serve enterprise clients across Asia-Pacific from our Singapore headquarters, with delivery experience in Indonesia, the Philippines, Malaysia, Singapore and India. Our deepest sector experience is in telecommunications, aviation and travel, financial services and retail, where customer bases run at national scale, in the hundreds of millions across our programmes."}},{"@type":"Question","name":"Where are Aventis Technology's delivery centres?","acceptedAnswer":{"@type":"Answer","text":"We operate seven delivery centres: Singapore, Jakarta in Indonesia, Manila in the Philippines, Bangalore, Pune and Tirupati in India, and Toronto in Canada. The spread means core working hours cover more than twenty hours of every weekday, with managed services closing the remaining window on rotating shifts, so delivery and support follow the sun across Asia-Pacific and North America."}},{"@type":"Question","name":"What does an Adobe Experience Platform implementation involve?","acceptedAnswer":{"@type":"Answer","text":"A typical programme starts with discovery and outcome definition, then moves through data architecture covering schema design, identity resolution, consent and governance, then platform build and integration, use case delivery in phased drops, and finally managed operations. Value usually lands within the first few months rather than at the end of a multi-year build."}},{"@type":"Question","name":"Do you take over platforms implemented by another partner?","acceptedAnswer":{"@type":"Answer","text":"Yes. A significant part of our work is inheriting live platforms from an incumbent, stabilising them, and taking full ownership of operations, releases and continuous optimization. We run structured handovers with knowledge transfer, documentation and a defined ownership date."}},{"@type":"Question","name":"What are Prezio and CX Pulse?","acceptedAnswer":{"@type":"Answer","text":"Prezio is our dynamic pricing and offer decisioning engine, which scores every customer against a full offer catalog and publishes a winning offer and price per channel, with commercial guardrails and holdout-based measurement. CX Pulse is our experience management platform, capturing NPS, CSAT and CES across every touchpoint with AI-read verbatims and closed-loop workflows."}}]}</script>
@@ -616,13 +622,13 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
   <a class="brand" href="#top" aria-label="Aventis Technology home"><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#3B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="#fff"/></svg><span class="wm">Aventis <b>Technology</b></span></a>
   <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   <div class="nav-links" id="nav-links">
-    <a href="services.html">Services</a>
-    <a href="adobe.html">Adobe</a>
-    <a href="case-studies.html">Work</a>
+    <a href="/services">Services</a>
+    <a href="/adobe">Adobe</a>
+    <a href="/case-studies">Work</a>
     <a href="#products">Products</a>
-    <a href="blog.html">Blog</a>
+    <a href="/blog">Blog</a>
     <a href="#about">About</a>
-    <a class="btn" href="contact.html">Start a project <span class="arr">&rarr;</span></a>
+    <a class="btn" href="/contact">Start a project <span class="arr">&rarr;</span></a>
   </div>
 </nav>
 
@@ -637,7 +643,7 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
     </h1>
     <p class="hero-sub">Aventis Technology designs, builds and operates digital experience platforms for Asia's most ambitious brands, from real-time customer data and hyper-personalized journeys to dynamic content, super apps and digital wallets.</p>
     <div class="hero-cta">
-      <a class="btn" href="contact.html">Start the climb <span class="arr">→</span></a>
+      <a class="btn" href="/contact">Start the climb <span class="arr">→</span></a>
       <a class="btn ghost" href="#services">Explore what we do</a>
     </div>
   </div>
@@ -667,8 +673,8 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
     <div class="pracs rv">
       <a class="prac" href="#services"><h3>Data &amp; AI</h3><p>Customer data platforms, identity and consent, streaming pipelines, decision intelligence and applied AI, engineered to carry customer bases at national scale.</p><span class="meta">Data foundations, agentic systems</span></a>
       <a class="prac" href="#services"><h3>CX &amp; MarTech</h3><p>Journey orchestration, lifecycle marketing, dynamic content and hyper-personalization across every owned and paid channel, built on the platform that fits you.</p><span class="meta">Adobe, Braze, Salesforce</span></a>
-      <a class="prac" href="prezio.html"><h3>Revenue Decisioning</h3><p>Offer and price decisioning at N=1, with commercial guardrails and holdout-based measurement, powered by our own Prezio engine.</p><span class="meta">Prezio</span></a>
-      <a class="prac" href="cx-pulse.html"><h3>Experience Management</h3><p>Voice of the customer across every touchpoint, with AI-read verbatims and closed-loop workflows that route insight to the teams who can act.</p><span class="meta">CX Pulse</span></a>
+      <a class="prac" href="/prezio"><h3>Revenue Decisioning</h3><p>Offer and price decisioning at N=1, with commercial guardrails and holdout-based measurement, powered by our own Prezio engine.</p><span class="meta">Prezio</span></a>
+      <a class="prac" href="/cx-pulse"><h3>Experience Management</h3><p>Voice of the customer across every touchpoint, with AI-read verbatims and closed-loop workflows that route insight to the teams who can act.</p><span class="meta">CX Pulse</span></a>
     </div>
   </div>
 </section>
@@ -849,7 +855,7 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
           <div class="f"><span class="dot"></span><div><b>Commercial guardrails</b><p>Margin floors, eligibility and fairness rules enforced on every decision, with a full audit trail.</p></div></div>
           <div class="f"><span class="dot"></span><div><b>Value you can prove</b><p>Built-in holdouts and dashboards that separate the incremental revenue from the noise.</p></div></div>
         </div>
-        <a class="btn" style="margin-top:36px" href="prezio.html">Explore Prezio <span class="arr">→</span></a>
+        <a class="btn" style="margin-top:36px" href="/prezio">Explore Prezio <span class="arr">→</span></a>
       </div>
       <div class="rv">
         <div class="mock tilt-l" aria-hidden="true">
@@ -882,7 +888,7 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
           <div class="f"><span class="dot"></span><div><b>AI-read verbatims</b><p>Themes, sentiment and emerging issues surfaced automatically from open feedback.</p></div></div>
           <div class="f"><span class="dot"></span><div><b>Built to close the loop</b><p>Alerts and workflows push detractor cases to frontline teams in minutes, not quarters.</p></div></div>
         </div>
-        <a class="btn" style="margin-top:36px" href="cx-pulse.html">Explore CX Pulse <span class="arr">→</span></a>
+        <a class="btn" style="margin-top:36px" href="/cx-pulse">Explore CX Pulse <span class="arr">→</span></a>
       </div>
       <div class="rv">
         <div class="mock" aria-hidden="true">
@@ -958,26 +964,26 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
       <p class="lede">Enterprise transformations delivered end to end, from architecture through to the teams that operate them every day.</p>
     </div>
     <div class="cases rv">
-      <a class="cs" href="case-studies.html#telco-martech">
+      <a class="cs" href="/case-studies#telco-martech">
         <span class="sector">Telecommunications &middot; Indonesia</span>
         <h3>A national operator rebuilds its marketing stack</h3>
         <p>A fixed-price Adobe Experience Cloud transformation for one of Indonesia's largest operators, unifying multiple consumer brands onto a single customer data foundation with real-time journeys across app, messaging and USSD.</p>
         <div class="kpi"><div><b>Nation-scale</b><small>Subscriber base unified</small></div><div><b>Multi-brand</b><small>On one data foundation</small></div></div>
       </a>
-      <a class="cs" href="case-studies.html#pricing">
+      <a class="cs" href="/case-studies#pricing">
         <span class="sector">Telecommunications &middot; Offer decisioning</span>
         <h3>From segment pricing to a price per customer</h3>
         <p>Prezio deployed against a live offer catalog, scoring the entire subscriber base nightly and publishing a winning offer per customer and channel under enforced margin and eligibility guardrails.</p>
         <div class="kpi"><div><b>N=1</b><small>Decisioning at full base</small></div><div><b>100%</b><small>Guardrail compliance</small></div></div>
       </a>
-      <a class="cs" href="case-studies.html#managed-services">
+      <a class="cs" href="/case-studies#managed-services">
         <span class="sector">Telecommunications &middot; Philippines</span>
         <h3>Taking over a live experience platform</h3>
         <p>A structured takeover of an in-flight marketing platform for a Philippine telecom group, moving from incumbent handover to full ownership of operations, releases and optimization inside one quarter.</p>
         <div class="kpi"><div><b>24&times;7</b><small>Operations</small></div><div><b>1 quarter</b><small>To full ownership</small></div></div>
       </a>
     </div>
-    <a class="btn ghost" style="margin-top:40px" href="case-studies.html">Read the case studies <span class="arr">&rarr;</span></a>
+    <a class="btn ghost" style="margin-top:40px" href="/case-studies">Read the case studies <span class="arr">&rarr;</span></a>
   </div>
 </section>
 
@@ -1086,7 +1092,7 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
     <p class="lede">Build what's next with confidence.</p>
     <div class="cta-btns">
       <a class="btn ghost" href="#proof">Explore more projects</a>
-      <a class="btn" href="contact.html">Start the conversation <span class="arr">→</span></a>
+      <a class="btn" href="/contact">Start the conversation <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -1120,22 +1126,24 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
     </div>
     <div>
       <h4>Services</h4>
-      <a href="services.html">All services</a>
-      <a href="adobe.html">Adobe &amp; AEM</a>
+      <a href="/services">All services</a>
+      <a href="/adobe">Adobe &amp; AEM</a>
       <a href="#services">Capabilities</a>
       <a href="#operate">Run &amp; Optimize</a>
-      <a href="case-studies.html">Case studies</a>
+      <a href="/case-studies">Case studies</a>
     </div>
     <div>
       <h4>Products</h4>
-      <a href="prezio.html">Prezio</a>
-      <a href="cx-pulse.html">CX Pulse</a>
-      <a href="blog.html">Blog</a>
-      <a href="careers.html">Careers</a>
+      <a href="/prezio">Prezio</a>
+      <a href="/cx-pulse">CX Pulse</a>
+      <a href="/blog">Blog</a>
+      <a href="/careers">Careers</a>
     </div>
     <div>
       <h4>Connect</h4>
-      <a href="contact.html">Contact us</a>
+      <a href="/contact">Contact us</a>
+      <a href="/legal">Legal</a>
+      <a href="/privacy">Privacy Policy</a>
       <div class="socials">
         <a href="https://www.linkedin.com/company/aventis-aitechnology/" target="_blank" rel="noopener" aria-label="Aventis Technology on LinkedIn" title="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
@@ -1144,13 +1152,11 @@ footer{border-top:1px solid var(--line);padding:70px 48px 40px;background:rgba(0
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
         </a>
       </div>
-      <a href="legal.html">Legal</a>
-      <a href="privacy.html">Privacy Policy</a>
     </div>
   </div>
   <div class="legal">
     <span>&copy; 2026 Aventis Technologies Pte. Ltd. Singapore. All rights reserved.</span>
-    <span><a href="legal.html" style="color:inherit">Legal</a> &middot; <a href="privacy.html" style="color:inherit">Privacy</a> &middot; Customer experience, engineered at altitude.</span>
+    <span><a href="/legal" style="color:inherit">Legal</a> &middot; <a href="/privacy" style="color:inherit">Privacy</a> &middot; Customer experience, engineered at altitude.</span>
   </div>
 </footer>
 <script>
@@ -1872,7 +1878,7 @@ if(!reduced){
 })();
 </script>
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
-  <p>We use cookies to improve your experience and analyze site traffic. Read our <a href="privacy.html">Privacy Policy</a> to learn more.</p>
+  <p>We use cookies to improve your experience and analyze site traffic. Read our <a href="/privacy">Privacy Policy</a> to learn more.</p>
   <div class="ck-actions">
     <button type="button" class="btn ghost" id="ck-decline">Decline</button>
     <button type="button" class="btn" id="ck-accept">Accept</button>
