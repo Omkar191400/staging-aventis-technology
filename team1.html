@@ -3,72 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Start a Project with Aventis Technology</title>
-<meta name="description" content="Talk to the Aventis Technology team about Adobe Experience Cloud, AEM, dynamic pricing, customer experience and digital engineering programmes across Asia-Pacific.">
-<link rel="canonical" href="https://www.aventistechnology.com/contact">
-<meta name="robots" content="index,follow">
+<title>Team &amp; Global Delivery Organization | Aventis Technology</title>
+<meta name="description" content="The leadership, regional delivery managers, product teams and global delivery hubs behind Aventis Technology's Adobe, data and engineering programmes across Asia-Pacific.">
+<link rel="canonical" href="https://www.aventistechnology.com/team1">
+<meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="%233B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="white"/></svg>'>
 <style>
-.chero{padding:170px 48px 20px}
-.chero h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,6vw,72px);line-height:1.04;
-          letter-spacing:-.04em;max-width:15ch}
-.chero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--blue)}
-.chero .sub{color:var(--muted);font-size:clamp(16px,1.5vw,20px);max-width:56ch;margin-top:26px}
+/* ---------- Hero ---------- */
+.thero{padding:170px 48px 40px}
+.thero h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,6vw,74px);line-height:1.03;
+          letter-spacing:-.04em;max-width:16ch}
+.thero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--blue)}
+.thero .sub{color:var(--muted);font-size:clamp(16px,1.5vw,20px);max-width:60ch;margin-top:26px}
+.thero .legend{display:flex;flex-wrap:wrap;gap:22px;margin-top:38px}
+.thero .legend span{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--muted-2);
+  font-family:var(--display);letter-spacing:.02em}
+.thero .legend i{width:9px;height:9px;border-radius:50%;display:block;flex:none}
 
-.cgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:start;margin-top:20px}
-.cintro h2{font-size:clamp(24px,2.4vw,32px);max-width:18ch}
-.cintro p{color:var(--muted);font-size:16px;margin-top:18px;max-width:46ch}
-.cpoints{margin-top:34px;border-top:1px solid var(--line)}
-.cpt{padding:20px 0;border-bottom:1px solid var(--line)}
-.cpt b{display:block;font-family:var(--display);font-weight:600;font-size:16px;margin-bottom:6px}
-.cpt span{color:var(--muted);font-size:14.5px}
-.cmeta{margin-top:34px}
-.cmeta .lbl{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.24em;
-            text-transform:uppercase;color:var(--blue);display:block;margin-bottom:10px}
-.cmeta p{color:var(--muted);font-size:15px;margin-bottom:20px}
-.cmeta a{color:var(--ink)}
+/* ---------- Org tree shell ---------- */
+#orgtree{padding-top:20px}
+.org-tree{position:relative;max-width:1280px;margin:70px auto 0}
+.org-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}
+.org-svg path{fill:none;stroke:rgba(143,178,255,.38);stroke-width:1.75;transition:stroke .4s,stroke-width .4s,opacity .4s}
+.org-svg path.hi{stroke:var(--blue);stroke-width:2.2;opacity:1}
+.org-svg path.dim{opacity:.12}
+.org-svg circle{fill:var(--bg);stroke:rgba(255,255,255,.30);stroke-width:1.5;transition:stroke .4s,fill .4s}
+.org-svg circle.hi{stroke:var(--blue);fill:var(--blue)}
 
-/* ---------- Form ---------- */
-.fwrap{border:1px solid var(--line-strong);border-radius:24px;padding:44px 40px;background:var(--panel-solid)}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.fld{margin-bottom:18px}
-.fld label{display:block;font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.12em;
-           text-transform:uppercase;color:var(--muted-2);margin-bottom:9px}
-.fld input,.fld select,.fld textarea{
-  width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;
-  padding:14px 16px;color:var(--ink);font-family:var(--body);font-size:15.5px;
-  transition:border-color .25s,background .25s}
-.fld textarea{min-height:132px;resize:vertical}
-.fld input:focus,.fld select:focus,.fld textarea:focus{
-  outline:none;border-color:var(--blue);background:rgba(255,255,255,.08)}
-.fld input::placeholder,.fld textarea::placeholder{color:var(--muted-2);opacity:.7}
-.fld select{appearance:none;cursor:pointer;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238FA4D8' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 16px center;background-size:12px;padding-right:42px}
-.fld select option{background:#0A1A52;color:#fff}
-.fld .err{display:none;color:#FFB4B4;font-size:13px;margin-top:7px}
-.fld.invalid input,.fld.invalid select,.fld.invalid textarea{border-color:#FF8A8A}
-.fld.invalid .err{display:block}
-.consent{display:flex;gap:12px;align-items:flex-start;margin:6px 0 24px}
-.consent input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:#3B66F6}
-.consent label{font-size:14px;color:var(--muted);letter-spacing:0;text-transform:none;font-family:var(--body);margin:0}
-.consent a{color:var(--blue)}
-.fsubmit{width:100%;justify-content:center;border:0;cursor:pointer;font-size:15px;padding:16px 26px}
-.fsubmit[disabled]{opacity:.6;cursor:not-allowed}
-.fnote{color:var(--muted-2);font-size:13px;margin-top:16px;text-align:center}
-.fmsg{display:none;border-radius:14px;padding:18px 20px;margin-bottom:22px;font-size:15px;line-height:1.55}
-.fmsg.ok{display:block;background:rgba(120,220,170,.12);border:1px solid rgba(120,220,170,.45);color:#CFF3E1}
-.fmsg.bad{display:block;background:rgba(255,140,140,.10);border:1px solid rgba(255,140,140,.4);color:#FFD6D6}
-.fmsg a{color:#fff;text-decoration:underline}
-@media(max-width:1080px){.cgrid{grid-template-columns:1fr;gap:44px}}
-@media(max-width:640px){
-  .chero{padding:130px 20px 10px}
-  .fwrap{padding:30px 22px;border-radius:18px}
-  .frow{grid-template-columns:1fr;gap:0}
+.org-ceo-row{position:relative;z-index:1;display:flex;justify-content:center;margin-bottom:26px}
+
+.org-tier{position:relative;z-index:1;margin-bottom:8px}
+.org-tier-label{display:flex;align-items:center;gap:12px;margin:0 0 24px;font-family:var(--display);
+  font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2)}
+.org-tier-label i{width:8px;height:8px;border-radius:50%;flex:none}
+.org-tier-label b{color:var(--ink);font-weight:700}
+.org-row{display:grid;gap:18px;margin-bottom:70px}
+.org-row[data-cols="5"]{grid-template-columns:repeat(5,1fr)}
+.org-row[data-cols="4"]{grid-template-columns:repeat(4,1fr)}
+
+/* ---------- Node card ---------- */
+.org-node{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--panel-solid);
+  padding:22px 16px 20px;text-align:center;cursor:pointer;user-select:none;
+  transition:border-color .35s,background .35s,transform .4s var(--ease),box-shadow .35s}
+.org-node:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.28)}
+.org-node.hi{border-color:var(--line-strong);background:var(--panel-hover)}
+.org-node.dim{opacity:.38}
+.org-avatar{width:60px;height:60px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;
+  justify-content:center;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.01em;
+  border:1.5px solid;background:rgba(255,255,255,.04);transition:transform .4s var(--ease)}
+.org-node:hover .org-avatar{transform:scale(1.06)}
+.org-node b{display:block;font-family:var(--display);font-weight:600;font-size:14.5px;letter-spacing:-.008em;
+  color:var(--ink);margin-bottom:4px;line-height:1.28}
+.org-node span{display:block;color:var(--muted);font-size:12px;line-height:1.4}
+
+.org-ceo{width:260px;padding:28px 20px 26px}
+.org-ceo .org-avatar{width:76px;height:76px;font-size:19px;margin-bottom:16px}
+.org-ceo b{font-size:18px}
+.org-ceo span{font-size:13px}
+
+/* tier accent colours (subtle, not the loud PPT palette) */
+.t1 .org-avatar{border-color:#8FB2FF;color:#DCE7FF}
+.t2 .org-avatar{border-color:#7BE0C4;color:#DFFBF1}
+.t3 .org-avatar{border-color:#C6AEFF;color:#EFE6FF}
+.t4 .org-avatar{border-color:#FFC98F;color:#FFEBD6}
+.tc .org-avatar{border-color:#fff;color:#fff;background:rgba(255,255,255,.08)}
+.dot-ceo{background:#fff}.dot-t1{background:#8FB2FF}.dot-t2{background:#7BE0C4}
+.dot-t3{background:#C6AEFF}.dot-t4{background:#FFC98F}
+
+.org-note{max-width:1280px;margin:8px auto 0;padding-top:20px;border-top:1px solid var(--line);
+  color:var(--muted-2);font-size:13.5px;font-style:italic}
+
+@media(max-width:1080px){
+  .org-row[data-cols="5"]{grid-template-columns:repeat(3,1fr)}
+  .org-row[data-cols="4"]{grid-template-columns:repeat(2,1fr)}
 }
+@media(max-width:640px){
+  .org-row[data-cols="5"],.org-row[data-cols="4"]{grid-template-columns:repeat(2,1fr)}
+  .org-node{padding:18px 12px 16px}
+  .org-tree{margin-top:50px}
+  .org-svg{display:none}
+}
+
+/* ---------- Hub belt ---------- */
+#hubs{padding-top:0}
+.hub-belt{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:56px}
+.hub{border:1px solid var(--line);border-radius:16px;padding:24px 18px;background:rgba(255,255,255,.03);
+  transition:border-color .35s,background .35s,transform .4s var(--ease)}
+.hub:hover{border-color:var(--line-strong);background:rgba(255,255,255,.06);transform:translateY(-3px)}
+.hub .pin{width:8px;height:8px;border-radius:50%;background:#FFC98F;margin-bottom:14px}
+.hub h4{font-family:var(--display);font-weight:600;font-size:15.5px;margin-bottom:6px;letter-spacing:-.01em}
+.hub p{color:var(--muted);font-size:12.5px}
+@media(max-width:1080px){.hub-belt{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.hub-belt{grid-template-columns:1fr 1fr}}
+
+/* ---------- Detail drawer ---------- */
+.org-detail{position:fixed;right:20px;bottom:20px;left:20px;max-width:420px;margin-left:auto;
+  background:var(--panel-hover);border:1px solid var(--line-strong);border-radius:20px;
+  padding:22px 24px;box-shadow:0 30px 70px rgba(0,0,0,.5);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  transform:translateY(140%);opacity:0;transition:transform .5s var(--ease),opacity .5s;z-index:50}
+.org-detail.show{transform:translateY(0);opacity:1}
+.org-detail .row{display:flex;gap:16px;align-items:center}
+.org-detail .org-avatar{margin:0;flex:none}
+.org-detail b{font-size:16px}
+.org-detail span{font-size:13px}
+.org-detail .close{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--muted-2);
+  font-size:18px;cursor:pointer;line-height:1;padding:4px}
+.org-detail .close:hover{color:var(--ink)}
+@media(max-width:520px){.org-detail{left:14px;right:14px;padding:18px 20px}}
 </style>
 </head>
 <body>
@@ -81,122 +126,97 @@
     <a href="/adobe">Adobe</a>
     <a href="/case-studies">Work</a>
     <a href="/team">Team</a>
-    <a href="/#products">Products</a>
     <a href="/blog">Blog</a>
     <a href="/#about">About</a>
     <a class="btn" href="/contact">Start a project <span class="arr">&rarr;</span></a>
   </div>
 </nav>
 
-<header class="chero">
+<header class="thero">
   <div class="wrap">
-    <h1>Let's talk about <em>what's next.</em></h1>
-    <p class="sub">Whether you're standing up a new platform, cleaning up an existing estate, or trying to get more out of what you already licensed &mdash; start here.</p>
+    <div class="sec-tag">Team &amp; Organization</div>
+    <h1>The people running <em>the delivery.</em></h1>
+    <p class="sub">Leadership, regional delivery management, product teams and the global hubs they operate from &mdash; the structure behind every Aventis engagement. Tap a card to see more, or trace a line back to the top.</p>
+    <div class="legend">
+      <span><i style="background:#8FB2FF"></i>Global Leadership</span>
+      <span><i style="background:#7BE0C4"></i>Regional Leadership</span>
+      <span><i style="background:#C6AEFF"></i>Delivery Teams</span>
+      <span><i style="background:#FFC98F"></i>Global Delivery Hubs</span>
+    </div>
   </div>
 </header>
 
-<section style="padding-top:56px">
+<section id="orgtree">
   <div class="wrap">
-    <div class="cgrid">
+    <div class="org-tree" id="org-tree">
+      <svg class="org-svg" id="org-svg"></svg>
 
-      <div class="cintro rv">
-        <h2>Tell us where you are today.</h2>
-        <p>We'll map the route from there. Every enquiry goes to a senior practitioner, not a queue &mdash; you'll hear back within one business day.</p>
-
-        <div class="cpoints">
-          <div class="cpt">
-            <b>A conversation, not a pitch deck</b>
-            <span>First call is about your estate, your constraints and what's actually blocking you.</span>
-          </div>
-          <div class="cpt">
-            <b>People who'll do the work</b>
-            <span>The architects and leads you meet early are the ones who stay on the engagement.</span>
-          </div>
-          <div class="cpt">
-            <b>An honest scope</b>
-            <span>If it's not a fit, or the timeline isn't realistic, we'll say so before anyone signs anything.</span>
-          </div>
-        </div>
-
-        <div class="cmeta">
-          <span class="lbl">Registered office</span>
-          <p>Aventis Technologies Pte. Ltd.<br>2 Venture Drive, #13-26<br>Vision Exchange, Singapore 608526</p>
-
-          <span class="lbl">Email</span>
-          <p><a href="mailto:hello@aventistechnology.com">hello@aventistechnology.com</a></p>
-
-          <span class="lbl">Delivery presence</span>
-          <p>Singapore &middot; Jakarta &middot; Manila &middot; Bangalore &middot; Pune &middot; Tirupati &middot; Toronto</p>
+      <div class="org-ceo-row">
+        <div class="org-node tc org-ceo" data-id="ceo" data-name="Vamsi Reddy" data-role="CEO &amp; Founder">
+          <!-- Photo placeholder: replace this div with <img src="images/team/vamsi-reddy.jpg" alt="Vamsi Reddy"> when available -->
+          <div class="org-avatar">VR</div>
+          <b>Vamsi Reddy</b>
+          <span>CEO &amp; Founder</span>
         </div>
       </div>
 
-      <div class="rv">
-        <div class="fwrap">
-          <div class="fmsg" id="fmsg" role="status" aria-live="polite"></div>
+      <div class="org-tier" data-tier="1">
+        <div class="org-tier-label"><i class="dot-t1"></i><b>Global Leadership</b></div>
+        <div class="org-row" data-cols="5">
+          <div class="org-node t1" data-id="t1-1" data-parent="ceo" data-name="Praveen Reddy" data-role="CX &amp; Martech Practice Head &mdash; Global">
+            <div class="org-avatar">PR</div><b>Praveen Reddy</b><span>CX &amp; Martech Practice Head &mdash; Global</span>
+          </div>
+          <div class="org-node t1" data-id="t1-2" data-parent="ceo" data-name="Tarun Pannuru" data-role="CX &amp; Martech Practice Head &mdash; SEA">
+            <div class="org-avatar">TP</div><b>Tarun Pannuru</b><span>CX &amp; Martech Practice Head &mdash; SEA</span>
+          </div>
+          <div class="org-node t1" data-id="t1-3" data-parent="ceo" data-name="Ginu Sudhakaran" data-role="Experience Management Practice Head &mdash; Global">
+            <div class="org-avatar">GS</div><b>Ginu Sudhakaran</b><span>Experience Management Practice Head &mdash; Global</span>
+          </div>
+          <div class="org-node t1" data-id="t1-4" data-parent="ceo" data-name="Mansoor Alam" data-role="Data &amp; AI Practice Head">
+            <div class="org-avatar">MA</div><b>Mansoor Alam</b><span>Data &amp; AI Practice Head</span>
+          </div>
+          <div class="org-node t1" data-id="t1-5" data-parent="ceo" data-name="Rohan Mansukhe" data-role="Head of Engineering">
+            <div class="org-avatar">RM</div><b>Rohan Mansukhe</b><span>Head of Engineering</span>
+          </div>
+        </div>
+      </div>
 
-          <form id="contact-form" novalidate>
-            <div class="frow">
-              <div class="fld">
-                <label for="cf-name">Your name</label>
-                <input type="text" id="cf-name" name="name" placeholder="Jane Tan" autocomplete="name">
-                <span class="err">Please enter your name.</span>
-              </div>
-              <div class="fld">
-                <label for="cf-company">Company</label>
-                <input type="text" id="cf-company" name="company" placeholder="Company name" autocomplete="organization">
-                <span class="err">Please enter your company.</span>
-              </div>
-            </div>
+      <div class="org-tier" data-tier="2">
+        <div class="org-tier-label"><i class="dot-t2"></i><b>Regional Leadership</b></div>
+        <div class="org-row" data-cols="5">
+          <div class="org-node t2" data-id="t2-1" data-parent="t1" data-name="Marionne Armand" data-role="Program Director &mdash; Manila">
+            <div class="org-avatar">MA</div><b>Marionne Armand</b><span>Program Director &mdash; Manila</span>
+          </div>
+          <div class="org-node t2" data-id="t2-2" data-parent="t1" data-name="Soumyadip Mitra" data-role="Client Delivery Manager &mdash; Jakarta">
+            <div class="org-avatar">SM</div><b>Soumyadip Mitra</b><span>Client Delivery Manager &mdash; Jakarta</span>
+          </div>
+          <div class="org-node t2" data-id="t2-3" data-parent="t1" data-name="Fendy Mahatma" data-role="Enterprise Architect &mdash; Surabaya">
+            <div class="org-avatar">FM</div><b>Fendy Mahatma</b><span>Enterprise Architect &mdash; Surabaya</span>
+          </div>
+          <div class="org-node t2" data-id="t2-4" data-parent="t1" data-name="Kurt Fatalla" data-role="Client Delivery Manager &mdash; Manila">
+            <div class="org-avatar">KF</div><b>Kurt Fatalla</b><span>Client Delivery Manager &mdash; Manila</span>
+          </div>
+          <div class="org-node t2" data-id="t2-5" data-parent="t1" data-name="Pushpa Ojha" data-role="Service Delivery Manager &mdash; Manila">
+            <div class="org-avatar">PO</div><b>Pushpa Ojha</b><span>Service Delivery Manager &mdash; Manila</span>
+          </div>
+        </div>
+      </div>
 
-            <div class="frow">
-              <div class="fld">
-                <label for="cf-email">Work email</label>
-                <input type="email" id="cf-email" name="email" placeholder="jane@company.com" autocomplete="email">
-                <span class="err">Please enter a valid email address.</span>
-              </div>
-              <div class="fld">
-                <label for="cf-phone">Phone <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
-                <input type="tel" id="cf-phone" name="phone" placeholder="+65 0000 0000" autocomplete="tel">
-              </div>
-            </div>
-
-            <div class="fld">
-              <label for="cf-topic">What can we help with?</label>
-              <select id="cf-topic" name="topic">
-                <option value="">Select a topic</option>
-                <option>Adobe Experience Cloud / AEM</option>
-                <option>Customer data &amp; personalisation</option>
-                <option>Prezio &mdash; dynamic pricing</option>
-                <option>CX Pulse &mdash; tNPS &amp; feedback</option>
-                <option>Digital wallets &amp; payments</option>
-                <option>Mobile app development</option>
-                <option>Data privacy &amp; compliance</option>
-                <option>Something else</option>
-              </select>
-              <span class="err">Please choose a topic.</span>
-            </div>
-
-            <div class="fld">
-              <label for="cf-message">A bit of context</label>
-              <textarea id="cf-message" name="message" placeholder="What are you trying to achieve, and what's in the way right now?"></textarea>
-              <span class="err">Please tell us a little about your project.</span>
-            </div>
-
-            <div class="consent">
-              <input type="checkbox" id="cf-consent" name="consent">
-              <label for="cf-consent">I agree that Aventis Technology may store and process the details above in order to respond to this enquiry, as described in the <a href="/privacy">Privacy Policy</a>.</label>
-            </div>
-            <div class="fld" style="margin-top:-16px"><span class="err" id="consent-err">Please accept the privacy notice to continue.</span></div>
-
-            <!-- honeypot: hidden from humans, catches bots -->
-            <div style="position:absolute;left:-9999px" aria-hidden="true">
-              <label for="cf-website">Do not fill this in</label>
-              <input type="text" id="cf-website" name="_gotcha" tabindex="-1" autocomplete="off">
-            </div>
-
-            <button type="submit" class="btn fsubmit" id="cf-submit">Send enquiry <span class="arr">&rarr;</span></button>
-            <p class="fnote">We'll only use these details to reply to you. No newsletters, no lists.</p>
-          </form>
+      <div class="org-tier" data-tier="3">
+        <div class="org-tier-label"><i class="dot-t3"></i><b>Delivery Teams</b></div>
+        <div class="org-row" data-cols="4">
+          <div class="org-node t3" data-id="t3-1" data-parent="t2" data-name="Nilesh Batra" data-role="Technical Product Manager &mdash; Prezio">
+            <div class="org-avatar">NB</div><b>Nilesh Batra</b><span>Technical Product Manager &mdash; Prezio</span>
+          </div>
+          <div class="org-node t3" data-id="t3-2" data-parent="t2" data-name="Uzair Ghalib" data-role="Commercial Product Manager &mdash; Prezio">
+            <div class="org-avatar">UG</div><b>Uzair Ghalib</b><span>Commercial Product Manager &mdash; Prezio</span>
+          </div>
+          <div class="org-node t3" data-id="t3-3" data-parent="t2" data-name="Madhurima Jayam" data-role="Head of Finance">
+            <div class="org-avatar">MJ</div><b>Madhurima Jayam</b><span>Head of Finance</span>
+          </div>
+          <div class="org-node t3" data-id="t3-4" data-parent="t2" data-name="Matloob Faiyaz Warsi" data-role="Enterprise Architect">
+            <div class="org-avatar">MW</div><b>Matloob Faiyaz Warsi</b><span>Enterprise Architect</span>
+          </div>
         </div>
       </div>
 
@@ -204,133 +224,183 @@
   </div>
 </section>
 
+<section id="hubs">
+  <div class="wrap">
+    <div class="rv">
+      <div class="org-tier-label"><i class="dot-t4"></i><b>Global Delivery Hubs</b></div>
+      <h2 style="max-width:20ch">Five hubs. <em style="font-style:normal;color:transparent;-webkit-text-stroke:1.4px var(--blue)">One delivery standard.</em></h2>
+    </div>
+    <div class="hub-belt rv">
+      <div class="hub"><div class="pin"></div><h4>Pune Delivery Center</h4><p>Lead: Ginu Sudhakaran</p></div>
+      <div class="hub"><div class="pin"></div><h4>Bangalore Delivery Center</h4><p>Lead: Koushik Banerjee</p></div>
+      <div class="hub"><div class="pin"></div><h4>Tirupati Delivery Center</h4><p>Lead: Praveen Reddy</p></div>
+      <div class="hub"><div class="pin"></div><h4>Islamabad Delivery Center</h4><p>Lead: Mansoor Alam</p></div>
+      <div class="hub"><div class="pin"></div><h4>Surabaya Delivery Center</h4><p>Lead: Fendy Mahatma</p></div>
+    </div>
+    <p class="org-note">Ginu, Mansoor, Praveen and Fendy hold dual leadership responsibilities across regional / practice roles and delivery hub leadership.</p>
+  </div>
+</section>
+
+<section class="pcta">
+  <div class="wrap">
+    <h2>Want to work <em>with this team?</em></h2>
+    <p class="lede">Whether you're hiring us or hoping to join us.</p>
+    <div class="cta-btns">
+      <a class="btn ghost" href="/careers">See open roles</a>
+      <a class="btn" href="/contact">Start the conversation <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="org-detail" id="org-detail">
+  <button class="close" id="org-detail-close" aria-label="Close">&#10005;</button>
+  <div class="row">
+    <div class="org-avatar" id="od-avatar">VR</div>
+    <div>
+      <b id="od-name">&nbsp;</b>
+      <span id="od-role">&nbsp;</span>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   "use strict";
-  /* ------------------------------------------------------------------
-     FORM ENDPOINT
-     Set this to your Formspree endpoint, e.g.
-       var ENDPOINT = "https://formspree.io/f/abcdwxyz";
-     Leave empty and the form falls back to opening the visitor's mail
-     client with the details pre-filled, so it never silently fails.
-     ------------------------------------------------------------------ */
-  var ENDPOINT = "";
-  var FALLBACK_EMAIL = "hello@aventistechnology.com";
+  var wrap = document.getElementById('org-tree');
+  var svg = document.getElementById('org-svg');
+  if(!wrap || !svg) return;
 
-  var form = document.getElementById('contact-form');
-  if(!form) return;
-  var msg = document.getElementById('fmsg');
-  var btn = document.getElementById('cf-submit');
+  var NS = 'http://www.w3.org/2000/svg';
+  var ceo, tiers;
 
-  function fldOf(el){ return el.closest('.fld'); }
-  function setInvalid(el, bad){
-    var f = fldOf(el); if(!f) return;
-    f.classList.toggle('invalid', !!bad);
-  }
-  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-
-  function validate(){
-    var ok = true;
-    var name = document.getElementById('cf-name');
-    var company = document.getElementById('cf-company');
-    var email = document.getElementById('cf-email');
-    var topic = document.getElementById('cf-topic');
-    var message = document.getElementById('cf-message');
-    var consent = document.getElementById('cf-consent');
-
-    [[name, name.value.trim().length > 1],
-     [company, company.value.trim().length > 1],
-     [email, validEmail(email.value.trim())],
-     [topic, topic.value !== ''],
-     [message, message.value.trim().length > 9]].forEach(function(pair){
-       var good = pair[1];
-       setInvalid(pair[0], !good);
-       if(!good) ok = false;
-     });
-
-    var cErr = document.getElementById('consent-err');
-    if(!consent.checked){ cErr.style.display = 'block'; ok = false; }
-    else { cErr.style.display = 'none'; }
-
-    return ok;
+  function centerOf(el, containerRect){
+    var r = el.getBoundingClientRect();
+    return { x: r.left + r.width/2 - containerRect.left, yTop: r.top - containerRect.top, yBot: r.bottom - containerRect.top };
   }
 
-  ['cf-name','cf-company','cf-email','cf-topic','cf-message'].forEach(function(id){
-    var el = document.getElementById(id);
-    el.addEventListener('input', function(){ setInvalid(el, false); });
-    el.addEventListener('change', function(){ setInvalid(el, false); });
-  });
-  document.getElementById('cf-consent').addEventListener('change', function(){
-    if(this.checked) document.getElementById('consent-err').style.display = 'none';
-  });
+  function clearSvg(){ while(svg.firstChild) svg.removeChild(svg.firstChild); }
 
-  function show(kind, html){
-    msg.className = 'fmsg ' + kind;
-    msg.innerHTML = html;
-    msg.scrollIntoView({behavior:'smooth', block:'center'});
+  function path(d, id){
+    var p = document.createElementNS(NS,'path');
+    p.setAttribute('d', d);
+    if(id) p.setAttribute('data-edge', id);
+    svg.appendChild(p);
+    return p;
   }
 
-  function mailtoFallback(data){
-    var body = 'Name: ' + data.name + '\n'
-             + 'Company: ' + data.company + '\n'
-             + 'Email: ' + data.email + '\n'
-             + 'Phone: ' + (data.phone || '-') + '\n'
-             + 'Topic: ' + data.topic + '\n\n'
-             + data.message;
-    var href = 'mailto:' + FALLBACK_EMAIL
-             + '?subject=' + encodeURIComponent('Website enquiry - ' + data.company)
-             + '&body=' + encodeURIComponent(body);
-    window.location.href = href;
-    show('ok', "We've opened your email app with the details filled in &mdash; just hit send. "
-             + "If nothing opened, email us directly at <a href='mailto:" + FALLBACK_EMAIL + "'>" + FALLBACK_EMAIL + "</a>.");
+  function build(){
+    if(window.innerWidth <= 640) return; // svg hidden on mobile, skip layout work
+    clearSvg();
+    var cRect = wrap.getBoundingClientRect();
+    ceo = wrap.querySelector('.org-ceo');
+    var ceoC = centerOf(ceo, cRect);
+
+    var tierEls = wrap.querySelectorAll('.org-tier');
+    var prevBusY = ceoC.yBot;
+    var prevTrunkX = ceoC.x;
+
+    tierEls.forEach(function(tierEl){
+      var nodes = tierEl.querySelectorAll('.org-node');
+      if(!nodes.length) return;
+      var first = centerOf(nodes[0], cRect);
+      var busY = first.yTop - 26; // horizontal distribution line sits above the row
+
+      // trunk from previous level down to this tier's bus
+      path('M '+prevTrunkX+' '+prevBusY+' L '+prevTrunkX+' '+busY, 'trunk-'+tierEl.dataset.tier);
+
+      var xs = [];
+      nodes.forEach(function(n){
+        var c = centerOf(n, cRect);
+        xs.push(c.x);
+      });
+      var minX = Math.min.apply(null, xs), maxX = Math.max.apply(null, xs);
+
+      // bus line spanning the row, passing through the trunk x
+      path('M '+minX+' '+busY+' L '+maxX+' '+busY, 'bus-'+tierEl.dataset.tier);
+
+      // drops to each node, tagged with that node's id for hover targeting
+      nodes.forEach(function(n){
+        var c = centerOf(n, cRect);
+        path('M '+c.x+' '+busY+' L '+c.x+' '+c.yTop, 'drop-'+n.dataset.id);
+        var dot = document.createElementNS(NS,'circle');
+        dot.setAttribute('cx', c.x); dot.setAttribute('cy', busY); dot.setAttribute('r', 3);
+        dot.setAttribute('data-node', n.dataset.id);
+        svg.appendChild(dot);
+      });
+
+      prevBusY = Math.max.apply(null, Array.prototype.map.call(nodes, function(n){ return centerOf(n,cRect).yBot; }));
+      prevTrunkX = prevTrunkX; // trunk stays centred under CEO for a clean spine
+    });
+
+    svg.setAttribute('width', cRect.width);
+    svg.setAttribute('height', wrap.scrollHeight);
   }
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    msg.className = 'fmsg';
-    if(!validate()){
-      var bad = form.querySelector('.fld.invalid input, .fld.invalid select, .fld.invalid textarea');
-      if(bad) bad.focus();
+  function highlight(nodeId){
+    var all = svg.querySelectorAll('path');
+    if(!nodeId){
+      all.forEach(function(p){ p.classList.remove('hi'); p.classList.remove('dim'); });
       return;
     }
-
-    // honeypot tripped -> pretend success, drop silently
-    if(document.getElementById('cf-website').value){
-      show('ok', 'Thanks &mdash; your enquiry is on its way.');
-      form.reset();
-      return;
+    all.forEach(function(p){ p.classList.add('dim'); p.classList.remove('hi'); });
+    var drop = svg.querySelector('[data-edge="drop-'+nodeId+'"]');
+    if(drop){ drop.classList.remove('dim'); drop.classList.add('hi'); }
+    var dot = svg.querySelector('circle[data-node="'+nodeId+'"]');
+    if(dot){ dot.classList.add('hi'); }
+    // also light the tier's bus + trunk chain up to CEO
+    var tier = wrap.querySelector('[data-id="'+nodeId+'"]').closest('.org-tier');
+    if(tier){
+      var t = tier.dataset.tier;
+      var bus = svg.querySelector('[data-edge="bus-'+t+'"]');
+      var trunk = svg.querySelector('[data-edge="trunk-'+t+'"]');
+      [bus, trunk].forEach(function(p){ if(p){ p.classList.remove('dim'); p.classList.add('hi'); } });
     }
+  }
 
-    var data = {
-      name: document.getElementById('cf-name').value.trim(),
-      company: document.getElementById('cf-company').value.trim(),
-      email: document.getElementById('cf-email').value.trim(),
-      phone: document.getElementById('cf-phone').value.trim(),
-      topic: document.getElementById('cf-topic').value,
-      message: document.getElementById('cf-message').value.trim()
-    };
+  // ---- detail drawer ----
+  var detail = document.getElementById('org-detail');
+  var odAvatar = document.getElementById('od-avatar');
+  var odName = document.getElementById('od-name');
+  var odRole = document.getElementById('od-role');
+  var active = null;
 
-    if(!ENDPOINT){ mailtoFallback(data); return; }
+  function openDetail(node){
+    var av = node.querySelector('.org-avatar');
+    odAvatar.textContent = av ? av.textContent : '';
+    odAvatar.className = 'org-avatar ' + (node.className.match(/\bt[1-4c]\b/)||[''])[0];
+    odName.textContent = node.dataset.name || '';
+    odRole.innerHTML = node.dataset.role || '';
+    detail.classList.add('show');
+  }
+  function closeDetail(){
+    detail.classList.remove('show');
+    if(active){ active.classList.remove('hi'); active = null; }
+    highlight(null);
+    wrap.querySelectorAll('.org-node').forEach(function(n){ n.classList.remove('dim'); });
+  }
+  document.getElementById('org-detail-close').addEventListener('click', closeDetail);
 
-    btn.disabled = true;
-    btn.innerHTML = 'Sending&hellip;';
-
-    fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    }).then(function(res){
-      if(!res.ok) throw new Error('Bad status ' + res.status);
-      form.reset();
-      show('ok', '<b>Thanks &mdash; we\u2019ve got it.</b><br>A senior practitioner will get back to you within one business day.');
-    }).catch(function(){
-      show('bad', "Something went wrong sending that. Please email us directly at "
-                + "<a href='mailto:" + FALLBACK_EMAIL + "'>" + FALLBACK_EMAIL + "</a> and we'll pick it up straight away.");
-    }).finally(function(){
-      btn.disabled = false;
-      btn.innerHTML = 'Send enquiry <span class="arr">&rarr;</span>';
+  wrap.querySelectorAll('.org-node').forEach(function(n){
+    n.addEventListener('click', function(){
+      if(active === n){ closeDetail(); return; }
+      if(active) active.classList.remove('hi');
+      active = n;
+      n.classList.add('hi');
+      wrap.querySelectorAll('.org-node').forEach(function(other){
+        other.classList.toggle('dim', other !== n);
+      });
+      highlight(n.dataset.id);
+      openDetail(n);
     });
   });
+
+  build();
+  var resizeT;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeT);
+    resizeT = setTimeout(build, 180);
+  });
+  window.addEventListener('load', build);
 })();
 </script>
 
@@ -358,7 +428,7 @@
       <a href="/#platforms">Platforms</a>
       <a href="/#industries">Industries</a>
       <a href="/#proof">Proof</a>
-      <a href="/team">Leadership</a>
+      <a href="/#team">Leadership</a>
       <a href="/#faq">FAQ</a>
     </div>
     <div>

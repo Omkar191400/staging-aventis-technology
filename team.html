@@ -3,52 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy | Aventis Technology</title>
-<meta name="description" content="How Aventis Technologies Pte. Ltd. collects, uses, stores and protects personal data across our website and services, including cookies and your data rights.">
-<link rel="canonical" href="https://www.aventistechnology.com/privacy">
+<title>Team &amp; Global Delivery Organization | Aventis Technology</title>
+<meta name="description" content="Meet the leadership, regional delivery managers, product teams and global delivery hubs behind Aventis Technology's Adobe, data and engineering programmes across Asia-Pacific.">
+<link rel="canonical" href="https://www.aventistechnology.com/team">
 <meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="%233B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="white"/></svg>'>
 <style>
-.lhero{padding:150px 48px 50px;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-soft) 100%);border-bottom:1px solid var(--line)}
-.lhero .wrap{max-width:760px}
-.crumb{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2)}
-.crumb a{color:var(--muted-2);text-decoration:none}
-.crumb a:hover{color:var(--blue)}
-.lhero h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.15;letter-spacing:-.02em;margin-top:18px;max-width:20ch;color:var(--ink)}
-.lhero .meta{margin-top:16px;color:var(--muted);font-size:14.5px}
-.lhero .meta b{color:var(--ink);font-weight:600}
+/* ---------- Hero ---------- */
+.thero{padding:170px 48px 30px}
+.thero h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,6vw,74px);line-height:1.03;
+          letter-spacing:-.04em;max-width:16ch}
+.thero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--blue)}
+.thero .sub{color:var(--muted);font-size:clamp(16px,1.5vw,20px);max-width:58ch;margin-top:26px}
+.tstats{display:flex;flex-wrap:wrap;gap:44px;margin-top:44px;padding-top:34px;border-top:1px solid var(--line)}
+.tstats div b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(26px,3vw,38px);
+  letter-spacing:-.03em;line-height:1}
+.tstats div span{display:block;color:var(--muted-2);font-size:13px;margin-top:8px;letter-spacing:.02em}
 
-.ldoc{padding:56px 48px 100px;background:#FFFFFF;
-  --ink:#0B1730;--muted:#54607A;--muted-2:#8592AD;
-  --line:rgba(11,23,48,.12);--line-strong:rgba(11,23,48,.22);
-  --blue:#3355E0;color:var(--ink);
+/* ---------- Section headers ---------- */
+.tsec{padding-top:96px}
+.tsec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;
+  padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:56px}
+.tsec-head .l .tag{display:flex;align-items:center;gap:11px;font-family:var(--display);font-size:11px;
+  font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);margin-bottom:14px}
+.tsec-head .l .tag i{width:8px;height:8px;border-radius:50%;flex:none}
+.tsec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.2vw,42px);
+  letter-spacing:-.03em;max-width:20ch}
+.tsec-head .r{color:var(--muted);font-size:15.5px;max-width:38ch;padding-bottom:6px}
+@media(max-width:900px){.tsec-head{flex-direction:column;align-items:flex-start;gap:16px}.tsec-head .r{max-width:none}}
+
+/* ---------- People grid ---------- */
+.people{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+.people.four{grid-template-columns:repeat(4,1fr)}
+
+/* staggered rhythm — every 2nd card drops slightly */
+.people .person:nth-child(even){transform:translateY(26px)}
+.people.is-hovering .person:not(:hover){opacity:.42;filter:saturate(.5)}
+
+.person{position:relative;display:block;text-decoration:none;color:inherit;
+  transition:opacity .45s var(--ease),filter .45s var(--ease),transform .55s var(--ease)}
+.person:hover{transform:translateY(-6px)}
+.people .person:nth-child(even):hover{transform:translateY(20px)}
+
+.p-photo{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;
+  border:1px solid var(--line);background:var(--navy-2)}
+.p-photo img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(.35) contrast(1.02);transition:transform .8s var(--ease),filter .6s}
+.person:hover .p-photo img{transform:scale(1.06);filter:grayscale(0)}
+.p-photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,26,82,0) 38%,rgba(8,18,60,.92) 100%);
+  opacity:.85;transition:opacity .5s}
+.person:hover .p-photo::after{opacity:1}
+
+/* accent rail that grows on hover */
+.p-rail{position:absolute;left:18px;bottom:18px;width:26px;height:2px;background:var(--blue);
+  border-radius:2px;transition:width .5s var(--ease),opacity .35s;z-index:2}
+.person:hover .p-rail{width:56px;opacity:0}
+
+/* role reveal, sits inside the photo, slides up on hover */
+.p-role{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;
+  color:var(--blue-soft);font-size:12.5px;line-height:1.45;
+  opacity:0;transform:translateY(10px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.person:hover .p-role{opacity:1;transform:translateY(0)}
+
+.p-meta{padding:16px 2px 0}
+.p-meta b{display:block;font-family:var(--display);font-weight:600;font-size:16px;
+  letter-spacing:-.015em;color:var(--ink);line-height:1.25}
+.p-meta span{display:block;color:var(--muted);font-size:13px;margin-top:5px;line-height:1.45}
+
+/* dual-role badge */
+.p-dual{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--display);font-size:9.5px;
+  font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+  background:rgba(9,22,72,.72);border:1px solid var(--line-strong);border-radius:100px;padding:5px 10px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+
+/* CEO feature card */
+.founder{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:center;
+  border:1px solid var(--line-strong);border-radius:28px;background:var(--panel-solid);
+  padding:40px;margin-top:20px}
+.founder .p-photo{aspect-ratio:1/1;border-radius:22px}
+.founder .p-photo img{filter:grayscale(.2)}
+.founder .fq{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.2vw,28px);
+  line-height:1.35;letter-spacing:-.02em;max-width:26ch}
+.founder .fname{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.founder .fname b{display:block;font-family:var(--display);font-weight:600;font-size:18px}
+.founder .fname span{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+@media(max-width:900px){.founder{grid-template-columns:1fr;gap:28px;padding:26px;border-radius:20px}}
+
+/* ---------- Hubs ---------- */
+.hub-belt{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.hub{position:relative;border:1px solid var(--line);border-radius:18px;padding:26px 20px 24px;
+  background:rgba(255,255,255,.03);overflow:hidden;
+  transition:border-color .4s,background .4s,transform .5s var(--ease)}
+.hub::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:#FFC98F;
+  transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease)}
+.hub:hover::before{transform:scaleY(1)}
+.hub:hover{border-color:var(--line-strong);background:rgba(255,255,255,.06);transform:translateY(-4px)}
+.hub h4{font-family:var(--display);font-weight:600;font-size:15.5px;margin-bottom:7px;letter-spacing:-.01em}
+.hub p{color:var(--muted);font-size:12.5px}
+.hub .city{font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:#FFC98F;margin-bottom:12px;display:block}
+
+.tnote{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);
+  color:var(--muted-2);font-size:13.5px;font-style:italic;max-width:80ch}
+
+@media(max-width:1180px){
+  .people{grid-template-columns:repeat(3,1fr)}
+  .people.four{grid-template-columns:repeat(3,1fr)}
+  .hub-belt{grid-template-columns:repeat(3,1fr)}
 }
-.ldoc .wrap{max-width:760px}
-.ltoc{border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-bottom:48px;background:rgba(11,23,48,.03)}
-.ltoc h2{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-2);margin:0 0 14px}
-.ltoc ol{columns:2;column-gap:28px;list-style:none}
-.ltoc li{break-inside:avoid;margin-bottom:9px}
-.ltoc a{color:var(--ink);text-decoration:none;font-size:14.5px;opacity:.82;transition:opacity .2s,color .2s}
-.ltoc a:hover{opacity:1;color:var(--blue)}
-@media(max-width:640px){.ltoc ol{columns:1}}
-
-.lsec{margin-bottom:44px;padding:0;scroll-margin-top:100px}
-.lsec h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.01em;color:var(--ink);padding-bottom:8px;margin-bottom:14px;border-bottom:1px solid var(--line)}
-.lsec p{font-size:15.5px;line-height:1.68;color:var(--muted);margin-bottom:12px}
-.lsec strong{color:var(--ink)}
-.lsec a{color:var(--blue)}
-.lsec ul{list-style:none;margin:6px 0 16px}
-.lsec ul li{position:relative;padding-left:20px;font-size:15.5px;line-height:1.68;color:var(--muted);margin-bottom:8px}
-.lsec ul li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--blue)}
-.ltable{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:14.5px}
-.ltable th,.ltable td{text-align:left;padding:12px 14px;border:1px solid var(--line);vertical-align:top;color:var(--muted)}
-.ltable th{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:rgba(11,23,48,.04)}
-.lback{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:36px;border-top:1px solid var(--line)}
-.lback span{color:var(--muted);font-size:14px}
-@media(max-width:640px){.ldoc{padding:40px 20px 70px}.ltable{font-size:13.5px}.ltable th,.ltable td{padding:9px 10px}}
+@media(max-width:760px){
+  .thero{padding:130px 20px 20px}
+  .tsec{padding-top:70px}
+  .people,.people.four{grid-template-columns:1fr 1fr;gap:14px}
+  .people .person:nth-child(even){transform:none}
+  .people .person:nth-child(even):hover{transform:translateY(-6px)}
+  .people.is-hovering .person:not(:hover){opacity:1;filter:none}
+  .p-role{opacity:1;transform:none;position:static;margin-top:6px;left:auto;right:auto;bottom:auto;
+    color:var(--muted);font-size:12px}
+  .p-photo::after{opacity:.7}
+  .p-rail{display:none}
+  .hub-belt{grid-template-columns:1fr 1fr}
+  .tstats{gap:28px}
+}
 </style>
 </head>
 <body>
@@ -61,196 +141,265 @@
     <a href="/adobe">Adobe</a>
     <a href="/case-studies">Work</a>
     <a href="/team">Team</a>
-    <a href="/#products">Products</a>
     <a href="/blog">Blog</a>
     <a href="/#about">About</a>
     <a class="btn" href="/contact">Start a project <span class="arr">&rarr;</span></a>
   </div>
 </nav>
 
-<header class="lhero">
+<header class="thero">
   <div class="wrap">
-    <div class="crumb"><a href="/">Aventis Technology</a> &nbsp;/&nbsp; Privacy</div>
-    <h1>Privacy Policy</h1>
-    <p class="meta">How we collect, use and protect personal data &middot; applies to this website and our business contacts &middot; last updated <b>August 2026</b></p>
+    <div class="sec-tag">Team &amp; Organization</div>
+    <h1>The people running <em>the delivery.</em></h1>
+    <p class="sub">Practice leadership, regional delivery management, product teams and the hubs they operate from &mdash; the structure behind every Aventis engagement.</p>
+    <div class="tstats">
+      <div><b>15</b><span>Leadership &amp; delivery</span></div>
+      <div><b>5</b><span>Global delivery hubs</span></div>
+      <div><b>7</b><span>Countries</span></div>
+      <div><b>~70%</b><span>Adobe-specialised roster</span></div>
+    </div>
   </div>
 </header>
 
-<section class="ldoc">
+<!-- ---------- Founder ---------- -->
+<section class="tsec" id="founder">
   <div class="wrap">
-
-    <div class="ltoc" aria-label="Sections in this policy">
-      <h2>On this page</h2>
-      <ol>
-        <li><a href="#p1">1. Who we are</a></li>
-        <li><a href="#p2">2. Scope of this policy</a></li>
-        <li><a href="#p3">3. Information we collect</a></li>
-        <li><a href="#p4">4. How we use your information</a></li>
-        <li><a href="#p5">5. Legal bases for processing</a></li>
-        <li><a href="#p6">6. Cookies and analytics</a></li>
-        <li><a href="#p7">7. Sharing and disclosure</a></li>
-        <li><a href="#p8">8. International transfers</a></li>
-        <li><a href="#p9">9. Retention</a></li>
-        <li><a href="#p10">10. Security</a></li>
-        <li><a href="#p11">11. Your rights</a></li>
-        <li><a href="#p12">12. Client and subscriber data</a></li>
-        <li><a href="#p13">13. Third-party links</a></li>
-        <li><a href="#p14">14. Children</a></li>
-        <li><a href="#p15">15. Changes to this policy</a></li>
-        <li><a href="#p16">16. Contact us</a></li>
-      </ol>
+    <div class="founder rv">
+      <div class="p-photo">
+        <img src="images/team/vamsi-reddy.jpg" alt="Vamsi Reddy, CEO and Founder" width="640" height="800" loading="lazy">
+      </div>
+      <div>
+        <div class="sec-tag" style="margin-bottom:18px">Founder</div>
+        <p class="fq">&ldquo;Senior practitioners who stay on the engagement from first workshop to production &mdash; not a rotating bench.&rdquo;</p>
+        <div class="fname">
+          <b>Vamsi Reddy</b>
+          <span>CEO &amp; Founder</span>
+        </div>
+      </div>
     </div>
-
-    <section class="lsec" id="p1">
-      <h2>1. Who we are</h2>
-      <p><strong>Aventis Technologies Pte. Ltd.</strong> (&ldquo;Aventis&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;) is a company incorporated in the Republic of Singapore, with its registered office at 2 Venture Drive, #13-26, Vision Exchange, Singapore 608526.</p>
-      <p>We are a technology consulting and digital solutions partner. For personal data collected through this website and in the course of our business relationships, Aventis acts as the data controller.</p>
-    </section>
-
-    <section class="lsec" id="p2">
-      <h2>2. Scope of this policy</h2>
-      <p>This policy explains how we handle personal data relating to visitors to <strong>aventistechnology.com</strong>, prospective and existing clients, partners, suppliers and job applicants.</p>
-      <p>It does not cover personal data that we process <em>on behalf of our clients</em> when delivering services &mdash; for example subscriber data held inside a client's Adobe Experience Platform environment. That processing is governed by our contract with the relevant client and is described in Clause 12 below.</p>
-    </section>
-
-    <section class="lsec" id="p3">
-      <h2>3. Information we collect</h2>
-      <p>We collect only what we need, and most of it you give us directly.</p>
-      <table class="ltable">
-        <thead>
-          <tr><th>Category</th><th>What it includes</th><th>How we get it</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Contact details</td><td>Name, company, work email, phone number</td><td>You provide it via our contact form or by emailing us</td></tr>
-          <tr><td>Enquiry content</td><td>The topic you select and the message you write</td><td>You provide it via our contact form</td></tr>
-          <tr><td>Application data</td><td>CV, work history, portfolio links, right-to-work information</td><td>You provide it when applying for a role</td></tr>
-          <tr><td>Technical data</td><td>IP address, browser and device type, pages viewed, referring page</td><td>Collected automatically by our hosting provider and, where you consent, analytics</td></tr>
-          <tr><td>Preference data</td><td>Your cookie consent choice</td><td>Stored locally in your browser when you respond to our cookie banner</td></tr>
-        </tbody>
-      </table>
-      <p>We do not knowingly collect sensitive personal data through this website, and we ask that you do not include it in enquiry messages.</p>
-    </section>
-
-    <section class="lsec" id="p4">
-      <h2>4. How we use your information</h2>
-      <ul>
-        <li>To respond to your enquiry and, where relevant, to scope and discuss a potential engagement.</li>
-        <li>To manage our contractual relationship with clients, partners and suppliers.</li>
-        <li>To assess job applications and manage recruitment.</li>
-        <li>To operate, secure and improve this website.</li>
-        <li>To understand, in aggregate, how the site is used &mdash; only where you have accepted analytics cookies.</li>
-        <li>To meet legal, regulatory and accounting obligations.</li>
-      </ul>
-      <p>We do not sell personal data. We do not add website enquirers to marketing lists or newsletters without a separate, explicit opt-in.</p>
-    </section>
-
-    <section class="lsec" id="p5">
-      <h2>5. Legal bases for processing</h2>
-      <p>Where data protection law requires a legal basis, we rely on the following:</p>
-      <ul>
-        <li><strong>Legitimate interests</strong> &mdash; responding to business enquiries, running and securing our website, and managing supplier and partner relationships.</li>
-        <li><strong>Performance of a contract</strong> &mdash; delivering services and administering agreements with clients.</li>
-        <li><strong>Consent</strong> &mdash; analytics and non-essential cookies, and any optional marketing communications. You may withdraw consent at any time.</li>
-        <li><strong>Legal obligation</strong> &mdash; where we are required to retain or disclose information by law.</li>
-      </ul>
-    </section>
-
-    <section class="lsec" id="p6">
-      <h2>6. Cookies and analytics</h2>
-      <p>When you first visit the site you will see a cookie banner offering <strong>Accept</strong> and <strong>Decline</strong>. Your choice is stored in your browser's local storage under the key <code>aventis-cookie-consent</code> so that we do not ask again on every page.</p>
-      <p><strong>Strictly necessary storage</strong> is always active. This is limited to remembering your consent choice and is required for the site to work correctly. It is not used to track you.</p>
-      <p><strong>Analytics and marketing cookies</strong> are only set if you accept. If you decline, non-essential cookies are not set.</p>
-      <p>To change your choice later, clear this site's data in your browser settings; the banner will then appear again on your next visit. You can also block or delete cookies through your browser at any time, though parts of the site may behave differently as a result.</p>
-    </section>
-
-    <section class="lsec" id="p7">
-      <h2>7. Sharing and disclosure</h2>
-      <p>We share personal data only where it is necessary, and only with parties bound to protect it:</p>
-      <ul>
-        <li><strong>Service providers</strong> &mdash; hosting, email, form handling and, where enabled, analytics providers acting on our instructions.</li>
-        <li><strong>Professional advisers</strong> &mdash; legal, accounting and insurance advisers where relevant.</li>
-        <li><strong>Group companies and delivery teams</strong> &mdash; our own personnel across the locations listed on this site, on a need-to-know basis.</li>
-        <li><strong>Authorities</strong> &mdash; where disclosure is required by law, court order or a competent regulator.</li>
-      </ul>
-      <p>We do not share your personal data with third parties for their own marketing purposes.</p>
-    </section>
-
-    <section class="lsec" id="p8">
-      <h2>8. International transfers</h2>
-      <p>Aventis operates across Singapore, Indonesia, the Philippines, India and Canada, and our service providers may process data outside your country of residence.</p>
-      <p>Where personal data is transferred across borders, we take steps to ensure it remains protected to a comparable standard &mdash; including contractual safeguards with recipients and, in respect of Singapore, compliance with the Transfer Limitation Obligation under the Personal Data Protection Act.</p>
-    </section>
-
-    <section class="lsec" id="p9">
-      <h2>9. Retention</h2>
-      <p>We keep personal data only for as long as it is needed for the purpose it was collected for:</p>
-      <ul>
-        <li><strong>Enquiries that do not progress</strong> &mdash; up to 24 months, so we have context if you come back to us.</li>
-        <li><strong>Client and supplier records</strong> &mdash; for the duration of the relationship and then as required for legal, tax and audit purposes.</li>
-        <li><strong>Job applications</strong> &mdash; up to 12 months after a decision, unless you ask us to remove them sooner.</li>
-      </ul>
-      <p>When data is no longer needed, we delete it or anonymise it so it can no longer be linked to you.</p>
-    </section>
-
-    <section class="lsec" id="p10">
-      <h2>10. Security</h2>
-      <p>Aventis maintains an information security programme that is independently audited against the AICPA <strong>SOC 2 Type II</strong> standard, covering security, availability and confidentiality of the systems we use to deliver our services.</p>
-      <p>Controls include access management on a least-privilege basis, encryption of data in transit, monitoring and incident response procedures, and supplier due diligence. No system can be guaranteed completely secure, but we take these obligations seriously and review them regularly.</p>
-    </section>
-
-    <section class="lsec" id="p11">
-      <h2>11. Your rights</h2>
-      <p>Subject to applicable law, you may ask us to:</p>
-      <ul>
-        <li>Confirm whether we hold personal data about you, and give you access to it.</li>
-        <li>Correct information that is inaccurate or incomplete.</li>
-        <li>Delete information where we no longer have a valid reason to keep it.</li>
-        <li>Restrict or object to certain processing, including processing based on legitimate interests.</li>
-        <li>Withdraw consent where our processing relies on it.</li>
-        <li>Receive a copy of certain information in a portable format.</li>
-      </ul>
-      <p>To exercise any of these, email <a href="mailto:privacy@aventistechnology.com">privacy@aventistechnology.com</a>. We will respond within the timeframe required by applicable law, and we may need to verify your identity first. If you are not satisfied with our response, you may complain to your local data protection authority &mdash; in Singapore, the Personal Data Protection Commission (PDPC).</p>
-    </section>
-
-    <section class="lsec" id="p12">
-      <h2>12. Client and subscriber data</h2>
-      <p>When delivering services, Aventis frequently processes personal data belonging to our clients' own customers &mdash; for example within Adobe Experience Platform, a customer data platform, or a pricing or feedback system we operate on a client's behalf.</p>
-      <p>In that context our client is the controller and Aventis acts as a <strong>processor</strong> (or, under the Singapore PDPA, a data intermediary). We process that data only on the client's documented instructions and under the terms of the applicable agreement and data processing addendum, which you can read more about on our <a href="/legal">Legal</a> page.</p>
-      <p>If you are a customer of one of our clients and wish to exercise your rights over your data, please contact that organisation directly, as they determine how your data is used. We will support them in responding.</p>
-    </section>
-
-    <section class="lsec" id="p13">
-      <h2>13. Third-party links</h2>
-      <p>This site links to third-party services, including LinkedIn and Medium, where our published content is hosted. Those platforms have their own privacy policies and cookie practices, and we are not responsible for how they handle your data. We recommend reviewing their policies before interacting with them.</p>
-    </section>
-
-    <section class="lsec" id="p14">
-      <h2>14. Children</h2>
-      <p>Our website and services are directed at businesses and are not intended for children. We do not knowingly collect personal data from anyone under 18. If you believe a child has provided us with personal data, contact us and we will delete it.</p>
-    </section>
-
-    <section class="lsec" id="p15">
-      <h2>15. Changes to this policy</h2>
-      <p>We may update this policy to reflect changes in our practices, technology or legal obligations. The date at the top of this page shows when it was last revised. Where changes are significant, we will take reasonable steps to bring them to your attention.</p>
-    </section>
-
-    <section class="lsec" id="p16">
-      <h2>16. Contact us</h2>
-      <p>For any question about this policy or about how we handle your personal data:</p>
-      <p><strong>Aventis Technologies Pte. Ltd.</strong><br>
-      2 Venture Drive, #13-26, Vision Exchange<br>
-      Singapore 608526</p>
-      <p>Privacy enquiries: <a href="mailto:privacy@aventistechnology.com">privacy@aventistechnology.com</a><br>
-      General enquiries: <a href="mailto:hello@aventistechnology.com">hello@aventistechnology.com</a></p>
-    </section>
-
-    <div class="lback">
-      <span>&copy; 2026 Aventis Technologies Pte. Ltd. Singapore. All rights reserved.</span>
-      <a class="btn ghost" href="/">Back to home</a>
-    </div>
-
   </div>
 </section>
+
+<!-- ---------- Global Leadership ---------- -->
+<section class="tsec" id="global-leadership">
+  <div class="wrap">
+    <div class="tsec-head rv">
+      <div class="l">
+        <div class="tag"><i style="background:#8FB2FF"></i>Global Leadership</div>
+        <h2>Practice heads who set the standard.</h2>
+      </div>
+      <p class="r">Each practice is owned end to end &mdash; strategy, architecture and delivery quality sit with the same person.</p>
+    </div>
+
+    <div class="people rv" data-hoverdim>
+      <div class="person">
+        <div class="p-photo">
+          <span class="p-dual">Dual role</span>
+          <img src="images/team/praveen-reddy.jpg" alt="Praveen Reddy" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">CX &amp; Martech Practice Head &mdash; Global<br>Also leads Tirupati Delivery Center</span>
+        </div>
+        <div class="p-meta"><b>Praveen Reddy</b><span>CX &amp; Martech Practice Head &mdash; Global</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/tarun-pannuru.jpg" alt="Tarun Pannuru" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">CX &amp; Martech Practice Head &mdash; SEA</span>
+        </div>
+        <div class="p-meta"><b>Tarun Pannuru</b><span>CX &amp; Martech Practice Head &mdash; SEA</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <span class="p-dual">Dual role</span>
+          <img src="images/team/ginu-sudhakaran.jpg" alt="Ginu Sudhakaran" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Experience Management Practice Head &mdash; Global<br>Also leads Pune Delivery Center</span>
+        </div>
+        <div class="p-meta"><b>Ginu Sudhakaran</b><span>Experience Management Practice Head &mdash; Global</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <span class="p-dual">Dual role</span>
+          <img src="images/team/mansoor-alam.jpg" alt="Mansoor Alam" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Data &amp; AI Practice Head<br>Also leads Islamabad Delivery Center</span>
+        </div>
+        <div class="p-meta"><b>Mansoor Alam</b><span>Data &amp; AI Practice Head</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/rohan-mansukhe.jpg" alt="Rohan Mansukhe" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Head of Engineering</span>
+        </div>
+        <div class="p-meta"><b>Rohan Mansukhe</b><span>Head of Engineering</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- Regional Leadership ---------- -->
+<section class="tsec" id="regional-leadership">
+  <div class="wrap">
+    <div class="tsec-head rv">
+      <div class="l">
+        <div class="tag"><i style="background:#7BE0C4"></i>Regional Leadership</div>
+        <h2>On the ground, in the market.</h2>
+      </div>
+      <p class="r">Delivery leadership sits in the region it serves &mdash; Manila, Jakarta and Surabaya &mdash; not remote from it.</p>
+    </div>
+
+    <div class="people rv" data-hoverdim>
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/marionne-armand.jpg" alt="Marionne Armand" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Program Director &mdash; Manila</span>
+        </div>
+        <div class="p-meta"><b>Marionne Armand</b><span>Program Director &mdash; Manila</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/soumyadip-mitra.jpg" alt="Soumyadip Mitra" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Client Delivery Manager &mdash; Jakarta</span>
+        </div>
+        <div class="p-meta"><b>Soumyadip Mitra</b><span>Client Delivery Manager &mdash; Jakarta</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <span class="p-dual">Dual role</span>
+          <img src="images/team/fendy-mahatma.jpg" alt="Fendy Mahatma" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Enterprise Architect &mdash; Surabaya<br>Also leads Surabaya Delivery Center</span>
+        </div>
+        <div class="p-meta"><b>Fendy Mahatma</b><span>Enterprise Architect &mdash; Surabaya</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/kurt-fatalla.jpg" alt="Kurt Fatalla" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Client Delivery Manager &mdash; Manila</span>
+        </div>
+        <div class="p-meta"><b>Kurt Fatalla</b><span>Client Delivery Manager &mdash; Manila</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/pushpa-ojha.jpg" alt="Pushpa Ojha" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Service Delivery Manager &mdash; Manila</span>
+        </div>
+        <div class="p-meta"><b>Pushpa Ojha</b><span>Service Delivery Manager &mdash; Manila</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- Delivery Teams ---------- -->
+<section class="tsec" id="delivery-teams">
+  <div class="wrap">
+    <div class="tsec-head rv">
+      <div class="l">
+        <div class="tag"><i style="background:#C6AEFF"></i>Delivery Teams</div>
+        <h2>Product, architecture and the business behind it.</h2>
+      </div>
+      <p class="r">The people building Prezio, shaping enterprise architecture, and keeping the commercial side honest.</p>
+    </div>
+
+    <div class="people four rv" data-hoverdim>
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/nilesh-batra.jpg" alt="Nilesh Batra" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Technical Product Manager &mdash; Prezio</span>
+        </div>
+        <div class="p-meta"><b>Nilesh Batra</b><span>Technical Product Manager &mdash; Prezio</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/uzair-ghalib.jpg" alt="Uzair Ghalib" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Commercial Product Manager &mdash; Prezio</span>
+        </div>
+        <div class="p-meta"><b>Uzair Ghalib</b><span>Commercial Product Manager &mdash; Prezio</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/madhurima-jayam.jpg" alt="Madhurima Jayam" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Head of Finance</span>
+        </div>
+        <div class="p-meta"><b>Madhurima Jayam</b><span>Head of Finance</span></div>
+      </div>
+
+      <div class="person">
+        <div class="p-photo">
+          <img src="images/team/matloob-warsi.jpg" alt="Matloob Faiyaz Warsi" width="640" height="800" loading="lazy">
+          <span class="p-rail"></span>
+          <span class="p-role">Enterprise Architect</span>
+        </div>
+        <div class="p-meta"><b>Matloob Faiyaz Warsi</b><span>Enterprise Architect</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- Hubs ---------- -->
+<section class="tsec" id="hubs">
+  <div class="wrap">
+    <div class="tsec-head rv">
+      <div class="l">
+        <div class="tag"><i style="background:#FFC98F"></i>Global Delivery Hubs</div>
+        <h2>Five hubs. One delivery standard.</h2>
+      </div>
+      <p class="r">Each hub is led by someone from the leadership group above &mdash; the same people accountable for the work.</p>
+    </div>
+
+    <div class="hub-belt rv">
+      <div class="hub"><span class="city">India</span><h4>Pune Delivery Center</h4><p>Lead: Ginu Sudhakaran</p></div>
+      <div class="hub"><span class="city">India</span><h4>Bangalore Delivery Center</h4><p>Lead: Koushik Banerjee</p></div>
+      <div class="hub"><span class="city">India</span><h4>Tirupati Delivery Center</h4><p>Lead: Praveen Reddy</p></div>
+      <div class="hub"><span class="city">Pakistan</span><h4>Islamabad Delivery Center</h4><p>Lead: Mansoor Alam</p></div>
+      <div class="hub"><span class="city">Indonesia</span><h4>Surabaya Delivery Center</h4><p>Lead: Fendy Mahatma</p></div>
+    </div>
+
+    <p class="tnote">Ginu, Mansoor, Praveen and Fendy hold dual leadership responsibilities across regional / practice roles and delivery hub leadership &mdash; marked above.</p>
+  </div>
+</section>
+
+<section class="pcta">
+  <div class="wrap">
+    <h2>Want to work <em>with this team?</em></h2>
+    <p class="lede">Whether you're hiring us or hoping to join us.</p>
+    <div class="cta-btns">
+      <a class="btn ghost" href="/careers">See open roles</a>
+      <a class="btn" href="/contact">Start the conversation <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  "use strict";
+  // dim siblings while hovering a person (desktop pointers only)
+  if(!window.matchMedia('(hover:hover)').matches) return;
+  document.querySelectorAll('.people[data-hoverdim]').forEach(function(grid){
+    grid.addEventListener('mouseover', function(){ grid.classList.add('is-hovering'); });
+    grid.addEventListener('mouseleave', function(){ grid.classList.remove('is-hovering'); });
+  });
+})();
+</script>
 
 <footer>
   <div class="foot">
@@ -276,7 +425,7 @@
       <a href="/#platforms">Platforms</a>
       <a href="/#industries">Industries</a>
       <a href="/#proof">Proof</a>
-      <a href="/team">Leadership</a>
+      <a href="/#team">Leadership</a>
       <a href="/#faq">FAQ</a>
     </div>
     <div>
