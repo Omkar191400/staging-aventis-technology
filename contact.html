@@ -90,7 +90,7 @@
 <header class="chero">
   <div class="wrap">
     <h1>Let's talk about <em>what's next.</em></h1>
-    <p class="sub">Whether you're standing up a new platform, cleaning up an existing estate, or trying to get more out of what you already licensed &mdash; start here.</p>
+    <p class="sub">Whether you're standing up a new platform, cleaning up an existing estate, or trying to get more out of what you already licensed - start here.</p>
   </div>
 </header>
 
@@ -100,7 +100,7 @@
 
       <div class="cintro rv">
         <h2>Tell us where you are today.</h2>
-        <p>We'll map the route from there. Every enquiry goes to a senior practitioner, not a queue &mdash; you'll hear back within one business day.</p>
+        <p>We'll map the route from there. Every enquiry goes to a senior practitioner, not a queue - you'll hear back within one business day.</p>
 
         <div class="cpoints">
           <div class="cpt">
@@ -165,8 +165,8 @@
                 <option value="">Select a topic</option>
                 <option>Adobe Experience Cloud / AEM</option>
                 <option>Customer data &amp; personalisation</option>
-                <option>Prezio &mdash; dynamic pricing</option>
-                <option>CX Pulse &mdash; tNPS &amp; feedback</option>
+                <option>Prezio - dynamic pricing</option>
+                <option>CX Pulse - tNPS &amp; feedback</option>
                 <option>Digital wallets &amp; payments</option>
                 <option>Mobile app development</option>
                 <option>Data privacy &amp; compliance</option>
@@ -280,7 +280,7 @@
              + '?subject=' + encodeURIComponent('Website enquiry - ' + data.company)
              + '&body=' + encodeURIComponent(body);
     window.location.href = href;
-    show('ok', "We've opened your email app with the details filled in &mdash; just hit send. "
+    show('ok', "We've opened your email app with the details filled in - just hit send. "
              + "If nothing opened, email us directly at <a href='mailto:" + FALLBACK_EMAIL + "'>" + FALLBACK_EMAIL + "</a>.");
   }
 
@@ -295,7 +295,7 @@
 
     // honeypot tripped -> pretend success, drop silently
     if(document.getElementById('cf-website').value){
-      show('ok', 'Thanks &mdash; your enquiry is on its way.');
+      show('ok', 'Thanks - your enquiry is on its way.');
       form.reset();
       return;
     }
@@ -321,7 +321,7 @@
     }).then(function(res){
       if(!res.ok) throw new Error('Bad status ' + res.status);
       form.reset();
-      show('ok', '<b>Thanks &mdash; we\u2019ve got it.</b><br>A senior practitioner will get back to you within one business day.');
+      show('ok', '<b>Thanks - we\u2019ve got it.</b><br>A senior practitioner will get back to you within one business day.');
     }).catch(function(){
       show('bad', "Something went wrong sending that. Please email us directly at "
                 + "<a href='mailto:" + FALLBACK_EMAIL + "'>" + FALLBACK_EMAIL + "</a> and we'll pick it up straight away.");
