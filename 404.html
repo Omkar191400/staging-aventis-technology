@@ -50,6 +50,14 @@
 @media(max-width:900px){.nf-links{grid-template-columns:1fr 1fr;gap:20px}}
 @media(max-width:520px){.nf-links{grid-template-columns:1fr}#radar{height:280px}}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF3RHDYZ2T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EF3RHDYZ2T');
+</script>
 </head>
 <body>
 <canvas id="bg-field" aria-hidden="true"></canvas>
@@ -58,11 +66,12 @@
   <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   <div class="nav-links" id="nav-links">
     <a href="/services">Services</a>
+    <a href="/adobe">Adobe</a>
     <a href="/case-studies">Work</a>
     <a href="/team">Team</a>
     <a href="/#products">Products</a>
     <a href="/blog">Blog</a>
-    <a href="/#about">About</a>
+    <a href="/team">About</a>
     <a class="btn" href="/contact">Start a project <span class="arr">&rarr;</span></a>
   </div>
 </nav>
@@ -97,6 +106,7 @@
 
     <div class="nf-links">
       <a href="/services"><b>Services</b><span>What we do, end to end</span></a>
+      <a href="/adobe"><b>Adobe &amp; AEM</b><span>Our Adobe practice</span></a>
       <a href="/case-studies"><b>Work</b><span>Selected case studies</span></a>
       <a href="/prezio"><b>Prezio</b><span>Dynamic pricing engine</span></a>
       <a href="/cx-pulse"><b>CX Pulse</b><span>tNPS &amp; feedback platform</span></a>
@@ -513,6 +523,7 @@ if(cv){ if(BG==='cells') initCells(); else initGraph(); }
 
   var ROUTES = [
     {label:'Services',    href:'/services'},
+    {label:'Adobe & AEM', href:'/adobe'},
     {label:'Work',        href:'/case-studies'},
     {label:'Prezio',      href:'/prezio'},
     {label:'CX Pulse',    href:'/cx-pulse'},

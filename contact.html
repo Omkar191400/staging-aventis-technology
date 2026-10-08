@@ -70,6 +70,14 @@
   .frow{grid-template-columns:1fr;gap:0}
 }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF3RHDYZ2T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EF3RHDYZ2T');
+</script>
 </head>
 <body>
 <canvas id="bg-field" aria-hidden="true"></canvas>
@@ -78,11 +86,12 @@
   <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   <div class="nav-links" id="nav-links">
     <a href="/services">Services</a>
+    <a href="/adobe">Adobe</a>
     <a href="/case-studies">Work</a>
     <a href="/team">Team</a>
     <a href="/#products">Products</a>
     <a href="/blog">Blog</a>
-    <a href="/#about">About</a>
+    <a href="/team">About</a>
     <a class="btn" href="/contact">Start a project <span class="arr">&rarr;</span></a>
   </div>
 </nav>
@@ -122,7 +131,7 @@
           <p>Aventis Technologies Pte. Ltd.<br>2 Venture Drive, #13-26<br>Vision Exchange, Singapore 608526</p>
 
           <span class="lbl">Email</span>
-          <p><a href="mailto:hello@aventistechnology.com">hello@aventistechnology.com</a></p>
+          <p><a href="mailto:info@aventistechnology.com.ph">info@aventistechnology.com.ph</a></p>
 
           <span class="lbl">Delivery presence</span>
           <p>Singapore &middot; Jakarta &middot; Manila &middot; Bangalore &middot; Pune &middot; Tirupati &middot; Toronto</p>
@@ -189,8 +198,8 @@
 
             <!-- honeypot: hidden from humans, catches bots -->
             <div style="position:absolute;left:-9999px" aria-hidden="true">
-              <label for="cf-website">Do not fill this in</label>
-              <input type="text" id="cf-website" name="_gotcha" tabindex="-1" autocomplete="off">
+              <label for="cf-hp">Do not fill this in</label>
+              <input type="text" id="cf-hp" name="_gotcha" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore>
             </div>
 
             <button type="submit" class="btn fsubmit" id="cf-submit">Send enquiry <span class="arr">&rarr;</span></button>
@@ -213,8 +222,8 @@
      Leave empty and the form falls back to opening the visitor's mail
      client with the details pre-filled, so it never silently fails.
      ------------------------------------------------------------------ */
-  var ENDPOINT = "";
-  var FALLBACK_EMAIL = "hello@aventistechnology.com";
+  var ENDPOINT = "https://formspree.io/f/xwlkvboa";
+  var FALLBACK_EMAIL = "info@aventistechnology.com.ph";
 
   var form = document.getElementById('contact-form');
   if(!form) return;
@@ -294,7 +303,7 @@
     }
 
     // honeypot tripped -> pretend success, drop silently
-    if(document.getElementById('cf-website').value){
+    if(document.getElementById('cf-hp').value){
       show('ok', 'Thanks - your enquiry is on its way.');
       form.reset();
       return;

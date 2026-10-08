@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adobe Experience Cloud &amp; AEM Implementation Partner | Aventis Technology</title>
-<meta name="description" content="Aventis Technology is an Adobe partner delivering Adobe Experience Manager (AEM), Adobe Experience Platform, Real-Time CDP, Journey Optimizer, Target and Customer Journey Analytics implementations for enterprises across Asia-Pacific.">
+<title>Adobe Experience Cloud &amp; AEM Partner | Aventis Technology</title>
+<meta name="description" content="Aventis Technology is an Adobe Digital Experience Partner architecting and engineering Adobe Experience Manager and Adobe Experience Platform programmes across Asia-Pacific, from architecture through managed services.">
 <link rel="canonical" href="https://www.aventistechnology.com/adobe">
 <meta name="robots" content="index,follow,max-snippet:-1">
-<meta property="og:title" content="Adobe Experience Cloud &amp; AEM Implementation Partner | Aventis Technology">
-<meta property="og:description" content="Adobe partner delivering AEM, AEP, Real-Time CDP and Journey Optimizer implementations for enterprises across Asia-Pacific.">
+<meta property="og:title" content="Adobe Experience Cloud &amp; AEM Partner | Aventis Technology">
+<meta property="og:description" content="Adobe Digital Experience Partner delivering AEM and Adobe Experience Platform programmes across Asia-Pacific.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.aventistechnology.com/adobe">
 <link rel="preconnect" href="https://api.fontshare.com">
@@ -16,90 +16,116 @@
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="%233B66F6"/><path d="M14 46 L32 16 L50 46 L41 46 L32 30 L28 37 L25 33 Z" fill="white"/></svg>'>
 <style>
-/* ---------- Hero ---------- */
-.ahero{position:relative;padding:170px 48px 90px}
-.ahero .wrap{max-width:1280px}
-.ahero .badge{display:inline-flex;align-items:center;gap:14px;margin-bottom:34px}
-.ahero .badge img{height:34px;width:auto;display:block}
-.ahero h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,6vw,78px);line-height:1.03;
-          letter-spacing:-.04em;max-width:17ch}
-.ahero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--blue)}
-.ahero .sub{color:var(--muted);font-size:clamp(16px,1.5vw,20px);max-width:58ch;margin-top:28px}
-.ahero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+/* ---------- Hero: two-column, featured badge panel ---------- */
+.ahero{min-height:86svh;display:flex;align-items:center;padding:150px 48px 90px;overflow:hidden}
+.ahero .kick{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);margin-bottom:26px}
+.ahero .kick i{font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.30);padding:6px 14px;border-radius:100px}
+.ahero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center;width:100%}
+.ahero h1{font-family:var(--display);font-weight:700;font-size:clamp(36px,5.4vw,68px);line-height:1.05;letter-spacing:-.03em;max-width:15ch}
+.ahero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.4px var(--blue)}
+.ahero .sub{margin-top:26px;max-width:52ch;color:var(--muted);font-size:clamp(15.5px,1.3vw,18px)}
+.ahero .cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
 
-/* ---------- Definition strip (AEO answer-first) ---------- */
-.defn{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-      background:rgba(255,255,255,.03);padding:48px 0;margin-top:80px}
-.defn p{font-family:var(--display);font-size:clamp(18px,1.9vw,24px);line-height:1.5;
-        letter-spacing:-.015em;color:var(--ink);max-width:88ch}
+.badge-panel{position:relative;border:1px solid var(--line-strong);border-radius:28px;background:var(--panel-solid);
+  padding:52px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;overflow:hidden}
+.badge-panel::before{content:"";position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:140%;height:140%;
+  background:radial-gradient(circle,rgba(255,80,60,.20) 0%,rgba(255,80,60,0) 62%);pointer-events:none}
+.badge-panel img{position:relative;width:100%;max-width:260px;height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
+.badge-panel .cap{position:relative;margin-top:26px;color:var(--muted);font-size:13.5px;line-height:1.6;max-width:34ch}
+.badge-panel .cap b{color:var(--ink)}
+@media(max-width:1080px){.ahero-grid{grid-template-columns:1fr;gap:40px}.badge-panel{padding:40px 28px}}
+
+/* ---------- Definition strip ---------- */
+.defn{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(0,0,0,.16);padding:52px 0}
+.defn p{font-family:var(--display);font-size:clamp(17px,1.7vw,22px);line-height:1.55;letter-spacing:-.012em;color:var(--ink);max-width:92ch}
 .defn p b{color:var(--blue-soft);font-weight:600}
 
-/* ---------- Stack diagram ---------- */
-.stack{margin-top:68px}
-.layer{margin-bottom:18px}
-.layer-label{display:flex;align-items:center;gap:14px;font-family:var(--display);font-size:11px;
-             font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
-.layer-label::before{content:"";width:26px;height:1px;background:var(--blue)}
-.mods{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.mod{border:1px solid var(--line);border-radius:16px;padding:22px 22px 24px;background:var(--panel-solid);
-     transition:border-color .35s,background .35s,transform .5s var(--ease)}
-.mod:hover{border-color:var(--line-strong);background:var(--panel-hover);transform:translateY(-3px)}
-.mod h4{font-family:var(--display);font-weight:600;font-size:15.5px;letter-spacing:-.01em;
-        color:var(--ink);margin-bottom:8px;line-height:1.3}
-.mod p{color:var(--muted);font-size:13.5px;line-height:1.55}
-.mod.own{border-color:rgba(143,178,255,.45);background:rgba(143,178,255,.09)}
-.mod.own h4::after{content:"Aventis";font-family:var(--display);font-size:9px;font-weight:700;
-   letter-spacing:.16em;text-transform:uppercase;color:var(--blue);border:1px solid rgba(143,178,255,.5);
-   border-radius:100px;padding:3px 8px;margin-left:9px;vertical-align:middle;white-space:nowrap}
-.foundation{border:1px dashed var(--line-strong);border-radius:18px;padding:26px 28px;margin-top:22px;
-            background:rgba(255,255,255,.03)}
+/* ---------- Layered stack (new signature component) ---------- */
+.stackwrap{margin-top:64px}
+.layer-band{position:relative;border-radius:24px;padding:40px 40px 36px;margin-bottom:34px}
+.layer-band.l1{background:linear-gradient(160deg,rgba(143,178,255,.10),rgba(143,178,255,.02));
+  border:1px solid rgba(143,178,255,.30);box-shadow:0 26px 50px rgba(0,0,0,.30)}
+.layer-band.l2{background:linear-gradient(160deg,rgba(123,224,196,.10),rgba(123,224,196,.02));
+  border:1px solid rgba(123,224,196,.28);box-shadow:0 26px 50px rgba(0,0,0,.30);margin-left:22px;margin-right:0}
+.layer-head{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.layer-head .dot{width:10px;height:10px;border-radius:50%;flex:none}
+.l1 .layer-head .dot{background:#8FB2FF}
+.l2 .layer-head .dot{background:#7BE0C4}
+.layer-head h3{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.015em}
+.layer-items{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.litem{background:rgba(9,22,72,.55);border:1px solid var(--line);border-radius:16px;padding:22px 20px;
+  transition:background .3s,border-color .3s,transform .4s var(--ease)}
+.litem:hover{background:rgba(18,38,104,.75);border-color:var(--line-strong);transform:translateY(-3px)}
+.litem h4{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em;margin-bottom:9px}
+.litem p{color:var(--muted);font-size:13px;line-height:1.55}
+.litem.own{border-color:rgba(255,120,90,.4);background:rgba(255,120,90,.08)}
+.litem.own h4::after{content:"Ours";font-family:var(--display);font-size:8.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#FF9C82;border:1px solid rgba(255,120,90,.5);border-radius:100px;padding:2px 7px;margin-left:8px;vertical-align:middle}
+
+.foundation{position:relative;border-radius:20px;padding:30px 36px;text-align:center;
+  background:linear-gradient(120deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px dashed var(--line-strong)}
 .foundation .ft{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.01em;margin-bottom:16px}
-.chips{display:flex;flex-wrap:wrap;gap:9px}
-.chip{font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:7px 14px}
-@media(max-width:1080px){.mods{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.mods{grid-template-columns:1fr}}
+.foundation .chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.foundation .chips span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:6px 13px}
+@media(max-width:1080px){.layer-items{grid-template-columns:repeat(2,1fr)}.layer-band.l2{margin-left:0}}
+@media(max-width:640px){.layer-items{grid-template-columns:1fr}.layer-band{padding:28px 22px}}
 
-/* ---------- AEM spotlight ---------- */
-.aem{background:var(--navy);border-radius:30px;padding:80px 64px;margin-top:0}
-.aem-top{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}
-.aem h2{max-width:16ch}
-.aem-top p{color:var(--muted);font-size:16.5px;max-width:48ch}
-.aem-rows{margin-top:56px;border-top:1px solid var(--line)}
-.arow{display:grid;grid-template-columns:64px 1fr 1.25fr;gap:28px;align-items:baseline;
-      padding:26px 0;border-bottom:1px solid var(--line)}
-.arow .n{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--blue)}
-.arow h4{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.015em}
-.arow p{color:var(--muted);font-size:15px}
-@media(max-width:900px){
-  .aem{padding:52px 26px;border-radius:22px}
-  .aem-top{grid-template-columns:1fr;gap:22px;align-items:start}
-  .arow{grid-template-columns:1fr;gap:8px;padding:22px 0}
-}
+/* ---------- AEM vertical timeline (new signature component) ---------- */
+.aemwrap{background:var(--navy);border-radius:30px;padding:72px 56px;margin-top:0}
+.aem-top{max-width:70ch;margin-bottom:56px}
+.aem-top p{color:var(--muted);font-size:16.5px;margin-top:16px}
+.timeline{position:relative;padding-left:64px}
+.timeline::before{content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(180deg,rgba(143,178,255,.55),rgba(143,178,255,.08))}
+.trow{position:relative;padding-bottom:44px}
+.trow:last-child{padding-bottom:0}
+.trow .node{position:absolute;left:-64px;top:0;width:48px;height:48px;border-radius:50%;
+  background:var(--navy);border:2px solid rgba(143,178,255,.55);display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;font-size:13px;color:var(--blue-soft)}
+.trow h4{font-family:var(--display);font-weight:600;font-size:18.5px;letter-spacing:-.015em;margin-bottom:10px;padding-top:10px}
+.trow p{color:var(--muted);font-size:15px;max-width:70ch}
+@media(max-width:900px){.aemwrap{padding:48px 24px;border-radius:22px}.timeline{padding-left:52px}.trow .node{left:-52px;width:40px;height:40px;font-size:11px}}
 
-/* ---------- Delivery phases ---------- */
-.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;
-        border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.ph{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:32px 26px 38px}
-.ph .step{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.24em;
-          text-transform:uppercase;color:var(--blue);margin-bottom:18px;display:block}
-.ph h4{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.015em;margin-bottom:12px}
-.ph p{color:var(--muted);font-size:14.5px}
-@media(max-width:1080px){.phases{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.phases{grid-template-columns:1fr}}
+/* ---------- Delivery phases with flow connector ---------- */
+.phaseflow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative}
+.phasebox{position:relative;border:1px solid var(--line);padding:32px 26px 36px;background:var(--panel-solid)}
+.phasebox:not(:last-child){border-right:0}
+.phasebox:first-child{border-radius:18px 0 0 18px}
+.phasebox:last-child{border-radius:0 18px 18px 0}
+.phasebox .step{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;display:block}
+.phasebox h4{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.015em;margin-bottom:12px}
+.phasebox p{color:var(--muted);font-size:14px}
+.phasebox:not(:last-child)::after{content:"\2192";position:absolute;right:-13px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;border-radius:50%;background:var(--bg);border:1px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--blue);z-index:2}
+@media(max-width:1080px){.phaseflow{grid-template-columns:1fr 1fr}
+  .phasebox:nth-child(1){border-radius:18px 18px 0 0}.phasebox:nth-child(2){border-radius:0}
+  .phasebox:nth-child(3){border-radius:0}.phasebox:nth-child(4){border-radius:0 0 18px 18px}
+  .phasebox:nth-child(odd){border-right:1px solid var(--line)}
+  .phasebox:nth-child(1),.phasebox:nth-child(2){border-bottom:0}
+  .phasebox:not(:last-child)::after{display:none}}
+@media(max-width:640px){.phaseflow{grid-template-columns:1fr}
+  .phasebox{border-radius:0 !important;border:1px solid var(--line) !important;border-bottom:0 !important}
+  .phasebox:last-child{border-bottom:1px solid var(--line) !important}}
 
-/* ---------- Numbers ---------- */
-.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:60px}
-.num-c{border-left:2px solid var(--blue);padding-left:22px}
-.num-c b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(30px,3.4vw,44px);
-         letter-spacing:-.03em;line-height:1}
-.num-c span{display:block;color:var(--muted);font-size:14.5px;margin-top:10px}
-@media(max-width:900px){.nums{grid-template-columns:1fr 1fr;gap:30px}}
+/* ---------- Why Aventis: pull statement ---------- */
+.whystrip{max-width:80ch}
+.whystrip p{font-family:var(--display);font-weight:500;font-size:clamp(19px,2vw,25px);line-height:1.55;
+  letter-spacing:-.012em;color:var(--ink);margin-top:22px}
 
-/* ---------- FAQ ---------- */
-.faq{margin-top:60px;max-width:900px}
-.qa{border-bottom:1px solid var(--line);padding:26px 0}
-.qa h4{font-family:var(--display);font-weight:600;font-size:17.5px;letter-spacing:-.012em;margin-bottom:10px}
-.qa p{color:var(--muted);font-size:15.5px;max-width:72ch}
+/* ---------- FAQ accordion (new, interactive) ---------- */
+.accordion{max-width:900px;margin-top:56px}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;padding:24px 4px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary h4{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.012em;color:var(--ink)}
+.qa .plus{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line-strong);position:relative}
+.qa .plus::before,.qa .plus::after{content:"";position:absolute;background:var(--blue-soft);
+  top:50%;left:50%;transform:translate(-50%,-50%)}
+.qa .plus::before{width:11px;height:1.6px}
+.qa .plus::after{width:1.6px;height:11px;transition:transform .3s var(--ease)}
+.qa[open] .plus::after{transform:translate(-50%,-50%) rotate(90deg) scaleY(0)}
+.qa .ans{padding:0 4px 26px;color:var(--muted);font-size:15.5px;max-width:78ch}
 </style>
 
 <script type="application/ld+json">
@@ -112,25 +138,17 @@
       "name": "Aventis Technology",
       "legalName": "Aventis Technologies Pte. Ltd.",
       "url": "https://www.aventistechnology.com/",
-      "description": "Technology consulting and digital solutions partner specialising in Adobe Experience Cloud implementation, enterprise digital strategy and customer experience engineering across Asia-Pacific.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2 Venture Drive, #13-26, Vision Exchange",
-        "postalCode": "608526",
-        "addressCountry": "SG"
-      },
-      "email": "hello@aventistechnology.com",
-      "areaServed": ["Singapore", "Indonesia", "Philippines", "India", "Canada"],
+      "description": "Aventis Technology is an Adobe Digital Experience Partner architecting and engineering enterprise digital experience ecosystems across Asia-Pacific on Adobe Experience Manager and Adobe Experience Platform.",
+      "address": { "@type": "PostalAddress", "streetAddress": "2 Venture Drive, #13-26, Vision Exchange", "postalCode": "608526", "addressCountry": "SG" },
+      "email": "info@aventistechnology.com.ph",
+      "sameAs": [
+        "https://www.linkedin.com/company/aventis-aitechnology/",
+        "https://medium.com/@vamsi.reddy_43948"
+      ],
+      "areaServed": ["Singapore", "Indonesia", "Philippines", "Malaysia", "India"],
       "knowsAbout": [
-        "Adobe Experience Manager",
-        "Adobe Experience Platform",
-        "Adobe Real-Time CDP",
-        "Adobe Journey Optimizer",
-        "Adobe Target",
-        "Adobe Customer Journey Analytics",
-        "Adobe Workfront",
-        "Digital Asset Management",
-        "Customer Data Platforms"
+        "Adobe Experience Manager", "Adobe Experience Platform", "Adobe Real-Time CDP",
+        "Adobe Journey Optimizer", "Adobe Target", "Customer Journey Analytics", "Adobe Workfront"
       ]
     },
     {
@@ -140,77 +158,37 @@
       "serviceType": "Adobe Experience Manager implementation partner",
       "provider": { "@id": "https://www.aventistechnology.com/#organization" },
       "url": "https://www.aventistechnology.com/adobe",
-      "description": "Implementation, migration, integration and managed services across Adobe Experience Manager, Adobe Experience Platform, Real-Time CDP, Journey Optimizer, Target and Customer Journey Analytics.",
-      "areaServed": "Asia-Pacific",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Adobe Experience Cloud services",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adobe Experience Manager (AEM) Sites and Assets implementation" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adobe Experience Platform and Real-Time CDP implementation" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adobe Journey Optimizer orchestration" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adobe Target personalisation and experimentation" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Customer Journey Analytics implementation" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AEM migration and managed services" }}
-        ]
-      }
+      "description": "Architecture, migration, integration and managed services across Adobe Experience Manager, Adobe Experience Platform, Real-Time CDP, Journey Optimizer, Target and Customer Journey Analytics.",
+      "areaServed": "Asia-Pacific"
     },
     {
       "@type": "FAQPage",
       "@id": "https://www.aventistechnology.com/adobe#faq",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is Aventis Technology an Adobe partner?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Aventis Technology is an Adobe partner delivering Adobe Experience Cloud implementations across Asia-Pacific, with a delivery organisation weighted approximately 70% toward Adobe-specialised roles including AEM architects, AEP consultants and Journey Optimizer leads."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which Adobe products does Aventis Technology implement?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Aventis implements Adobe Experience Manager (Sites and Assets), Adobe Experience Platform, Adobe Real-Time CDP, Adobe Journey Optimizer, Adobe Target, Adobe Customer Journey Analytics and Adobe Workfront, together with the Adobe Experience Platform Agent Orchestrator."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does an Adobe Experience Manager implementation partner do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "An AEM implementation partner designs the content architecture, builds and configures the AEM environment, migrates existing content and assets, integrates AEM with surrounding systems such as CDPs, CRM and commerce platforms, and then operates or supports the platform after go-live."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which industries does Aventis Technology deliver Adobe work for?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Aventis delivers Adobe Experience Cloud programmes primarily for telecommunications operators, financial services and enterprise brands across Singapore, Indonesia, the Philippines and the wider Asia-Pacific region."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Aventis integrate Adobe Experience Cloud with existing telecom or banking systems?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Aventis builds bi-directional integration layers connecting Adobe Experience Platform to billing, CRM, charging, network event and data warehouse systems, using streaming infrastructure such as Kafka for real-time ingestion and activation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Aventis provide managed services after an Adobe implementation goes live?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Aventis provides ongoing AEP, AEM and campaign operations support, covering platform administration, release management, performance optimisation and continued use-case delivery after the initial programme completes."
-          }
-        }
+        { "@type": "Question", "name": "Is Aventis Technology an Adobe partner?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Aventis Technology is an Adobe Digital Experience Partner delivering Adobe Experience Cloud programmes for enterprises across Asia-Pacific, from architecture and implementation through migration, optimisation and always-on operations." } },
+        { "@type": "Question", "name": "Which Adobe products does Aventis Technology implement?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Aventis delivers across Adobe Experience Platform, Adobe Real-Time CDP, Adobe Journey Optimizer, Adobe Customer Journey Analytics, Adobe Experience Manager, Adobe Target, Adobe GenStudio and Adobe Offer Decisioning." } },
+        { "@type": "Question", "name": "What does an Adobe Experience Manager implementation partner do?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An AEM implementation partner designs the content architecture, builds and configures the platform, migrates content and digital assets, and integrates AEM with surrounding systems such as customer data platforms, CRM and commerce platforms." } },
+        { "@type": "Question", "name": "Which industries does Aventis deliver Adobe work for?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Aventis delivers Adobe programmes across telecommunications, financial services, aviation and travel, and retail and consumer businesses, with delivery experience across Singapore, Indonesia, the Philippines, Malaysia and India." } },
+        { "@type": "Question", "name": "Can Aventis integrate Adobe Experience Cloud with existing telecom or banking systems?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Aventis integrates Adobe with the wider enterprise technology landscape, connecting customer data, identity, consent, CRM, analytics, messaging and other business systems." } },
+        { "@type": "Question", "name": "Does Aventis provide managed services after go-live?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Aventis stays beyond implementation, providing always-on operations, platform administration, release management, performance optimisation, data-quality engineering and continuous use-case delivery." } }
       ]
     }
   ]
 }
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF3RHDYZ2T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EF3RHDYZ2T');
 </script>
 </head>
 <body>
@@ -223,101 +201,95 @@
     <a href="/adobe">Adobe</a>
     <a href="/case-studies">Work</a>
     <a href="/team">Team</a>
-    <a href="/#products">Products</a>
     <a href="/blog">Blog</a>
-    <a href="/#about">About</a>
+    <a href="/team">About</a>
     <a class="btn" href="/contact">Start a project <span class="arr">&rarr;</span></a>
   </div>
 </nav>
 
 <header class="ahero">
-  <div class="wrap">
-    <div class="badge">
-      <img src="images/adobe-partner-badge.png" alt="Partner of Adobe" width="330" height="58">
+  <div class="wrap ahero-grid">
+    <div>
+      <span class="kick"><i>Adobe</i></span>
+      <h1>The Adobe stack, <em>engineered as one.</em></h1>
+      <p class="sub">Enterprise Adobe Experience Cloud across Asia-Pacific, from Experience Manager and Experience Platform to real-time journeys that connect data, decisions, and customer experiences.</p>
+      <div class="cta">
+        <a class="btn" href="/contact">Talk to our Adobe team <span class="arr">&rarr;</span></a>
+        <a class="btn ghost" href="/case-studies">See our work</a>
+      </div>
     </div>
-    <h1>The Adobe stack, <em>delivered properly.</em></h1>
-    <p class="sub">We design, build and run Adobe Experience Cloud for enterprises across Asia-Pacific &mdash; from Experience Manager and the Experience Platform through to real-time journeys that actually reach the customer.</p>
-    <div class="cta">
-      <a class="btn" href="/contact">Talk to our Adobe team <span class="arr">&rarr;</span></a>
-      <a class="btn ghost" href="/case-studies">See the work</a>
+    <div class="badge-panel rv">
+      <img src="images/adobe-partner-badge.png" alt="Partner of Adobe" width="260" height="48">
+      <p class="cap"><b>Aventis Technology</b> is an Adobe Digital Experience Partner, architecting and engineering Adobe programmes across Asia-Pacific.</p>
     </div>
   </div>
 </header>
 
 <section class="defn" style="padding-left:48px;padding-right:48px">
   <div class="wrap">
-    <p>Aventis Technology is an <b>Adobe partner</b> delivering <b>Adobe Experience Manager (AEM)</b> and <b>Adobe Experience Platform</b> implementations for telecommunications, financial services and enterprise brands across Singapore, Indonesia, the Philippines and the wider Asia-Pacific region &mdash; covering architecture, migration, integration and post-launch managed services.</p>
+    <p>Aventis Technology is an <b>Adobe partner</b> architecting and engineering enterprise digital experience ecosystems across Asia-Pacific on <b>Adobe Experience Manager (AEM)</b> and <b>Adobe Experience Platform</b>. We bring architecture, migration, integration, and managed services together to create Adobe foundations built for scale, performance, and continuous evolution, powering connected digital experiences for telecommunications, financial services, and enterprise brands across Singapore, Indonesia, the Philippines, and the wider region.</p>
   </div>
 </section>
 
-<section id="stack">
+<section id="platform">
   <div class="wrap">
     <div class="rv">
       <div class="sec-tag">The Platform</div>
-      <h2>One integrated stack, <em>not seven tools.</em></h2>
-      <p class="lede">Most Adobe estates underperform because the components were bought together and implemented separately. We deliver them as one architecture &mdash; shared identity, shared governance, one profile.</p>
+      <h2>One ecosystem. <em style="font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--blue)">One architecture. One customer.</em></h2>
+      <p class="lede">Adobe becomes significantly more powerful when the stack is engineered as a whole. We connect identity, data, governance, content, and experiences into one intelligent architecture, creating a unified foundation for every customer interaction.</p>
     </div>
 
-    <div class="stack rv">
-      <div class="layer">
-        <div class="layer-label">Experience &amp; Content</div>
-        <div class="mods">
-          <div class="mod">
+    <div class="stackwrap rv">
+      <div class="layer-band l1">
+        <div class="layer-head"><span class="dot"></span><h3>Experience &amp; Content</h3></div>
+        <div class="layer-items">
+          <div class="litem">
             <h4>Adobe Experience Manager</h4>
-            <p>Content and digital asset management, GenAI-assisted content creation, advanced search, and dynamic content for hyper-personalised offers.</p>
+            <p>Enterprise content and digital asset management, GenAI-assisted creation, advanced search, and dynamic content delivery for highly personalized experiences.</p>
           </div>
-          <div class="mod">
+          <div class="litem">
             <h4>Adobe Target</h4>
-            <p>A/B testing and experimentation, AI-powered personalisation, product and content recommendations, same-page and next-page personalisation.</p>
+            <p>A/B testing and experimentation, AI-powered personalization, product and content recommendations, and same-page and next-page experiences.</p>
           </div>
-          <div class="mod">
+          <div class="litem">
             <h4>Adobe Workfront</h4>
-            <p>Central project and task management, resource and capacity planning, with tight Creative Cloud and AEM integration.</p>
+            <p>Centralized project and task management, resource and capacity planning, with seamless integration across Creative Cloud and AEM.</p>
           </div>
-          <div class="mod">
+          <div class="litem">
             <h4>Customer Journey Analytics</h4>
-            <p>Cross-channel and cross-device analytics, guided analysis for non-analysts, cross-channel attribution and generative AI-driven insight.</p>
+            <p>Cross-channel and cross-device analytics, guided analysis for business users, cross-channel attribution, and generative AI-driven insights.</p>
           </div>
         </div>
       </div>
 
-      <div class="layer" style="margin-top:34px">
-        <div class="layer-label">Data &amp; Activation</div>
-        <div class="mods">
-          <div class="mod">
+      <div class="layer-band l2">
+        <div class="layer-head"><span class="dot"></span><h3>Data &amp; Activation</h3></div>
+        <div class="layer-items">
+          <div class="litem">
             <h4>Adobe Real-Time CDP</h4>
-            <p>Real-time unified profiles and audiences, patented data governance framework, AI/ML models, and out-of-the-box social and ad network integrations.</p>
+            <p>Real-time unified profiles and audiences, robust data governance, AI/ML models, and out-of-the-box integrations with social and advertising networks.</p>
           </div>
-          <div class="mod">
+          <div class="litem">
             <h4>Adobe Journey Optimizer</h4>
-            <p>Real-time omnichannel journey orchestration, personalised message design, experimentation and next-best-experience decisioning.</p>
+            <p>Real-time omnichannel journey orchestration, personalized message design, experimentation, and next-best-experience decisioning.</p>
           </div>
-          <div class="mod own">
+          <div class="litem own">
             <h4>Prezio</h4>
-            <p>Our AI-driven dynamic pricing engine. Flexible price, quota and validity combinations, propensity and elasticity modelling, no-code pricing governance.</p>
+            <p>Our AI-driven dynamic pricing engine. Flexible price, quota, and validity combinations, propensity and elasticity modelling, and no-code pricing governance.</p>
           </div>
-          <div class="mod own">
+          <div class="litem own">
             <h4>CX Pulse</h4>
-            <p>Our omnichannel tNPS platform. Event-triggered and relationship surveys, smart timing, local language support, native bidirectional Adobe integration.</p>
+            <p>Our omnichannel tNPS platform. Event-triggered and relationship surveys, intelligent timing, local language support, and native bidirectional Adobe integration.</p>
           </div>
         </div>
       </div>
 
-      <div class="foundation rv">
-        <div class="ft">Built on Adobe Experience Platform &mdash; with the Agent Orchestrator and AI agents underneath</div>
+      <div class="foundation">
+        <div class="ft">Built on Adobe Experience Platform, powered by Agent Orchestrator and AI agents</div>
         <div class="chips">
-          <span class="chip">Unified profile</span>
-          <span class="chip">Real-time profiles</span>
-          <span class="chip">Common identity</span>
-          <span class="chip">Industry data models</span>
-          <span class="chip">API-first / headless</span>
-          <span class="chip">Composable</span>
-          <span class="chip">Multi-cloud</span>
-          <span class="chip">Native source connectors</span>
-          <span class="chip">OOTB destination connectors</span>
-          <span class="chip">Data collaboration</span>
-          <span class="chip">Privacy &amp; governance</span>
-          <span class="chip">Data sovereignty</span>
+          <span>Unified profile</span><span>Real-time profiles</span><span>Common identity</span>
+          <span>API-first / headless</span><span>Composable</span><span>Multi-cloud</span>
+          <span>Native source connectors</span><span>Data collaboration</span><span>Privacy &amp; governance</span>
         </div>
       </div>
     </div>
@@ -326,41 +298,43 @@
 
 <section id="aem-detail">
   <div class="wrap">
-    <div class="aem rv">
+    <div class="aemwrap rv">
       <div class="aem-top">
-        <h2>Adobe Experience Manager, <em>end to end.</em></h2>
-        <p>AEM is where most enterprise content programmes either scale or stall. We take responsibility for the whole lifecycle &mdash; not just the build.</p>
+        <div class="sec-tag" style="margin-bottom:14px">Adobe Experience Manager</div>
+        <h2>AEM, end to end.</h2>
+        <p>AEM is where enterprise content programs either scale or stall. We own the full lifecycle, from architecture and implementation through optimization and ongoing operations.</p>
       </div>
-      <div class="aem-rows">
-        <div class="arow">
-          <span class="n">01</span>
+
+      <div class="timeline">
+        <div class="trow">
+          <div class="node">01</div>
           <h4>Architecture &amp; Content Model</h4>
-          <p>Component and template strategy, content fragment and reusability model, multi-site and multi-market structure, headless versus full-stack decisions made against your actual roadmap.</p>
+          <p>Designing the component and template architecture, content fragment strategy, reusable content model, and multi-site foundation, with headless and full-stack decisions shaped around your long-term roadmap.</p>
         </div>
-        <div class="arow">
-          <span class="n">02</span>
+        <div class="trow">
+          <div class="node">02</div>
           <h4>Assets &amp; Digital Asset Management</h4>
-          <p>DAM implementation with advanced search and filtering, metadata and taxonomy design, Creative Cloud and Firefly integration, and GenAI-assisted content workflows.</p>
+          <p>Building the DAM foundation across search, discovery, metadata, and taxonomy, integrated with Creative Cloud and Firefly to enable intelligent, GenAI-assisted content operations.</p>
         </div>
-        <div class="arow">
-          <span class="n">03</span>
+        <div class="trow">
+          <div class="node">03</div>
           <h4>Migration</h4>
-          <p>Moving content, assets and authoring workflows off legacy CMS or older AEM versions, with mapping, cleanup and cutover planned so publishing never goes dark.</p>
+          <p>Modernizing content, assets, and authoring workflows from legacy CMS platforms and earlier AEM versions, with disciplined mapping, remediation, validation, and cutover designed to keep publishing uninterrupted.</p>
         </div>
-        <div class="arow">
-          <span class="n">04</span>
+        <div class="trow">
+          <div class="node">04</div>
           <h4>Integration</h4>
-          <p>Connecting AEM to the Experience Platform, commerce, CRM, billing and charging systems &mdash; including streaming layers for real-time signal exchange.</p>
+          <p>Engineering the connections between AEM, Experience Platform, commerce, CRM, billing, and charging systems, with streaming architectures that move customer signals in real time.</p>
         </div>
-        <div class="arow">
-          <span class="n">05</span>
-          <h4>Personalisation at the Edge</h4>
-          <p>Wiring AEM content to Target and Journey Optimizer so the right asset reaches the right customer, on the channel they actually use.</p>
+        <div class="trow">
+          <div class="node">05</div>
+          <h4>Real-Time Personalization</h4>
+          <p>Connecting AEM, Target, and Journey Optimizer to orchestrate relevant content in the moment, delivering the right experience to the right customer across the channels that matter.</p>
         </div>
-        <div class="arow">
-          <span class="n">06</span>
+        <div class="trow">
+          <div class="node">06</div>
           <h4>Operations &amp; Managed Services</h4>
-          <p>Post-launch platform administration, release management, performance tuning and continued use-case delivery by the same team that built it.</p>
+          <p>Keeping the platform performing beyond launch through proactive administration, controlled releases, performance engineering, and continuous use-case delivery from the team that built it.</p>
         </div>
       </div>
     </div>
@@ -371,29 +345,29 @@
   <div class="wrap">
     <div class="rv">
       <div class="sec-tag">How we deliver</div>
-      <h2>Phased, outcomes-driven, <em>de-risked.</em></h2>
-      <p class="lede">We sequence delivery in drops so value lands early and the programme never depends on a single big-bang release.</p>
+      <h2>Phased, outcomes-driven, <em style="font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--blue)">built to scale.</em></h2>
+      <p class="lede">We structure delivery in focused releases, creating value early, validating decisions continuously, and reducing the risk of a single high-stakes launch.</p>
     </div>
-    <div class="phases rv">
-      <div class="ph">
+    <div class="phaseflow rv">
+      <div class="phasebox">
         <span class="step">Phase 01</span>
         <h4>Validate</h4>
-        <p>Business outcomes, data and technical readiness, channel scope and compliance requirements assessed before a line of code is written.</p>
+        <p>Business outcomes, data and technical readiness, channel scope, and compliance requirements assessed before a line of code is written.</p>
       </div>
-      <div class="ph">
+      <div class="phasebox">
         <span class="step">Phase 02</span>
         <h4>Foundation</h4>
-        <p>Core platform stand-up, identity and profile model, integration layer and governance guardrails established as the base everything else builds on.</p>
+        <p>Core platform stand-up, identity and profile model, integration layer, and governance guardrails established as the foundation everything else builds on.</p>
       </div>
-      <div class="ph">
+      <div class="phasebox">
         <span class="step">Phase 03</span>
         <h4>Activate</h4>
-        <p>Priority use cases delivered channel by channel &mdash; in-app, web, WhatsApp, SMS and retail &mdash; each with reporting wired in from day one.</p>
+        <p>Priority use cases delivered channel by channel: in-app, web, WhatsApp, SMS, and retail, with reporting built in from day one.</p>
       </div>
-      <div class="ph">
+      <div class="phasebox">
         <span class="step">Phase 04</span>
         <h4>Scale &amp; Operate</h4>
-        <p>Extended channels, additional brands and markets, then ongoing operations with the delivery team that already knows the estate.</p>
+        <p>Extended channels, additional brands and markets, followed by ongoing operations with the delivery team that already knows the estate.</p>
       </div>
     </div>
   </div>
@@ -403,14 +377,10 @@
   <div class="wrap">
     <div class="rv">
       <div class="sec-tag">Why Aventis</div>
-      <h2>An Adobe practice, <em>not an Adobe department.</em></h2>
-      <p class="lede">Adobe specialists make up the majority of our delivery organisation &mdash; architects, platform consultants and journey leads who work on this stack full time.</p>
+      <h2>An Adobe practice, <em style="font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--blue)">not an Adobe department.</em></h2>
     </div>
-    <div class="nums rv">
-      <div class="num-c"><b>~70%</b><span>of our delivery roster are Adobe-specialised roles</span></div>
-      <div class="num-c"><b>100M+</b><span>subscriber-scale programmes architected</span></div>
-      <div class="num-c"><b>7</b><span>Adobe Experience Cloud products delivered in-house</span></div>
-      <div class="num-c"><b>SOC 2</b><span>Type II certified delivery organisation</span></div>
+    <div class="whystrip rv">
+      <p>Adobe specialists make up the majority of our delivery organization: architects, platform consultants, and journey leads who work with the Adobe stack full time, bringing deep platform expertise from architecture through execution.</p>
     </div>
   </div>
 </section>
@@ -419,33 +389,33 @@
   <div class="wrap">
     <div class="rv">
       <div class="sec-tag">Common questions</div>
-      <h2>Adobe &amp; AEM, <em>answered.</em></h2>
+      <h2>Adobe &amp; AEM, <em style="font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--blue)">answered.</em></h2>
     </div>
-    <div class="faq rv">
-      <div class="qa">
-        <h4>Is Aventis Technology an Adobe partner?</h4>
-        <p>Yes. Aventis Technology is an Adobe partner delivering Adobe Experience Cloud implementations across Asia-Pacific, with a delivery organisation weighted approximately 70% toward Adobe-specialised roles including AEM architects, AEP consultants and Journey Optimizer leads.</p>
-      </div>
-      <div class="qa">
-        <h4>Which Adobe products does Aventis Technology implement?</h4>
-        <p>Adobe Experience Manager (Sites and Assets), Adobe Experience Platform, Adobe Real-Time CDP, Adobe Journey Optimizer, Adobe Target, Adobe Customer Journey Analytics and Adobe Workfront &mdash; together with the Adobe Experience Platform Agent Orchestrator.</p>
-      </div>
-      <div class="qa">
-        <h4>What does an Adobe Experience Manager implementation partner do?</h4>
-        <p>An AEM implementation partner designs the content architecture, builds and configures the AEM environment, migrates existing content and assets, integrates AEM with surrounding systems such as CDPs, CRM and commerce platforms, and then operates or supports the platform after go-live.</p>
-      </div>
-      <div class="qa">
-        <h4>Which industries does Aventis deliver Adobe work for?</h4>
-        <p>Primarily telecommunications operators, financial services and enterprise brands across Singapore, Indonesia, the Philippines and the wider Asia-Pacific region.</p>
-      </div>
-      <div class="qa">
-        <h4>Can Aventis integrate Adobe Experience Cloud with existing telecom or banking systems?</h4>
-        <p>Yes. We build bi-directional integration layers connecting Adobe Experience Platform to billing, CRM, charging, network event and data warehouse systems, using streaming infrastructure such as Kafka for real-time ingestion and activation.</p>
-      </div>
-      <div class="qa">
-        <h4>Does Aventis provide managed services after go-live?</h4>
-        <p>Yes. We provide ongoing AEP, AEM and campaign operations support &mdash; platform administration, release management, performance optimisation and continued use-case delivery after the initial programme completes.</p>
-      </div>
+    <div class="accordion rv">
+      <details class="qa" open>
+        <summary><h4>Is Aventis Technology an Adobe partner?</h4><span class="plus"></span></summary>
+        <div class="ans">Yes. Aventis Technology is an Adobe Digital Experience Partner delivering Adobe Experience Cloud programmes for enterprises across Asia-Pacific, from architecture and implementation through migration, optimisation and always-on operations.</div>
+      </details>
+      <details class="qa">
+        <summary><h4>Which Adobe products does Aventis Technology implement?</h4><span class="plus"></span></summary>
+        <div class="ans">Aventis delivers across Adobe Experience Platform, Adobe Real-Time CDP, Adobe Journey Optimizer, Adobe Customer Journey Analytics, Adobe Experience Manager, Adobe Target, Adobe GenStudio and Adobe Offer Decisioning. Programmes typically combine multiple capabilities into one connected experience architecture.</div>
+      </details>
+      <details class="qa">
+        <summary><h4>What does an Adobe Experience Manager implementation partner do?</h4><span class="plus"></span></summary>
+        <div class="ans">An AEM implementation partner designs the content architecture, builds and configures the platform, migrates content and digital assets, and integrates AEM with surrounding systems such as customer data platforms, CRM and commerce platforms. The role can also extend beyond launch into platform operations, optimisation and ongoing support.</div>
+      </details>
+      <details class="qa">
+        <summary><h4>Which industries does Aventis deliver Adobe work for?</h4><span class="plus"></span></summary>
+        <div class="ans">Aventis delivers Adobe programmes across telecommunications, financial services, aviation and travel, and retail and consumer businesses, with delivery experience across Singapore, Indonesia, the Philippines, Malaysia and India.</div>
+      </details>
+      <details class="qa">
+        <summary><h4>Can Aventis integrate Adobe Experience Cloud with existing telecom or banking systems?</h4><span class="plus"></span></summary>
+        <div class="ans">Yes. Aventis integrates Adobe with the wider enterprise technology landscape, connecting customer data, identity, consent, CRM, analytics, messaging and other business systems. Its work includes real-time data foundations, journey orchestration and decisioning at enterprise scale.</div>
+      </details>
+      <details class="qa">
+        <summary><h4>Does Aventis provide managed services after go-live?</h4><span class="plus"></span></summary>
+        <div class="ans">Yes. Aventis stays beyond implementation, providing always-on operations, platform administration, release management, performance optimisation, data-quality engineering and continuous use-case delivery. The team that builds the platform can continue to operate, tune and evolve it after go-live.</div>
+      </details>
     </div>
   </div>
 </section>
@@ -453,9 +423,9 @@
 <section class="pcta">
   <div class="wrap">
     <h2>Let's talk about your <em>Adobe estate.</em></h2>
-    <p class="lede">Whether you're standing it up, cleaning it up, or trying to get more out of what you already licensed.</p>
+    <p class="lede">Whether you're building it, modernizing it, or getting more from what you've already invested in.</p>
     <div class="cta-btns">
-      <a class="btn ghost" href="/services">All our services</a>
+      <a class="btn ghost" href="/services">Explore all services</a>
       <a class="btn" href="/contact">Start the conversation <span class="arr">&rarr;</span></a>
     </div>
   </div>
@@ -491,7 +461,6 @@
     <div>
       <h4>Services</h4>
       <a href="/services">All services</a>
-      <a href="/adobe">Adobe &amp; AEM</a>
       <a href="/#services">Capabilities</a>
       <a href="/#operate">Run &amp; Optimize</a>
       <a href="/case-studies">Case studies</a>
@@ -501,7 +470,6 @@
       <a href="/prezio">Prezio</a>
       <a href="/cx-pulse">CX Pulse</a>
       <a href="/blog">Blog</a>
-      <a href="/careers">Careers</a>
     </div>
     <div>
       <h4>Connect</h4>
