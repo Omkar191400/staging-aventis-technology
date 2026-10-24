@@ -99,22 +99,83 @@ function emptyStateHTML() {
     </div>`;
 }
 
+// ── Fetch with timeout + retry ────────────────────────────────────────────────
+const FETCH_TIMEOUT_MS  = 10_000;   // 10 s per attempt
+const RETRY_ATTEMPTS    = 3;        // total tries (1 original + 2 retries)
+const RETRY_BASE_MS     = 1_500;    // backoff base: 1.5 s, 3 s, 6 s …
+
+async function fetchWithTimeout(url, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function fetchFeedWithRetry(url) {
+  let lastErr;
+  for (let attempt = 1; attempt <= RETRY_ATTEMPTS; attempt++) {
+    try {
+      console.log(`[generate-blog] Fetch attempt ${attempt}/${RETRY_ATTEMPTS} — ${url}`);
+      const res = await fetchWithTimeout(url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AventisBlogBot/1.0)' }
+      });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status} ${res.statusText}`);
+      }
+      const xml = await res.text();
+      if (!xml.includes('<item>')) {
+        throw new Error('Response received but no <item> elements found — possibly not a valid RSS feed');
+      }
+      return xml;
+    } catch (err) {
+      lastErr = err;
+      const isAbort = err.name === 'AbortError';
+      console.warn(`[generate-blog] Attempt ${attempt} failed: ${isAbort ? `timed out after ${FETCH_TIMEOUT_MS}ms` : err.message}`);
+      if (attempt < RETRY_ATTEMPTS) {
+        const delay = RETRY_BASE_MS * Math.pow(2, attempt - 1);
+        console.log(`[generate-blog] Retrying in ${delay}ms …`);
+        await new Promise(r => setTimeout(r, delay));
+      }
+    }
+  }
+  throw lastErr;
+}
+
+// ── Fallback: keep existing blog.html if Medium is unreachable ────────────────
+function writeFallback() {
+  // If a previous successful build left a blog.html, keep it — stale posts
+  // are better than an empty page. Only write the empty state if there is
+  // nothing at all.
+  if (fs.existsSync(OUTPUT_PATH)) {
+    console.log('[generate-blog] Medium unreachable — keeping existing blog.html (stale-ok).');
+    return;
+  }
+  try {
+    const template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
+    const output = template.replace('<!--POSTS-->', emptyStateHTML());
+    fs.writeFileSync(OUTPUT_PATH, output);
+    console.log('[generate-blog] No existing blog.html — wrote empty-state fallback.');
+  } catch (e2) {
+    console.error('[generate-blog] Could not write fallback either:', e2.message);
+    // Still exit 0 so the rest of the site build completes.
+  }
+}
+
+// ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
   const fileArgIdx = process.argv.indexOf('--file');
   let xml;
 
   if (fileArgIdx !== -1) {
-    xml = fs.readFileSync(process.argv[fileArgIdx + 1], 'utf8');
-    console.log(`[generate-blog] Using local fixture: ${process.argv[fileArgIdx + 1]}`);
+    const fixturePath = process.argv[fileArgIdx + 1];
+    xml = fs.readFileSync(fixturePath, 'utf8');
+    console.log(`[generate-blog] Using local fixture: ${fixturePath}`);
   } else {
-    console.log(`[generate-blog] Fetching ${FEED_URL} ...`);
-    const res = await fetch(FEED_URL, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AventisBlogBot/1.0)' }
-    });
-    if (!res.ok) {
-      throw new Error(`Feed fetch failed: ${res.status} ${res.statusText}`);
-    }
-    xml = await res.text();
+    xml = await fetchFeedWithRetry(FEED_URL);
+    console.log('[generate-blog] Feed fetched successfully.');
   }
 
   const items = parseItems(xml).slice(0, MAX_POSTS);
@@ -131,16 +192,8 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error('[generate-blog] Failed:', err.message);
-  // Fail soft: if the feed is unreachable at build time, ship the page
-  // with the empty state rather than breaking the whole site build.
-  try {
-    const template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
-    const output = template.replace('<!--POSTS-->', emptyStateHTML());
-    fs.writeFileSync(OUTPUT_PATH, output);
-    console.log('[generate-blog] Wrote fallback blog.html with empty state.');
-  } catch (e2) {
-    console.error('[generate-blog] Could not write fallback either:', e2.message);
-    process.exit(1);
-  }
+  console.error('[generate-blog] All fetch attempts failed:', err.message);
+  writeFallback();
+  // Exit 0 — feed being down should never break a site deploy.
+  process.exit(0);
 });
